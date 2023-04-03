@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/pages/ordenes_trabajo_list.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize the database
+  await MyDatabase.instance.database;
+
   runApp(const MainApp());
 }
 
@@ -9,12 +16,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return const MaterialApp(home: OrdenesTrabajoList());
   }
 }
