@@ -12,11 +12,93 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.2
   path: ^1.8.2
+  flutter_native_splash: ^2.2.19
+  localization: ^2.1.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_bloc: ^8.1.2
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.0
+  flutter_svg: ^2.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  build_runner: ^2.3.3
+  freezed: ^2.3.2
+  json_serializable: ^6.6.1
+
+flutter_native_splash:
+  color: "#000000"
+  #image:
+  android: true
+  ios: true
+  fullscreen: true
+  #android_gravity: center
+  #ios_content_mode:
 
 flutter:
   uses-material-design: true
+  generate: true
+  
+  assets:
+    - assets/
+    - assets/lang/
+    - assets/fonts/
+
+  fonts:
+    - family: SourceSansPro
+      fonts:
+        - asset: assets/fonts/SourceSansPro-Black.ttf
+          weight: 900
+        - asset: assets/fonts/SourceSansPro-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/SourceSansPro-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/SourceSansPro-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/SourceSansPro-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/SourceSansPro-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/SourceSansPro-Italic.ttf
+          style: italic
+        - asset: assets/fonts/SourceSansPro-Light.ttf
+          weight: 300
+        - asset: assets/fonts/SourceSansPro-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/SourceSansPro-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/SourceSansPro-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/SourceSansPro-SemiboldItalic.ttf
+          weight: 600
+          style: italic
+    - family: Oblik
+      fonts:
+        - asset: assets/fonts/Oblik-Black.otf
+          weight: 900
+        - asset: assets/fonts/Oblik-BlackItalic.otf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Oblik-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Oblik-BoldItalic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Oblik-Light.otf
+          weight: 300
+        - asset: assets/fonts/Oblik-LightItalic.otf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Oblik-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Oblik-RegularItalic.otf
+          weight: 400
+          style: italic

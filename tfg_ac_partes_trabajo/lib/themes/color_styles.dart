@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ColorStyles {
+class MyColorStyles {
+  static const Color backgroundColor = Color(0xFFd2d2d2);
+
+  static const Color redColor = Color(0xFFed2e38);
+  static Color redColor10 = const Color(0xFFed2e38).withOpacity(0.1);
+  static Color redColor20 = const Color(0xFFed2e38).withOpacity(0.2);
+  static Color redColor30 = const Color(0xFFed2e38).withOpacity(0.3);
+  static Color redColor40 = const Color(0xFFed2e38).withOpacity(0.4);
+  static Color redColor50 = const Color(0xFFed2e38).withOpacity(0.5);
+  static Color redColor60 = const Color(0xFFed2e38).withOpacity(0.6);
+  static Color redColor70 = const Color(0xFFed2e38).withOpacity(0.7);
+  static Color redColor80 = const Color(0xFFed2e38).withOpacity(0.8);
+  static Color redColor90 = const Color(0xFFed2e38).withOpacity(0.9);
+
   static const Color blueColor = Color(0xFF64A0D0);
   static Color blueColor10 = const Color(0xFF64A0D0).withOpacity(0.1);
   static Color blueColor20 = const Color(0xFF64A0D0).withOpacity(0.2);

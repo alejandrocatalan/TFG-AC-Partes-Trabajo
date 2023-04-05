@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FontStyles {
-  FontStyles(this._color);
+class MyFontStyles {
+  MyFontStyles(this._color);
 
   final Color _color;
 
