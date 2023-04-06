@@ -21,6 +21,10 @@ dependencies:
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
   flutter_svg: ^2.0.4
+  flutter_easyloading:
+    git:
+      url: https://github.com/yeikel16/flutter_easyloading.git
+      ref: fix-description
 
 dev_dependencies:
   flutter_test:
@@ -31,17 +35,16 @@ dev_dependencies:
   json_serializable: ^6.6.1
 
 flutter_native_splash:
-  color: "#000000"
-  #image:
+  color: "#FFFFFF"
+  image: assets/inycom_icon.png
   android: true
   ios: true
   fullscreen: true
   #android_gravity: center
-  #ios_content_mode:
+  ios_content_mode: scaleAspectFit
 
 flutter:
   uses-material-design: true
-  generate: true
   
   assets:
     - assets/

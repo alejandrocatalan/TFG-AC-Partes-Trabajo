@@ -238,6 +238,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.2"
+  flutter_easyloading:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: fix-description
+      resolved-ref: "897c173e7d6c4849abdaed08ba77d54b5b8f2f7f"
+      url: "https://github.com/yeikel16/flutter_easyloading.git"
+    source: git
+    version: "3.0.5"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -259,6 +268,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.19"
+  flutter_spinkit:
+    dependency: transitive
+    description:
+      name: flutter_spinkit
+      sha256: "77a2117c0517ff909221f3160b8eb20052ab5216107581168af574ac1f05dff8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
   flutter_svg:
     dependency: "direct main"
     description:

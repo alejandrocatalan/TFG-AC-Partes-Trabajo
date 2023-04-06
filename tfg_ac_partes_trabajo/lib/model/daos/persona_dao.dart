@@ -3,7 +3,10 @@ import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/persona.dart';
 
 class PersonaDao extends BaseDao<Persona> {
-  static const String tableName = 'personas';
+  static final PersonaDao _instance = PersonaDao._internal();
+  static PersonaDao get instance => _instance;
+
+  PersonaDao._internal() : super(tableName: 'personas');
 
   @override
   Future<Persona?> get(int id) async {

@@ -10,7 +10,6 @@ class ParteTrabajo extends ObjectWithMap {
   final String? coordenadas;
 
   ParteTrabajo({
-    required int id,
     required this.ordenTrabajoId,
     required this.fechaInicio,
     required this.fechaFin,
@@ -18,11 +17,10 @@ class ParteTrabajo extends ObjectWithMap {
     required this.trabajoARealizar,
     required this.identificadorDispositivo,
     this.coordenadas,
-  }) : super(id: id);
+  }) : super(id: null);
 
   factory ParteTrabajo.fromMap(Map<String, dynamic> map) {
     return ParteTrabajo(
-      id: map['id'],
       ordenTrabajoId: map['ordenTrabajoId'],
       fechaInicio: DateTime.parse(map['fechaInicio']),
       fechaFin: DateTime.parse(map['fechaFin']),
@@ -30,13 +28,12 @@ class ParteTrabajo extends ObjectWithMap {
       trabajoARealizar: map['trabajoARealizar'],
       identificadorDispositivo: map['identificadorDispositivo'],
       coordenadas: map['coordenadas'],
-    );
+    )..id = map['id'];
   }
 
   @override
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
+    final map = {
       'ordenTrabajoId': ordenTrabajoId,
       'fechaInicio': fechaInicio.toIso8601String(),
       'fechaFin': fechaFin.toIso8601String(),
@@ -45,5 +42,11 @@ class ParteTrabajo extends ObjectWithMap {
       'identificadorDispositivo': identificadorDispositivo,
       'coordenadas': coordenadas,
     };
+
+    if (id != null) {
+      map['id'] = id.toString();
+    }
+
+    return map;
   }
 }

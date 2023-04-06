@@ -10,7 +10,6 @@ class OrdenTrabajo extends ObjectWithMap {
   final String? instalacion;
 
   OrdenTrabajo({
-    required int id,
     required this.fechaInicio,
     this.fechaFin,
     this.tipo,
@@ -18,11 +17,10 @@ class OrdenTrabajo extends ObjectWithMap {
     this.trabajoARealizar,
     required this.codigoOrdenCliente,
     this.instalacion,
-  }) : super(id: id);
+  }) : super(id: null);
 
   factory OrdenTrabajo.fromMap(Map<String, dynamic> map) {
     return OrdenTrabajo(
-      id: map['id'],
       fechaInicio: DateTime.parse(map['fechaInicio']),
       fechaFin:
           map['fechaFin'] != null ? DateTime.parse(map['fechaFin']) : null,
@@ -31,13 +29,12 @@ class OrdenTrabajo extends ObjectWithMap {
       trabajoARealizar: map['trabajoARealizar'],
       codigoOrdenCliente: map['codigoOrdenCliente'],
       instalacion: map['instalacion'],
-    );
+    )..id = map['id'];
   }
 
   @override
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
+    final map = {
       'fechaInicio': fechaInicio.toIso8601String(),
       'fechaFin': fechaFin?.toIso8601String(),
       'tipo': tipo,
@@ -46,5 +43,11 @@ class OrdenTrabajo extends ObjectWithMap {
       'codigoOrdenCliente': codigoOrdenCliente,
       'instalacion': instalacion,
     };
+
+    if (id != null) {
+      map['id'] = id.toString();
+    }
+
+    return map;
   }
 }

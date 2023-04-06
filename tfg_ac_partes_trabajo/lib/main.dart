@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
-import 'package:tfg_ac_partes_trabajo/pages/ordenes_trabajo_list.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/custom_circular_progress_indicator.dart';
+import 'package:tfg_ac_partes_trabajo/pages/ordenes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/app_localizations.dart';
 
@@ -12,6 +14,8 @@ void main() async {
   await MyDatabase.instance.database;
 
   runApp(const MainApp());
+
+  configLoading();
 }
 
 class MainApp extends StatelessWidget {
@@ -20,29 +24,80 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: MyColorStyles.backgroundColor,
-        ),
-        locale: const Locale("en"),
-        supportedLocales: const [Locale("en"), Locale("es")],
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        localeResolutionCallback: (locale, supportedLocales) {
-          for (var supportedLocale in supportedLocales) {
-            if (supportedLocale.languageCode == locale!.languageCode &&
-                supportedLocale.countryCode == locale.countryCode) {
-              return supportedLocale;
-            }
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: MyColorStyles.backgroundColor,
+      ),
+      locale: const Locale("en"),
+      supportedLocales: const [Locale("en"), Locale("es")],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale!.languageCode &&
+              supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
           }
-          return supportedLocales.first;
-        },
-        home: const OrdenesTrabajoList());
+        }
+        return supportedLocales.first;
+      },
+      home: const OrdenesTrabajoPage(),
+      builder: EasyLoading.init(),
+    );
   }
 }
+
+void configLoading() {
+  EasyLoading.instance
+    ..indicatorWidget = const SizedBox(
+      height: 60,
+      width: 60,
+      child: CustomCircularProgressIndicator(
+        color: Colors.blue,
+        strokeWidth: 6,
+      ),
+    )
+    ..indicatorType = EasyLoadingIndicatorType.dualRing
+    ..loadingStyle = EasyLoadingStyle.custom
+    ..backgroundColor = Colors.transparent
+    ..textColor = Colors.black
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..maskType = EasyLoadingMaskType.blur
+    ..sigmaX = 5.0
+    ..sigmaY = 5.0
+    ..progressColor = const Color.fromRGBO(234, 81, 49, 1)
+    ..indicatorColor = Colors.blue
+    ..maskColor = Colors.black.withOpacity(0.5)
+    ..userInteractions = false
+    ..dismissOnTap = false
+    ..maskUseSafeArea = true
+    ..maskPadding = const EdgeInsets.only(top: kToolbarHeight)
+    ..customAnimation = CustomAnimation();
+}
+
+class CustomAnimation extends EasyLoadingAnimation {
+  CustomAnimation();
+
+  @override
+  Widget buildWidget(
+    Widget child,
+    AnimationController controller,
+    AlignmentGeometry alignment,
+  ) {
+    return Opacity(
+      opacity: controller.value,
+      child: RotationTransition(
+        turns: controller,
+        child: child,
+      ),
+    );
+  }
+}
+
 /// Para generar la pantalla splash utilizando el paquete https://pub.dev/packages/flutter_native_splash
 // flutter pub run flutter_native_splash:create

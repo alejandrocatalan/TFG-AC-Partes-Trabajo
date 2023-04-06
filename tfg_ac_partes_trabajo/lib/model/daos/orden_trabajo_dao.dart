@@ -3,7 +3,10 @@ import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 
 class OrdenTrabajoDao extends BaseDao<OrdenTrabajo> {
-  static const String tableName = 'ordenesTrabajo';
+  static final OrdenTrabajoDao _instance = OrdenTrabajoDao._internal();
+  static OrdenTrabajoDao get instance => _instance;
+
+  OrdenTrabajoDao._internal() : super(tableName: 'ordenesTrabajo');
 
   @override
   Future<OrdenTrabajo?> get(int id) async {
