@@ -1,0 +1,16 @@
+part of 'listado_partes_bloc.dart';
+
+@freezed
+class ListadoPartesState with _$ListadoPartesState {
+  const factory ListadoPartesState({
+    required bool isLoading,
+    required bool isError,
+    required List<ParteTrabajo> listPartesTrabajo,
+  }) = _ListadoPartesState;
+
+  factory ListadoPartesState.initial() => const ListadoPartesState(
+        isLoading: false,
+        isError: false,
+        listPartesTrabajo: [],
+      );
+}

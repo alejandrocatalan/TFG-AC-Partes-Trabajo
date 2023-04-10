@@ -4,9 +4,14 @@ import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 
 class CustomScaffold extends StatelessWidget {
   final String title;
+  final FloatingActionButton? floatingActionButton;
   final Widget body;
 
-  const CustomScaffold({Key? key, required this.title, required this.body})
+  const CustomScaffold(
+      {Key? key,
+      required this.title,
+      this.floatingActionButton,
+      required this.body})
       : super(key: key);
 
   @override
@@ -20,6 +25,7 @@ class CustomScaffold extends StatelessWidget {
         ),
         backgroundColor: MyColorStyles.redColor,
       ),
+      floatingActionButton: floatingActionButton,
       body: Container(
         child: body,
       ),

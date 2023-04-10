@@ -4,22 +4,25 @@ class Subcontrata extends ObjectWithMap {
   final String descripcion;
 
   Subcontrata({
-    required int id,
     required this.descripcion,
-  }) : super(id: id);
+  }) : super(id: null);
 
   factory Subcontrata.fromMap(Map<String, dynamic> map) {
     return Subcontrata(
-      id: map['id'],
       descripcion: map['descripcion'],
-    );
+    )..id = map['id'];
   }
 
   @override
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
+    final map = {
       'descripcion': descripcion,
     };
+
+    if (id != null) {
+      map['id'] = id.toString();
+    }
+
+    return map;
   }
 }

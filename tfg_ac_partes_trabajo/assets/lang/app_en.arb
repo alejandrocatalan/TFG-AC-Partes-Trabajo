@@ -1,4 +1,6 @@
 {
 "work_orders_list":"Work orders list",
-"work_order_detail":"Work order detail"
+"work_parts_list":"Work parts list",
+"work_order_detail":"Work order detail",
+"work_part_detail":"Work part detail"
 }

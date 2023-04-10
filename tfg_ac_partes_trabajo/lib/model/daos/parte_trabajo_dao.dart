@@ -33,4 +33,18 @@ class ParteTrabajoDao extends BaseDao<ParteTrabajo> {
       return ParteTrabajo.fromMap(maps[i]);
     });
   }
+
+  Future<List<ParteTrabajo>> getAllPartesDeOrden(
+      {required int ordenTrabajoId}) async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      where: 'ordenTrabajoId = ?',
+      whereArgs: [ordenTrabajoId],
+    );
+
+    return List.generate(maps.length, (i) {
+      return ParteTrabajo.fromMap(maps[i]);
+    });
+  }
 }

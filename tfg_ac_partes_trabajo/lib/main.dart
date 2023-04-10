@@ -3,7 +3,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_circular_progress_indicator.dart';
+import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/ordenes_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/app_localizations.dart';
 
@@ -28,7 +30,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: MyColorStyles.backgroundColor,
       ),
-      locale: const Locale("en"),
+      locale: const Locale("es"),
       supportedLocales: const [Locale("en"), Locale("es")],
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -45,8 +47,12 @@ class MainApp extends StatelessWidget {
         }
         return supportedLocales.first;
       },
-      home: const OrdenesTrabajoPage(),
       builder: EasyLoading.init(),
+      routes: {
+        PartesTrabajoPage.routeName: (_) => const PartesTrabajoPage(),
+        CrearParteTrabajoPage.routeName: (_) => const CrearParteTrabajoPage(),
+      },
+      home: const OrdenesTrabajoPage(),
     );
   }
 }
@@ -57,7 +63,7 @@ void configLoading() {
       height: 60,
       width: 60,
       child: CustomCircularProgressIndicator(
-        color: Colors.blue,
+        color: MyColorStyles.redColor,
         strokeWidth: 6,
       ),
     )

@@ -1,13 +1,17 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc.dart';
+import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_trabajo_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/parte_trabajo_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
+import 'package:tfg_ac_partes_trabajo/pages/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
@@ -44,7 +48,7 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
     _ordenTrabajoDao.create(OrdenTrabajo(
         fechaInicio: DateTime.now(), codigoOrdenCliente: "Prueba"));
     _parteTrabajoDao.create(ParteTrabajo(
-        ordenTrabajoId: 27,
+        ordenTrabajoId: 87,
         fechaInicio: DateTime.now(),
         fechaFin: DateTime.now(),
         observaciones: "observaciones",
@@ -106,32 +110,61 @@ class DetallesOrdenTrabajo extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       title: context.translate("work_order_detail"),
-      body: Container(
-        width: double.maxFinite,
-        color: MyColorStyles.whiteColor,
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SvgPicture.asset("assets/inycom_icon.svg"),
-            Text('ID: ${ordenTrabajo.id}'),
-            Text('Fecha de inicio: ${ordenTrabajo.fechaInicio.toString()}'),
-            if (ordenTrabajo.fechaFin != null)
-              Text('Fecha de fin: ${ordenTrabajo.fechaFin!.toString()}'),
-            if (ordenTrabajo.tipo != null) Text('Tipo: ${ordenTrabajo.tipo!}'),
-            if (ordenTrabajo.observaciones != null)
-              Text('Observaciones: ${ordenTrabajo.observaciones!}'),
-            if (ordenTrabajo.trabajoARealizar != null)
-              Text('Trabajo a realizar: ${ordenTrabajo.trabajoARealizar!}'),
-            Text(
-                'Código de orden del cliente: ${ordenTrabajo.codigoOrdenCliente}'),
-            if (ordenTrabajo.instalacion != null)
-              Text('Instalación: ${ordenTrabajo.instalacion!}'),
-          ],
+      body: CustomScrollView(slivers: [
+        SliverToBoxAdapter(
+          child: Container(
+            width: double.maxFinite,
+            color: MyColorStyles.whiteColor,
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SvgPicture.asset("assets/inycom_icon.svg"),
+                Text('ID: ${ordenTrabajo.id}'),
+                Text('Fecha de inicio: ${ordenTrabajo.fechaInicio.toString()}'),
+                if (ordenTrabajo.fechaFin != null)
+                  Text('Fecha de fin: ${ordenTrabajo.fechaFin!.toString()}'),
+                if (ordenTrabajo.tipo != null)
+                  Text('Tipo: ${ordenTrabajo.tipo!}'),
+                if (ordenTrabajo.observaciones != null)
+                  Text('Observaciones: ${ordenTrabajo.observaciones!}'),
+                if (ordenTrabajo.trabajoARealizar != null)
+                  Text('Trabajo a realizar: ${ordenTrabajo.trabajoARealizar!}'),
+                Text(
+                    'Código de orden del cliente: ${ordenTrabajo.codigoOrdenCliente}'),
+                if (ordenTrabajo.instalacion != null)
+                  Text('Instalación: ${ordenTrabajo.instalacion!}'),
+              ],
+            ),
+          ),
         ),
-      ),
+        SliverFillRemaining(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                    bottom: Platform.isIOS ? 30 : 15, left: 24, right: 24),
+                child: ButtonWidget(
+                    textButton: 'Ver partes de trabajo',
+                    disabled: false,
+                    context: context,
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        PartesTrabajoPage.routeName,
+                        arguments:
+                            ordenTrabajo, // Si necesitas pasar argumentos a la página
+                      );
+                    }),
+              )
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }

@@ -1,33 +1,36 @@
-// import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
-// import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
-// import 'package:tfg_ac_partes_trabajo/model/models/material.dart';
+import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/material.dart';
 
-// class MateriallDao extends BaseDao<Materiall> {
-//   static const String tableName = 'ordenesTrabajo';
+class MaterialDao extends BaseDao<Materiall> {
+  static final MaterialDao _instance = MaterialDao._internal();
+  static MaterialDao get instance => _instance;
 
-//   @override
-//   Future<Materiall?> get(int id) async {
-//     final db = await MyDatabase.instance.database;
-//     final maps = await db.query(
-//       tableName,
-//       where: 'id = ?',
-//       whereArgs: [id],
-//     );
+  MaterialDao._internal() : super(tableName: 'ordenesTrabajo');
 
-//     if (maps.isNotEmpty) {
-//       return Materiall.fromMap(maps.first);
-//     } else {
-//       return null;
-//     }
-//   }
+  @override
+  Future<Materiall?> get(int id) async {
+    final db = await MyDatabase.instance.database;
+    final maps = await db.query(
+      tableName,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
 
-//   @override
-//   Future<List<Materiall>> getAll() async {
-//     final db = await MyDatabase.instance.database;
-//     final List<Map<String, dynamic>> maps = await db.query(tableName);
+    if (maps.isNotEmpty) {
+      return Materiall.fromMap(maps.first);
+    } else {
+      return null;
+    }
+  }
 
-//     return List.generate(maps.length, (i) {
-//       return Materiall.fromMap(maps[i]);
-//     });
-//   }
-// }
+  @override
+  Future<List<Materiall>> getAll() async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(tableName);
+
+    return List.generate(maps.length, (i) {
+      return Materiall.fromMap(maps[i]);
+    });
+  }
+}

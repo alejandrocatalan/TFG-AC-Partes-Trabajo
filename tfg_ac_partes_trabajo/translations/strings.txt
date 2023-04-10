@@ -3,7 +3,17 @@ tags = android,ios
 en = Work orders list
 es = Lista órdenes de trabajo
 
+[work_parts_list]
+tags = android,ios
+en = Work parts list
+es = Lista partes de trabajo
+
 [work_order_detail]
 tags = android,ios
 en = Work order detail
 es = Detalle orden de trabajo
+
+[work_part_detail]
+tags = android,ios
+en = Work part detail
+es = Detalle parte de trabajo

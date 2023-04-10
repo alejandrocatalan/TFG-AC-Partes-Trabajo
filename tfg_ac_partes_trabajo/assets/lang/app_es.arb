@@ -1,4 +1,6 @@
 {
 "work_orders_list":"Lista órdenes de trabajo",
-"work_order_detail":"Detalle orden de trabajo"
+"work_parts_list":"Lista partes de trabajo",
+"work_order_detail":"Detalle orden de trabajo",
+"work_part_detail":"Detalle parte de trabajo"
 }
