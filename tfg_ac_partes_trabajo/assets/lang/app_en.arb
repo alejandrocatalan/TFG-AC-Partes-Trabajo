@@ -2,5 +2,17 @@
 "work_orders_list":"Work orders list",
 "work_parts_list":"Work parts list",
 "work_order_detail":"Work order detail",
-"work_part_detail":"Work part detail"
+"work_part_detail":"Work part detail",
+"create_work_part":"Create work order",
+"work_to_be_done":"Work to be done",
+"observations":"Observations",
+"create_part":"Create work order",
+"view_work_parts":"View work orders",
+"installation":"Installation",
+"customer_order_code":"Customer order code",
+"type":"Type",
+"end_date":"End date",
+"start_date":"Start date",
+"order":"Order",
+"part":"Part"
 }

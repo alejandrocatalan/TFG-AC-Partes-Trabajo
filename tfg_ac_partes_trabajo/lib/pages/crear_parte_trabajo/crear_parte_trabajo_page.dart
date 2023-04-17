@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
 class CrearParteTrabajoPage extends StatefulWidget {
   static const routeName = '/crear-parte-trabajo';
@@ -17,30 +19,30 @@ class _CrearParteTrabajoPageState extends State<CrearParteTrabajoPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      title: 'Crear parte de trabajo',
+      title: context.translate("create_work_part"),
       body: Container(
-        padding: const EdgeInsets.only(top: 12, left: 24, right: 24),
+        padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
         child: CustomScrollView(
+          clipBehavior: Clip.hardEdge,
           slivers: [
             SliverToBoxAdapter(
               child: Column(
-                children: const [
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Trabajo a realizar',
-                    ),
+                children: [
+                  CustomTextField(
+                    hintText: context.translate("work_to_be_done"),
+                    controller: TextEditingController(),
                   ),
-                  SizedBox(height: 16),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Observaciones',
-                    ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    hintText: context.translate("observations"),
+                    controller: TextEditingController(),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                 ],
               ),
             ),
             SliverFillRemaining(
+              hasScrollBody: false,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.min,
@@ -48,7 +50,7 @@ class _CrearParteTrabajoPageState extends State<CrearParteTrabajoPage> {
                   Container(
                     margin: EdgeInsets.only(bottom: Platform.isIOS ? 30 : 15),
                     child: ButtonWidget(
-                        textButton: 'Crear parte',
+                        textButton: context.translate("create_part"),
                         disabled: false,
                         context: context,
                         onPressed: () {}),

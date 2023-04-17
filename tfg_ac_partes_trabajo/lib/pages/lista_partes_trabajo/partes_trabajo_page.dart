@@ -4,8 +4,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
-import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
-import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo/crear_parte_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/detalle_parte_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/widgets/parte_trabajo_card.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
@@ -64,11 +65,8 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
             itemCount: state.listPartesTrabajo.length,
             itemBuilder: (context, index) {
               final parteTrabajo = state.listPartesTrabajo[index];
-              return ListTile(
-                title: Text('Parte ${parteTrabajo.id}'),
-                subtitle: Text(
-                    'Fecha de inicio: ${parteTrabajo.fechaInicio.toString()}'),
-                tileColor: MyColorStyles.whiteColor,
+              return ParteTrabajoCard(
+                parteTrabajo: parteTrabajo,
                 onTap: () {
                   Navigator.push(
                     context,
@@ -82,38 +80,6 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
             },
           );
         },
-      ),
-    );
-  }
-}
-
-class DetallesParteTrabajo extends StatelessWidget {
-  final ParteTrabajo parteTrabajo;
-
-  const DetallesParteTrabajo({Key? key, required this.parteTrabajo})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomScaffold(
-      title: context.translate("work_part_detail"),
-      body: Container(
-        width: double.maxFinite,
-        color: MyColorStyles.whiteColor,
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('ID: ${parteTrabajo.id}'),
-            Text('Orden de trabajo: ${parteTrabajo.ordenTrabajoId.toString()}'),
-            Text('Fecha de inicio: ${parteTrabajo.fechaInicio.toString()}'),
-            Text('Fecha de fin: ${parteTrabajo.fechaFin.toString()}'),
-            Text('Trabajo a realizar: ${parteTrabajo.trabajoARealizar}'),
-            Text('Observaciones: ${parteTrabajo.observaciones}'),
-          ],
-        ),
       ),
     );
   }

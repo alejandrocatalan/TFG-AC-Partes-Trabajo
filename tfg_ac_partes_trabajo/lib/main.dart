@@ -3,9 +3,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_circular_progress_indicator.dart';
-import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo_page.dart';
-import 'package:tfg_ac_partes_trabajo/pages/ordenes_trabajo_page.dart';
-import 'package:tfg_ac_partes_trabajo/pages/partes_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo/crear_parte_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/ordenes_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/app_localizations.dart';
 

@@ -2,5 +2,17 @@
 "work_orders_list":"Lista órdenes de trabajo",
 "work_parts_list":"Lista partes de trabajo",
 "work_order_detail":"Detalle orden de trabajo",
-"work_part_detail":"Detalle parte de trabajo"
+"work_part_detail":"Detalle parte de trabajo",
+"create_work_part":"Crear parte de trabajo",
+"work_to_be_done":"Trabajo a realizar",
+"observations":"Observaciones",
+"create_part":"Crear parte",
+"view_work_parts":"Ver partes de trabajo",
+"installation":"Instalación",
+"customer_order_code":"Código de orden del cliente",
+"type":"Tipo",
+"end_date":"Fecha de fin",
+"start_date":"Fecha de inicio",
+"order":"Orden",
+"part":"Parte"
 }

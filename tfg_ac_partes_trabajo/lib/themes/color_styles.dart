@@ -63,7 +63,17 @@ class MyColorStyles {
   static const Color whiteColor = Color(0xFFFFFFFF);
 
   static const Color lightGreyColor = Color(0xFFF8F8F8);
-  static const Color greyColor = Color(0xFFe0e4e7);
+
+  static const Color greyColor = Colors.grey;
+  static Color greyColor10 = Colors.grey.withOpacity(0.1);
+  static Color greyColor20 = Colors.grey.withOpacity(0.2);
+  static Color greyColor30 = Colors.grey.withOpacity(0.3);
+  static Color greyColor40 = Colors.grey.withOpacity(0.4);
+  static Color greyColor50 = Colors.grey.withOpacity(0.5);
+  static Color greyColor60 = Colors.grey.withOpacity(0.6);
+  static Color greyColor70 = Colors.grey.withOpacity(0.7);
+  static Color greyColor80 = Colors.grey.withOpacity(0.8);
+  static Color greyColor90 = Colors.grey.withOpacity(0.9);
 
   static const Color darkGreyColor = Color(0xFF121212);
   static Color darkGreyColor10 = const Color(0xFF121212).withOpacity(0.1);
