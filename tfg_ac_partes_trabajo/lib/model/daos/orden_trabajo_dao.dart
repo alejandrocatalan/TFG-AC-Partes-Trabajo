@@ -24,6 +24,20 @@ class OrdenTrabajoDao extends BaseDao<OrdenTrabajo> {
     }
   }
 
+  Future<List<OrdenTrabajo>> getAllFiltered(String searchTerm) async {
+    final db = await MyDatabase.instance.database;
+
+    final List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      where: 'id LIKE ?',
+      whereArgs: ['$searchTerm%'],
+    );
+
+    return List.generate(maps.length, (i) {
+      return OrdenTrabajo.fromMap(maps[i]);
+    });
+  }
+
   @override
   Future<List<OrdenTrabajo>> getAll() async {
     final db = await MyDatabase.instance.database;

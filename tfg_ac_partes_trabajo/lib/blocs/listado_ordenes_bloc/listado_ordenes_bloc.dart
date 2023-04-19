@@ -10,15 +10,26 @@ part 'listado_ordenes_bloc.freezed.dart';
 class ListadoOrdenesBloc
     extends Bloc<ListadoOrdenesEvent, ListadoOrdenesState> {
   ListadoOrdenesBloc() : super(ListadoOrdenesState.initial()) {
-    on<ListadoOrdenesEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    final OrdenTrabajoDao ordenTrabajoDao = OrdenTrabajoDao.instance;
+
+    on<ListadoOrdenesEvent>((event, emit) {});
 
     on<OnLoadOrdenes>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      final OrdenTrabajoDao ordenTrabajoDao = OrdenTrabajoDao.instance;
       List<OrdenTrabajo> ordenesTrabajo = await ordenTrabajoDao.getAll();
+
+      emit(state.copyWith(
+        isLoading: false,
+        listOrdenesTrabajo: ordenesTrabajo,
+      ));
+    });
+
+    on<OnSearch>((event, emit) async {
+      emit(state.copyWith(isLoading: true));
+
+      List<OrdenTrabajo> ordenesTrabajo =
+          await ordenTrabajoDao.getAllFiltered(event.search);
 
       emit(
           state.copyWith(isLoading: false, listOrdenesTrabajo: ordenesTrabajo));

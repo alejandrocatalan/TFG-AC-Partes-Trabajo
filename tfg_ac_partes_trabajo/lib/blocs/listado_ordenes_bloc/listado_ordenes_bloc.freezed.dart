@@ -19,32 +19,38 @@ mixin _$ListadoOrdenesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
   }) {
     return onLoadOrdenes();
   }
@@ -115,6 +122,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
   }) {
     return onLoadOrdenes?.call();
   }
@@ -123,6 +131,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadOrdenes != null) {
@@ -135,6 +144,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
   }) {
     return onLoadOrdenes(this);
   }
@@ -143,6 +153,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
   }) {
     return onLoadOrdenes?.call(this);
   }
@@ -151,6 +162,7 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadOrdenes != null) {
@@ -162,6 +174,138 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
 
 abstract class OnLoadOrdenes implements ListadoOrdenesEvent {
   const factory OnLoadOrdenes() = _$OnLoadOrdenes;
+}
+
+/// @nodoc
+abstract class _$$OnSearchCopyWith<$Res> {
+  factory _$$OnSearchCopyWith(
+          _$OnSearch value, $Res Function(_$OnSearch) then) =
+      __$$OnSearchCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String search});
+}
+
+/// @nodoc
+class __$$OnSearchCopyWithImpl<$Res>
+    extends _$ListadoOrdenesEventCopyWithImpl<$Res, _$OnSearch>
+    implements _$$OnSearchCopyWith<$Res> {
+  __$$OnSearchCopyWithImpl(_$OnSearch _value, $Res Function(_$OnSearch) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? search = null,
+  }) {
+    return _then(_$OnSearch(
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnSearch implements OnSearch {
+  const _$OnSearch({required this.search});
+
+  @override
+  final String search;
+
+  @override
+  String toString() {
+    return 'ListadoOrdenesEvent.onSearch(search: $search)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnSearch &&
+            (identical(other.search, search) || other.search == search));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, search);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnSearchCopyWith<_$OnSearch> get copyWith =>
+      __$$OnSearchCopyWithImpl<_$OnSearch>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
+  }) {
+    return onSearch(search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
+  }) {
+    return onSearch?.call(search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
+    required TResult orElse(),
+  }) {
+    if (onSearch != null) {
+      return onSearch(search);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
+  }) {
+    return onSearch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
+  }) {
+    return onSearch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
+    required TResult orElse(),
+  }) {
+    if (onSearch != null) {
+      return onSearch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnSearch implements ListadoOrdenesEvent {
+  const factory OnSearch({required final String search}) = _$OnSearch;
+
+  String get search;
+  @JsonKey(ignore: true)
+  _$$OnSearchCopyWith<_$OnSearch> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

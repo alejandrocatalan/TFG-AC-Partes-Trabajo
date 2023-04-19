@@ -12,7 +12,7 @@ import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/widgets/orden_
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
 class OrdenesTrabajoPage extends StatelessWidget {
-  const OrdenesTrabajoPage({super.key});
+  const OrdenesTrabajoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,21 @@ class OrdenesTrabajoPage extends StatelessWidget {
 }
 
 class OrdenesTrabajoView extends StatefulWidget {
-  const OrdenesTrabajoView({super.key});
+  const OrdenesTrabajoView({Key? key}) : super(key: key);
 
   @override
   State<OrdenesTrabajoView> createState() => _OrdenesTrabajoViewState();
 }
 
 class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
+  /// Variables
+  // DAOs
   final OrdenTrabajoDao _ordenTrabajoDao = OrdenTrabajoDao.instance;
   final ParteTrabajoDao _parteTrabajoDao = ParteTrabajoDao.instance;
+  // Controllers
+  final TextEditingController _searchController = TextEditingController();
 
+  /// Functions
   @override
   void initState() {
     super.initState();
@@ -80,9 +85,14 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SearchTextField(
-                        controller: TextEditingController(),
+                        controller: _searchController,
                         height: 50,
                         width: MediaQuery.of(context).size.width * 0.95,
+                        onChanged: (value) {
+                          context
+                              .read<ListadoOrdenesBloc>()
+                              .add(ListadoOrdenesEvent.onSearch(search: value));
+                        },
                       ),
                     ],
                   ),
@@ -90,7 +100,7 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
               ),
               SliverFillRemaining(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 12),
+                  padding: const EdgeInsets.only(top: 6),
                   child: ListView.builder(
                     itemCount: state.listOrdenesTrabajo.length,
                     itemBuilder: (context, index) {

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo/crear_parte_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/detalle_parte_trabajo_page.dart';
@@ -24,19 +25,36 @@ class PartesTrabajoPage extends StatelessWidget {
         ..add(ListadoPartesEvent.onLoadPartesDeOrden(
             ordenTrabajoId: ordenTrabajo.id!)),
       lazy: false,
-      child: const PartesTrabajoView(),
+      child: PartesTrabajoView(
+        ordenTrabajo: ordenTrabajo,
+      ),
     );
   }
 }
 
 class PartesTrabajoView extends StatefulWidget {
-  const PartesTrabajoView({Key? key}) : super(key: key);
+  const PartesTrabajoView({Key? key, required this.ordenTrabajo})
+      : super(key: key);
+
+  final OrdenTrabajo ordenTrabajo;
 
   @override
   State<PartesTrabajoView> createState() => _PartesTrabajoViewState();
 }
 
 class _PartesTrabajoViewState extends State<PartesTrabajoView> {
+  /// Variables
+  // DAOs
+
+  // Controllers
+  final TextEditingController _searchController = TextEditingController();
+
+  /// Functions
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -61,23 +79,54 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
           }
         },
         builder: (context, state) {
-          return ListView.builder(
-            itemCount: state.listPartesTrabajo.length,
-            itemBuilder: (context, index) {
-              final parteTrabajo = state.listPartesTrabajo[index];
-              return ParteTrabajoCard(
-                parteTrabajo: parteTrabajo,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          DetallesParteTrabajo(parteTrabajo: parteTrabajo),
-                    ),
-                  );
-                },
-              );
-            },
+          return CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Container(
+                  color: Colors.white,
+                  height: 70,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SearchTextField(
+                        controller: _searchController,
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.95,
+                        onChanged: (value) {
+                          context.read<ListadoPartesBloc>().add(
+                              ListadoPartesEvent.onSearch(
+                                  ordenTrabajoId: widget.ordenTrabajo.id!,
+                                  search: value));
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverFillRemaining(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: ListView.builder(
+                    itemCount: state.listPartesTrabajo.length,
+                    itemBuilder: (context, index) {
+                      final parteTrabajo = state.listPartesTrabajo[index];
+                      return ParteTrabajoCard(
+                        parteTrabajo: parteTrabajo,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetallesParteTrabajo(
+                                  parteTrabajo: parteTrabajo),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),

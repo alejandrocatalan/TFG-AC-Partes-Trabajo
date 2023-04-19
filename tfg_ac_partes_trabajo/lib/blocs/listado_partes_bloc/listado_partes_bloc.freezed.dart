@@ -20,18 +20,21 @@ mixin _$ListadoPartesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ListadoPartesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult when<TResult extends Object?>({
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
   }) {
     return onLoadPartes();
   }
@@ -123,6 +130,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
   }) {
     return onLoadPartes?.call();
   }
@@ -132,6 +140,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -145,6 +154,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult map<TResult extends Object?>({
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
   }) {
     return onLoadPartes(this);
   }
@@ -154,6 +164,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
   }) {
     return onLoadPartes?.call(this);
   }
@@ -163,6 +174,7 @@ class _$OnLoadPartes implements OnLoadPartes {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -244,6 +256,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult when<TResult extends Object?>({
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
   }) {
     return onLoadPartesDeOrden(ordenTrabajoId);
   }
@@ -253,6 +266,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
   }) {
     return onLoadPartesDeOrden?.call(ordenTrabajoId);
   }
@@ -262,6 +276,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -275,6 +290,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult map<TResult extends Object?>({
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
   }) {
     return onLoadPartesDeOrden(this);
   }
@@ -284,6 +300,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
   }) {
     return onLoadPartesDeOrden?.call(this);
   }
@@ -293,6 +310,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -309,6 +327,156 @@ abstract class OnLoadPartesDeOrden implements ListadoPartesEvent {
   int get ordenTrabajoId;
   @JsonKey(ignore: true)
   _$$OnLoadPartesDeOrdenCopyWith<_$OnLoadPartesDeOrden> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnSearchCopyWith<$Res> {
+  factory _$$OnSearchCopyWith(
+          _$OnSearch value, $Res Function(_$OnSearch) then) =
+      __$$OnSearchCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int ordenTrabajoId, String search});
+}
+
+/// @nodoc
+class __$$OnSearchCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnSearch>
+    implements _$$OnSearchCopyWith<$Res> {
+  __$$OnSearchCopyWithImpl(_$OnSearch _value, $Res Function(_$OnSearch) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ordenTrabajoId = null,
+    Object? search = null,
+  }) {
+    return _then(_$OnSearch(
+      ordenTrabajoId: null == ordenTrabajoId
+          ? _value.ordenTrabajoId
+          : ordenTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnSearch implements OnSearch {
+  const _$OnSearch({required this.ordenTrabajoId, required this.search});
+
+  @override
+  final int ordenTrabajoId;
+  @override
+  final String search;
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onSearch(ordenTrabajoId: $ordenTrabajoId, search: $search)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnSearch &&
+            (identical(other.ordenTrabajoId, ordenTrabajoId) ||
+                other.ordenTrabajoId == ordenTrabajoId) &&
+            (identical(other.search, search) || other.search == search));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ordenTrabajoId, search);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnSearchCopyWith<_$OnSearch> get copyWith =>
+      __$$OnSearchCopyWithImpl<_$OnSearch>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+  }) {
+    return onSearch(ordenTrabajoId, search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+  }) {
+    return onSearch?.call(ordenTrabajoId, search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    required TResult orElse(),
+  }) {
+    if (onSearch != null) {
+      return onSearch(ordenTrabajoId, search);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+  }) {
+    return onSearch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+  }) {
+    return onSearch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    required TResult orElse(),
+  }) {
+    if (onSearch != null) {
+      return onSearch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnSearch implements ListadoPartesEvent {
+  const factory OnSearch(
+      {required final int ordenTrabajoId,
+      required final String search}) = _$OnSearch;
+
+  int get ordenTrabajoId;
+  String get search;
+  @JsonKey(ignore: true)
+  _$$OnSearchCopyWith<_$OnSearch> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

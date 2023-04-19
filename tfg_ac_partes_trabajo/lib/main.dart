@@ -107,3 +107,8 @@ class CustomAnimation extends EasyLoadingAnimation {
 
 /// Para generar la pantalla splash utilizando el paquete https://pub.dev/packages/flutter_native_splash
 // flutter pub run flutter_native_splash:create
+
+// SvgPicture.asset(
+//   "assets/inycom_icon.svg",
+//   width: 100,
+// ),

@@ -9,14 +9,13 @@ part 'listado_partes_bloc.freezed.dart';
 
 class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
   ListadoPartesBloc() : super(ListadoPartesState.initial()) {
-    on<ListadoPartesEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
+
+    on<ListadoPartesEvent>((event, emit) {});
 
     on<OnLoadPartes>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
       List<ParteTrabajo> partesTrabajo = await parteTrabajoDao.getAll();
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
@@ -25,9 +24,20 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     on<OnLoadPartesDeOrden>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
       List<ParteTrabajo> partesTrabajo = await parteTrabajoDao
           .getAllPartesDeOrden(ordenTrabajoId: event.ordenTrabajoId);
+
+      emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
+    });
+
+    on<OnSearch>((event, emit) async {
+      emit(state.copyWith(isLoading: true));
+
+      List<ParteTrabajo> partesTrabajo =
+          await parteTrabajoDao.getAllPartesDeOrdenFiltered(
+        ordenTrabajoId: event.ordenTrabajoId,
+        searchTerm: event.search,
+      );
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
     });

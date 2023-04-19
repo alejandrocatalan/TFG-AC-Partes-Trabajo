@@ -6,4 +6,7 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onLoadPartesDeOrden(
       {required int ordenTrabajoId}) = OnLoadPartesDeOrden;
+
+  const factory ListadoPartesEvent.onSearch(
+      {required int ordenTrabajoId, required String search}) = OnSearch;
 }
