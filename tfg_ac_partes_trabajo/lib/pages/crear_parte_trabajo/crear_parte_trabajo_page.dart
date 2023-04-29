@@ -32,6 +32,7 @@ class CrearParteTrabajoPage extends StatelessWidget {
 
     final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
     bloc.add(ListadoPartesEvent.onCreateParte(parteTrabajo: parteTrabajo));
+    // bloc.add(const ListadoPartesEvent.onCleanLastParteModified());
 
     return const CrearParteTrabajoView();
   }
@@ -46,8 +47,12 @@ class CrearParteTrabajoView extends StatefulWidget {
 
 class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
   /// Variables
-  late final int lastIdPT;
+  late ParteTrabajo _parteTrabajo;
   // Controllers
+  final TextEditingController _textEditingControllerObservaciones =
+      TextEditingController();
+  final TextEditingController _textEditingControllerTrabajoRealizado =
+      TextEditingController();
 
   /// Functions
   @override
@@ -67,6 +72,8 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
         } else {
           EasyLoading.dismiss();
         }
+
+        _parteTrabajo = state.lastParteCreated;
       },
       child: CustomScaffold(
         title: "${context.translate("create_part")} ",
@@ -96,9 +103,17 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(
-                    controller: TextEditingController(),
+                    controller: _textEditingControllerObservaciones,
                     hintText: "widget.parteTrabajo.observaciones",
                     readOnly: false,
+                    onChanged: (String value) {
+                      _parteTrabajo =
+                          _parteTrabajo.copyWith(observaciones: value);
+
+                      BlocProvider.of<ListadoPartesBloc>(context).add(
+                          ListadoPartesEvent.onUpdateParte(
+                              parteTrabajo: _parteTrabajo));
+                    },
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -108,9 +123,17 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(
-                    controller: TextEditingController(),
+                    controller: _textEditingControllerTrabajoRealizado,
                     hintText: "widget.parteTrabajo.trabajoARealizar",
                     readOnly: false,
+                    onChanged: (String value) {
+                      _parteTrabajo =
+                          _parteTrabajo.copyWith(trabajoARealizar: value);
+
+                      BlocProvider.of<ListadoPartesBloc>(context).add(
+                          ListadoPartesEvent.onUpdateParte(
+                              parteTrabajo: _parteTrabajo));
+                    },
                   ),
                 ],
               ),
@@ -129,7 +152,9 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                       textButton: context.translate("create_part"),
                       disabled: false,
                       context: context,
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }),
                 )
               ],
             ),

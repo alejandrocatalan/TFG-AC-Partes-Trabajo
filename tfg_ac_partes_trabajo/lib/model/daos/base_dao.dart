@@ -16,6 +16,7 @@ abstract class BaseDao<T extends ObjectWithMap> {
 
   Future<List<T>> getAll();
 
+  // Devuelve el número de filas afectadas
   Future<int> update(T obj) async {
     final db = await MyDatabase.instance.database;
     return await db.update(

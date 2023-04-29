@@ -12,4 +12,10 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onCreateParte(
       {required ParteTrabajo parteTrabajo}) = OnCreateParte;
+
+  const factory ListadoPartesEvent.onUpdateParte(
+      {required ParteTrabajo parteTrabajo}) = OnUpdateParte;
+
+  const factory ListadoPartesEvent.onCleanLastParteModified() =
+      OnCleanLastParteModified;
 }

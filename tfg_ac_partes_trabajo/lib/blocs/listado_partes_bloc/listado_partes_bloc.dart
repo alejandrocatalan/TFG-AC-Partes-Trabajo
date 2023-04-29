@@ -48,10 +48,27 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       int idParte = await parteTrabajoDao.create(event.parteTrabajo);
       ParteTrabajo? parteCreated = await parteTrabajoDao.get(idParte);
 
-      emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated));
+      emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated!));
 
       add(OnLoadPartesDeOrden(
           ordenTrabajoId: event.parteTrabajo.ordenTrabajoId));
     });
+
+    on<OnUpdateParte>((event, emit) async {
+      emit(state.copyWith(isLoading: true));
+
+      await parteTrabajoDao.update(event.parteTrabajo);
+      ParteTrabajo? parteCreated =
+          await parteTrabajoDao.get(event.parteTrabajo.id!);
+
+      emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated!));
+
+      add(OnLoadPartesDeOrden(
+          ordenTrabajoId: event.parteTrabajo.ordenTrabajoId));
+    });
+
+    // on<OnCleanLastParteModified>((event, emit) async {
+    //   emit(state.copyWith(lastParteModified: ParteTrabajo.initial()));
+    // });
   }
 }

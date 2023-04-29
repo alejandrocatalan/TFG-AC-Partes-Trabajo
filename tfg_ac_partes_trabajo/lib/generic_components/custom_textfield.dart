@@ -8,6 +8,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final double height;
   final bool readOnly;
+  final Function onChanged;
 
   const CustomTextField({
     Key? key,
@@ -16,6 +17,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.height = 150,
     this.readOnly = false,
+    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -56,6 +58,7 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           fillColor: MyColorStyles.whiteColor,
         ),
+        onChanged: (value) => onChanged(value),
       ),
     );
   }

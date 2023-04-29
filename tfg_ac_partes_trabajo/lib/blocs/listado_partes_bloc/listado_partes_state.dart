@@ -6,13 +6,15 @@ class ListadoPartesState with _$ListadoPartesState {
     required bool isLoading,
     required bool isError,
     required List<ParteTrabajo> listPartesTrabajo,
-    required ParteTrabajo? lastParteCreated,
+    required ParteTrabajo lastParteCreated,
+    required ParteTrabajo? lastParteModified,
   }) = _ListadoPartesState;
 
-  factory ListadoPartesState.initial() => const ListadoPartesState(
+  factory ListadoPartesState.initial() => ListadoPartesState(
         isLoading: false,
         isError: false,
         listPartesTrabajo: [],
-        lastParteCreated: null,
+        lastParteCreated: ParteTrabajo.initial(),
+        lastParteModified: null,
       );
 }

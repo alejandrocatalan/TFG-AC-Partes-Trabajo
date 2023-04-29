@@ -17,7 +17,42 @@ class ParteTrabajo extends ObjectWithMap {
     required this.trabajoARealizar,
     required this.identificadorDispositivo,
     this.coordenadas,
-  }) : super(id: null);
+    int? id,
+  }) : super(id: id);
+
+  static ParteTrabajo initial() {
+    return ParteTrabajo(
+      ordenTrabajoId: -1,
+      fechaInicio: DateTime.now(),
+      fechaFin: DateTime.now(),
+      observaciones: '',
+      trabajoARealizar: '',
+      identificadorDispositivo: '',
+    );
+  }
+
+  ParteTrabajo copyWith({
+    int? ordenTrabajoId,
+    DateTime? fechaInicio,
+    DateTime? fechaFin,
+    String? observaciones,
+    String? trabajoARealizar,
+    String? identificadorDispositivo,
+    String? coordenadas,
+    int? id,
+  }) {
+    return ParteTrabajo(
+      ordenTrabajoId: ordenTrabajoId ?? this.ordenTrabajoId,
+      fechaInicio: fechaInicio ?? this.fechaInicio,
+      fechaFin: fechaFin ?? this.fechaFin,
+      observaciones: observaciones ?? this.observaciones,
+      trabajoARealizar: trabajoARealizar ?? this.trabajoARealizar,
+      identificadorDispositivo:
+          identificadorDispositivo ?? this.identificadorDispositivo,
+      coordenadas: coordenadas ?? this.coordenadas,
+      id: id ?? this.id,
+    );
+  }
 
   factory ParteTrabajo.fromMap(Map<String, dynamic> map) {
     return ParteTrabajo(

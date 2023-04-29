@@ -50,6 +50,7 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                   controller: TextEditingController(),
                   hintText: widget.parteTrabajo.observaciones,
                   readOnly: false,
+                  onChanged: (value) {},
                 ),
                 const SizedBox(height: 12),
                 Text(
@@ -62,6 +63,7 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                   controller: TextEditingController(),
                   hintText: widget.parteTrabajo.trabajoARealizar,
                   readOnly: false,
+                  onChanged: (value) {},
                 ),
               ],
             ),

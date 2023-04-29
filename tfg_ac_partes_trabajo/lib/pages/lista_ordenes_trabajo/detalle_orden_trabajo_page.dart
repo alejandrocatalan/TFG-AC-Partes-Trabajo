@@ -66,6 +66,7 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                   controller: TextEditingController(),
                   hintText: widget.ordenTrabajo.observaciones ?? "",
                   readOnly: true,
+                  onChanged: () {},
                 ),
                 const SizedBox(height: 12),
                 Text(
@@ -78,6 +79,7 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                   controller: TextEditingController(),
                   hintText: widget.ordenTrabajo.trabajoARealizar ?? "",
                   readOnly: true,
+                  onChanged: () {},
                 ),
               ],
             ),

@@ -52,10 +52,6 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
   @override
   void initState() {
     super.initState();
-
-    // final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
-    // bloc.add(ListadoPartesEvent.onLoadPartesDeOrden(
-    //     ordenTrabajoId: widget.ordenTrabajo.id!));
   }
 
   @override
