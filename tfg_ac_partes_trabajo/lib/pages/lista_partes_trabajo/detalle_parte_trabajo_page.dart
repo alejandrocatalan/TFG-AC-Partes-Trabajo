@@ -61,7 +61,7 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                 const SizedBox(height: 12),
                 CustomTextField(
                   controller: TextEditingController(),
-                  hintText: widget.parteTrabajo.trabajoARealizar,
+                  hintText: widget.parteTrabajo.trabajoRealizado,
                   readOnly: false,
                   onChanged: (value) {},
                 ),

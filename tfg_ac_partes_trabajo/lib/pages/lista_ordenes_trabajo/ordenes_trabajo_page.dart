@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/orden_trabajo_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/detalle_orden_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/widgets/orden_trabajo_card.dart';
@@ -40,6 +41,10 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   @override
   void initState() {
     super.initState();
+
+    // MyDatabase.instance.clearDatabase();
+    OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(), codigoOrdenCliente: "codigoOrdenCliente"));
   }
 
   @override

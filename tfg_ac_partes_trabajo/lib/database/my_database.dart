@@ -55,7 +55,7 @@ class MyDatabase {
         fechaInicio TEXT NOT NULL,
         fechaFin TEXT NOT NULL,
         observaciones TEXT NOT NULL,
-        trabajoARealizar TEXT NOT NULL,
+        trabajoRealizado TEXT NOT NULL,
         identificadorDispositivo TEXT NOT NULL,
         coordenadas TEXT,
         FOREIGN KEY (ordenTrabajoId) REFERENCES ordenesTrabajo(id)
@@ -89,6 +89,27 @@ class MyDatabase {
         descripcion TEXT NOT NULL
       )
       ''');
+  }
+
+  Future<void> clearDatabase() async {
+    final db = await instance.database;
+
+    // Borrar los datos de todas las tablas
+    await db.delete('ordenesTrabajo');
+    await db.delete('partesTrabajo');
+    await db.delete('personas');
+    await db.delete('maquinas');
+    await db.delete('materiales');
+    await db.delete('subcontratas');
+
+    // Reiniciar el valor del autoincrement de todas las tablas
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="ordenesTrabajo";');
+    await db.execute('DELETE FROM sqlite_sequence WHERE name="partesTrabajo";');
+    await db.execute('DELETE FROM sqlite_sequence WHERE name="personas";');
+    await db.execute('DELETE FROM sqlite_sequence WHERE name="maquinas";');
+    await db.execute('DELETE FROM sqlite_sequence WHERE name="materiales";');
+    await db.execute('DELETE FROM sqlite_sequence WHERE name="subcontratas";');
   }
 
   Future close() async {

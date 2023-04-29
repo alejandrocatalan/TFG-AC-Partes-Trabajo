@@ -5,7 +5,7 @@ class ParteTrabajo extends ObjectWithMap {
   final DateTime fechaInicio;
   final DateTime fechaFin;
   final String observaciones;
-  final String trabajoARealizar;
+  final String trabajoRealizado;
   final String identificadorDispositivo;
   final String? coordenadas;
 
@@ -14,7 +14,7 @@ class ParteTrabajo extends ObjectWithMap {
     required this.fechaInicio,
     required this.fechaFin,
     required this.observaciones,
-    required this.trabajoARealizar,
+    required this.trabajoRealizado,
     required this.identificadorDispositivo,
     this.coordenadas,
     int? id,
@@ -26,7 +26,7 @@ class ParteTrabajo extends ObjectWithMap {
       fechaInicio: DateTime.now(),
       fechaFin: DateTime.now(),
       observaciones: '',
-      trabajoARealizar: '',
+      trabajoRealizado: '',
       identificadorDispositivo: '',
     );
   }
@@ -36,7 +36,7 @@ class ParteTrabajo extends ObjectWithMap {
     DateTime? fechaInicio,
     DateTime? fechaFin,
     String? observaciones,
-    String? trabajoARealizar,
+    String? trabajoRealizado,
     String? identificadorDispositivo,
     String? coordenadas,
     int? id,
@@ -46,7 +46,7 @@ class ParteTrabajo extends ObjectWithMap {
       fechaInicio: fechaInicio ?? this.fechaInicio,
       fechaFin: fechaFin ?? this.fechaFin,
       observaciones: observaciones ?? this.observaciones,
-      trabajoARealizar: trabajoARealizar ?? this.trabajoARealizar,
+      trabajoRealizado: trabajoRealizado ?? this.trabajoRealizado,
       identificadorDispositivo:
           identificadorDispositivo ?? this.identificadorDispositivo,
       coordenadas: coordenadas ?? this.coordenadas,
@@ -60,7 +60,7 @@ class ParteTrabajo extends ObjectWithMap {
       fechaInicio: DateTime.parse(map['fechaInicio']),
       fechaFin: DateTime.parse(map['fechaFin']),
       observaciones: map['observaciones'],
-      trabajoARealizar: map['trabajoARealizar'],
+      trabajoRealizado: map['trabajoRealizado'],
       identificadorDispositivo: map['identificadorDispositivo'],
       coordenadas: map['coordenadas'],
     )..id = map['id'];
@@ -73,7 +73,7 @@ class ParteTrabajo extends ObjectWithMap {
       'fechaInicio': fechaInicio.toIso8601String(),
       'fechaFin': fechaFin.toIso8601String(),
       'observaciones': observaciones,
-      'trabajoARealizar': trabajoARealizar,
+      'trabajoRealizado': trabajoRealizado,
       'identificadorDispositivo': identificadorDispositivo,
       'coordenadas': coordenadas,
     };

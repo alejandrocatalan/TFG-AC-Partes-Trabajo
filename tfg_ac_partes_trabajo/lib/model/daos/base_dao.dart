@@ -8,7 +8,7 @@ abstract class BaseDao<T extends ObjectWithMap> {
   Future<int> create(T obj) async {
     final db = await MyDatabase.instance.database;
     final id = await db.insert(tableName, obj.toMap());
-    obj.id = id;
+    // obj.id = id;
     return id;
   }
 

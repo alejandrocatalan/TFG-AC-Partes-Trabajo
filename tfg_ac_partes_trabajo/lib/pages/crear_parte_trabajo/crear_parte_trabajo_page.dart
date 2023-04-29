@@ -27,7 +27,7 @@ class CrearParteTrabajoPage extends StatelessWidget {
         fechaInicio: DateTime.now(),
         fechaFin: DateTime.now(),
         observaciones: "probatina",
-        trabajoARealizar: "12 12 ey you ey you",
+        trabajoRealizado: "12 12 ey you ey you",
         identificadorDispositivo: "");
 
     final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
@@ -88,13 +88,13 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                   const SizedBox(height: 12),
                   BlackAndNormalText(
                       blackText: "${context.translate("start_date")}: ",
-                      normalText:
-                          "fecha inicio"), // widget.parteTrabajo.fechaInicio.toString()
+                      normalText: _parteTrabajo.fechaInicio
+                          .toString()), // widget.parteTrabajo.fechaInicio.toString()
                   const SizedBox(height: 12),
                   BlackAndNormalText(
                       blackText: "${context.translate("end_date")}: ",
-                      normalText:
-                          "fecha fin"), // widget.parteTrabajo.fechaFin.toString()
+                      normalText: _parteTrabajo.fechaFin
+                          .toString()), // widget.parteTrabajo.fechaFin.toString()
                   const SizedBox(height: 12),
                   Text(
                     '${context.translate("observations")}:',
@@ -124,11 +124,11 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                   const SizedBox(height: 12),
                   CustomTextField(
                     controller: _textEditingControllerTrabajoRealizado,
-                    hintText: "widget.parteTrabajo.trabajoARealizar",
+                    hintText: "widget.parteTrabajo.trabajoRealizado",
                     readOnly: false,
                     onChanged: (String value) {
                       _parteTrabajo =
-                          _parteTrabajo.copyWith(trabajoARealizar: value);
+                          _parteTrabajo.copyWith(trabajoRealizado: value);
 
                       BlocProvider.of<ListadoPartesBloc>(context).add(
                           ListadoPartesEvent.onUpdateParte(
