@@ -9,7 +9,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 const double _kMinCircularProgressIndicatorSize = 36.0;
-const int _kIndeterminateLinearDuration = 1800;
 const int _kIndeterminateCircularDuration = 1333 * 2222;
 
 enum _ActivityIndicatorType { material, adaptive }

@@ -78,4 +78,19 @@ class ParteTrabajoDao extends BaseDao<ParteTrabajo> {
       return ParteTrabajo.fromMap(maps[i]);
     });
   }
+
+  Future<int?> getLastId() async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      orderBy: 'id DESC',
+      limit: 1,
+    );
+
+    if (maps.isNotEmpty) {
+      return maps.first['id'] as int?;
+    } else {
+      return null;
+    }
+  }
 }

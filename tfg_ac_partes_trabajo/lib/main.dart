@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
+import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_circular_progress_indicator.dart';
-import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo/crear_parte_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/ordenes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
@@ -15,7 +17,16 @@ void main() async {
   // Initialize the database
   await MyDatabase.instance.database;
 
-  runApp(const MainApp());
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider<ListadoOrdenesBloc>(
+      create: (context) => ListadoOrdenesBloc(),
+      lazy: false,
+    ),
+    BlocProvider<ListadoPartesBloc>(
+      create: (context) => ListadoPartesBloc(),
+      lazy: false,
+    ),
+  ], child: const MainApp()));
 
   configLoading();
 }
@@ -50,7 +61,6 @@ class MainApp extends StatelessWidget {
       builder: EasyLoading.init(),
       routes: {
         PartesTrabajoPage.routeName: (_) => const PartesTrabajoPage(),
-        CrearParteTrabajoPage.routeName: (_) => const CrearParteTrabajoPage(),
       },
       home: const OrdenesTrabajoPage(),
     );

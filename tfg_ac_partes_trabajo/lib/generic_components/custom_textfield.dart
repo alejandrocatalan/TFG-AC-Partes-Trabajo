@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
   final double height;
+  final bool readOnly;
 
   const CustomTextField({
     Key? key,
@@ -14,6 +15,7 @@ class CustomTextField extends StatelessWidget {
     required this.controller,
     this.obscureText = false,
     this.height = 150,
+    this.readOnly = false,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,8 @@ class CustomTextField extends StatelessWidget {
             .getSourceSansPro16Regular(),
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.top,
+        readOnly: readOnly,
+        cursorColor: MyColorStyles.redColor,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle:

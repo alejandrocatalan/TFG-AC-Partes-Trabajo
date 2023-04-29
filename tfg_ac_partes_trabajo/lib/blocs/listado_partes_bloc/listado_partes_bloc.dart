@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/parte_trabajo_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
@@ -8,9 +8,9 @@ part 'listado_partes_state.dart';
 part 'listado_partes_bloc.freezed.dart';
 
 class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
-  ListadoPartesBloc() : super(ListadoPartesState.initial()) {
-    final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
+  final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
 
+  ListadoPartesBloc() : super(ListadoPartesState.initial()) {
     on<ListadoPartesEvent>((event, emit) {});
 
     on<OnLoadPartes>((event, emit) async {
@@ -40,6 +40,18 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       );
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
+    });
+
+    on<OnCreateParte>((event, emit) async {
+      emit(state.copyWith(isLoading: true));
+
+      int idParte = await parteTrabajoDao.create(event.parteTrabajo);
+      ParteTrabajo? parteCreated = await parteTrabajoDao.get(idParte);
+
+      emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated));
+
+      add(OnLoadPartesDeOrden(
+          ordenTrabajoId: event.parteTrabajo.ordenTrabajoId));
     });
   }
 }

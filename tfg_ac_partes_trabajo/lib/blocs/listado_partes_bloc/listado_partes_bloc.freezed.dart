@@ -21,6 +21,7 @@ mixin _$ListadoPartesEvent {
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
     required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$ListadoPartesEvent {
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$ListadoPartesEvent {
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$ListadoPartesEvent {
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
     required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$ListadoPartesEvent {
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$ListadoPartesEvent {
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
     required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
   }) {
     return onLoadPartes();
   }
@@ -131,6 +138,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
   }) {
     return onLoadPartes?.call();
   }
@@ -141,6 +149,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -155,6 +164,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
     required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
   }) {
     return onLoadPartes(this);
   }
@@ -165,6 +175,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
   }) {
     return onLoadPartes?.call(this);
   }
@@ -175,6 +186,7 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -257,6 +269,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
     required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
   }) {
     return onLoadPartesDeOrden(ordenTrabajoId);
   }
@@ -267,6 +280,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
   }) {
     return onLoadPartesDeOrden?.call(ordenTrabajoId);
   }
@@ -277,6 +291,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -291,6 +306,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
     required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
   }) {
     return onLoadPartesDeOrden(this);
   }
@@ -301,6 +317,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
   }) {
     return onLoadPartesDeOrden?.call(this);
   }
@@ -311,6 +328,7 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -405,6 +423,7 @@ class _$OnSearch implements OnSearch {
     required TResult Function() onLoadPartes,
     required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
     required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
   }) {
     return onSearch(ordenTrabajoId, search);
   }
@@ -415,6 +434,7 @@ class _$OnSearch implements OnSearch {
     TResult? Function()? onLoadPartes,
     TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
   }) {
     return onSearch?.call(ordenTrabajoId, search);
   }
@@ -425,6 +445,7 @@ class _$OnSearch implements OnSearch {
     TResult Function()? onLoadPartes,
     TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
     TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -439,6 +460,7 @@ class _$OnSearch implements OnSearch {
     required TResult Function(OnLoadPartes value) onLoadPartes,
     required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
     required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
   }) {
     return onSearch(this);
   }
@@ -449,6 +471,7 @@ class _$OnSearch implements OnSearch {
     TResult? Function(OnLoadPartes value)? onLoadPartes,
     TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
   }) {
     return onSearch?.call(this);
   }
@@ -459,6 +482,7 @@ class _$OnSearch implements OnSearch {
     TResult Function(OnLoadPartes value)? onLoadPartes,
     TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
     TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -481,11 +505,159 @@ abstract class OnSearch implements ListadoPartesEvent {
 }
 
 /// @nodoc
+abstract class _$$OnCreateParteCopyWith<$Res> {
+  factory _$$OnCreateParteCopyWith(
+          _$OnCreateParte value, $Res Function(_$OnCreateParte) then) =
+      __$$OnCreateParteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ParteTrabajo parteTrabajo});
+}
+
+/// @nodoc
+class __$$OnCreateParteCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnCreateParte>
+    implements _$$OnCreateParteCopyWith<$Res> {
+  __$$OnCreateParteCopyWithImpl(
+      _$OnCreateParte _value, $Res Function(_$OnCreateParte) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parteTrabajo = null,
+  }) {
+    return _then(_$OnCreateParte(
+      parteTrabajo: null == parteTrabajo
+          ? _value.parteTrabajo
+          : parteTrabajo // ignore: cast_nullable_to_non_nullable
+              as ParteTrabajo,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnCreateParte implements OnCreateParte {
+  const _$OnCreateParte({required this.parteTrabajo});
+
+  @override
+  final ParteTrabajo parteTrabajo;
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onCreateParte(parteTrabajo: $parteTrabajo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnCreateParte &&
+            (identical(other.parteTrabajo, parteTrabajo) ||
+                other.parteTrabajo == parteTrabajo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, parteTrabajo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnCreateParteCopyWith<_$OnCreateParte> get copyWith =>
+      __$$OnCreateParteCopyWithImpl<_$OnCreateParte>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+  }) {
+    return onCreateParte(parteTrabajo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+  }) {
+    return onCreateParte?.call(parteTrabajo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    required TResult orElse(),
+  }) {
+    if (onCreateParte != null) {
+      return onCreateParte(parteTrabajo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+  }) {
+    return onCreateParte(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+  }) {
+    return onCreateParte?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    required TResult orElse(),
+  }) {
+    if (onCreateParte != null) {
+      return onCreateParte(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnCreateParte implements ListadoPartesEvent {
+  const factory OnCreateParte({required final ParteTrabajo parteTrabajo}) =
+      _$OnCreateParte;
+
+  ParteTrabajo get parteTrabajo;
+  @JsonKey(ignore: true)
+  _$$OnCreateParteCopyWith<_$OnCreateParte> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListadoPartesState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   List<ParteTrabajo> get listPartesTrabajo =>
       throw _privateConstructorUsedError;
+  ParteTrabajo? get lastParteCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListadoPartesStateCopyWith<ListadoPartesState> get copyWith =>
@@ -499,7 +671,10 @@ abstract class $ListadoPartesStateCopyWith<$Res> {
       _$ListadoPartesStateCopyWithImpl<$Res, ListadoPartesState>;
   @useResult
   $Res call(
-      {bool isLoading, bool isError, List<ParteTrabajo> listPartesTrabajo});
+      {bool isLoading,
+      bool isError,
+      List<ParteTrabajo> listPartesTrabajo,
+      ParteTrabajo? lastParteCreated});
 }
 
 /// @nodoc
@@ -518,6 +693,7 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
     Object? isLoading = null,
     Object? isError = null,
     Object? listPartesTrabajo = null,
+    Object? lastParteCreated = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -532,6 +708,10 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
           ? _value.listPartesTrabajo
           : listPartesTrabajo // ignore: cast_nullable_to_non_nullable
               as List<ParteTrabajo>,
+      lastParteCreated: freezed == lastParteCreated
+          ? _value.lastParteCreated
+          : lastParteCreated // ignore: cast_nullable_to_non_nullable
+              as ParteTrabajo?,
     ) as $Val);
   }
 }
@@ -545,7 +725,10 @@ abstract class _$$_ListadoPartesStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool isLoading, bool isError, List<ParteTrabajo> listPartesTrabajo});
+      {bool isLoading,
+      bool isError,
+      List<ParteTrabajo> listPartesTrabajo,
+      ParteTrabajo? lastParteCreated});
 }
 
 /// @nodoc
@@ -562,6 +745,7 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isError = null,
     Object? listPartesTrabajo = null,
+    Object? lastParteCreated = freezed,
   }) {
     return _then(_$_ListadoPartesState(
       isLoading: null == isLoading
@@ -576,6 +760,10 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
           ? _value._listPartesTrabajo
           : listPartesTrabajo // ignore: cast_nullable_to_non_nullable
               as List<ParteTrabajo>,
+      lastParteCreated: freezed == lastParteCreated
+          ? _value.lastParteCreated
+          : lastParteCreated // ignore: cast_nullable_to_non_nullable
+              as ParteTrabajo?,
     ));
   }
 }
@@ -586,7 +774,8 @@ class _$_ListadoPartesState implements _ListadoPartesState {
   const _$_ListadoPartesState(
       {required this.isLoading,
       required this.isError,
-      required final List<ParteTrabajo> listPartesTrabajo})
+      required final List<ParteTrabajo> listPartesTrabajo,
+      required this.lastParteCreated})
       : _listPartesTrabajo = listPartesTrabajo;
 
   @override
@@ -603,8 +792,11 @@ class _$_ListadoPartesState implements _ListadoPartesState {
   }
 
   @override
+  final ParteTrabajo? lastParteCreated;
+
+  @override
   String toString() {
-    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo)';
+    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated)';
   }
 
   @override
@@ -616,12 +808,18 @@ class _$_ListadoPartesState implements _ListadoPartesState {
                 other.isLoading == isLoading) &&
             (identical(other.isError, isError) || other.isError == isError) &&
             const DeepCollectionEquality()
-                .equals(other._listPartesTrabajo, _listPartesTrabajo));
+                .equals(other._listPartesTrabajo, _listPartesTrabajo) &&
+            (identical(other.lastParteCreated, lastParteCreated) ||
+                other.lastParteCreated == lastParteCreated));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isError,
-      const DeepCollectionEquality().hash(_listPartesTrabajo));
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      isError,
+      const DeepCollectionEquality().hash(_listPartesTrabajo),
+      lastParteCreated);
 
   @JsonKey(ignore: true)
   @override
@@ -633,10 +831,10 @@ class _$_ListadoPartesState implements _ListadoPartesState {
 
 abstract class _ListadoPartesState implements ListadoPartesState {
   const factory _ListadoPartesState(
-          {required final bool isLoading,
-          required final bool isError,
-          required final List<ParteTrabajo> listPartesTrabajo}) =
-      _$_ListadoPartesState;
+      {required final bool isLoading,
+      required final bool isError,
+      required final List<ParteTrabajo> listPartesTrabajo,
+      required final ParteTrabajo? lastParteCreated}) = _$_ListadoPartesState;
 
   @override
   bool get isLoading;
@@ -644,6 +842,8 @@ abstract class _ListadoPartesState implements ListadoPartesState {
   bool get isError;
   @override
   List<ParteTrabajo> get listPartesTrabajo;
+  @override
+  ParteTrabajo? get lastParteCreated;
   @override
   @JsonKey(ignore: true)
   _$$_ListadoPartesStateCopyWith<_$_ListadoPartesState> get copyWith =>

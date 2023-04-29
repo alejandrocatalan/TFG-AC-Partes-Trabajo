@@ -4,8 +4,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
-import 'package:tfg_ac_partes_trabajo/model/daos/orden_trabajo_dao.dart';
-import 'package:tfg_ac_partes_trabajo/model/daos/parte_trabajo_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/detalle_orden_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/widgets/orden_trabajo_card.dart';
@@ -16,14 +14,11 @@ class OrdenesTrabajoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => ListadoOrdenesBloc()
-        ..add(
-          const ListadoOrdenesEvent.onLoadOrdenes(),
-        ),
-      lazy: false,
-      child: const OrdenesTrabajoView(),
-    );
+    final ListadoOrdenesBloc bloc =
+        BlocProvider.of<ListadoOrdenesBloc>(context);
+    bloc.add(const ListadoOrdenesEvent.onLoadOrdenes());
+
+    return const OrdenesTrabajoView();
   }
 }
 
@@ -37,8 +32,7 @@ class OrdenesTrabajoView extends StatefulWidget {
 class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   /// Variables
   // DAOs
-  final OrdenTrabajoDao _ordenTrabajoDao = OrdenTrabajoDao.instance;
-  final ParteTrabajoDao _parteTrabajoDao = ParteTrabajoDao.instance;
+
   // Controllers
   final TextEditingController _searchController = TextEditingController();
 
@@ -46,17 +40,6 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   @override
   void initState() {
     super.initState();
-    // _ordenTrabajoDao.create(OrdenTrabajo(
-    //     fechaInicio: DateTime.now(), codigoOrdenCliente: "Prueba"));
-    // _parteTrabajoDao.create(ParteTrabajo(
-    //     ordenTrabajoId: 87,
-    //     fechaInicio: DateTime.now(),
-    //     fechaFin: DateTime.now(),
-    //     observaciones: "observaciones",
-    //     trabajoARealizar: "trabajoARealizar",
-    //     identificadorDispositivo: "identificadorDispositivo"));
-    // _ordenTrabajoDao.delete(34);
-    //_ordenTrabajoDao.deleteAll();
   }
 
   @override
@@ -112,7 +95,7 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => DetallesOrdenTrabajo(
+                              builder: (context) => DetallesOrdenTrabajoPage(
                                   ordenTrabajo: ordenTrabajo),
                             ),
                           );

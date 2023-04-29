@@ -9,4 +9,7 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onSearch(
       {required int ordenTrabajoId, required String search}) = OnSearch;
+
+  const factory ListadoPartesEvent.onCreateParte(
+      {required ParteTrabajo parteTrabajo}) = OnCreateParte;
 }

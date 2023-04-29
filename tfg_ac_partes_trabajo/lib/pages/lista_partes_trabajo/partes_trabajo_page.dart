@@ -20,14 +20,13 @@ class PartesTrabajoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final OrdenTrabajo ordenTrabajo =
         ModalRoute.of(context)!.settings.arguments as OrdenTrabajo;
-    return BlocProvider(
-      create: (BuildContext context) => ListadoPartesBloc()
-        ..add(ListadoPartesEvent.onLoadPartesDeOrden(
-            ordenTrabajoId: ordenTrabajo.id!)),
-      lazy: false,
-      child: PartesTrabajoView(
-        ordenTrabajo: ordenTrabajo,
-      ),
+
+    final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
+    bloc.add(ListadoPartesEvent.onLoadPartesDeOrden(
+        ordenTrabajoId: ordenTrabajo.id!));
+
+    return PartesTrabajoView(
+      ordenTrabajo: ordenTrabajo,
     );
   }
 }
@@ -53,6 +52,10 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
   @override
   void initState() {
     super.initState();
+
+    // final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
+    // bloc.add(ListadoPartesEvent.onLoadPartesDeOrden(
+    //     ordenTrabajoId: widget.ordenTrabajo.id!));
   }
 
   @override
@@ -62,7 +65,13 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: MyColorStyles.redColor,
         onPressed: () {
-          Navigator.pushNamed(context, CrearParteTrabajoPage.routeName);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  CrearParteTrabajoPage(ordenTrabajo: widget.ordenTrabajo),
+            ),
+          );
         },
         child: const Icon(
           Icons.add,
@@ -70,9 +79,10 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
       ),
       body: BlocConsumer<ListadoPartesBloc, ListadoPartesState>(
         listenWhen: (previous, current) =>
-            previous.isLoading != current.isLoading,
+            previous.isLoading != current.isLoading ||
+            previous.listPartesTrabajo != current.listPartesTrabajo,
         listener: (context, state) {
-          if (state.isLoading == true) {
+          if (state.isLoading) {
             EasyLoading.show();
           } else {
             EasyLoading.dismiss();
@@ -116,7 +126,7 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => DetallesParteTrabajo(
+                              builder: (context) => DetallesParteTrabajoPage(
                                   parteTrabajo: parteTrabajo),
                             ),
                           );
