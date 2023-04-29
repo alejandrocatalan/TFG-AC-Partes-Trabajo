@@ -89,6 +89,26 @@ class MyDatabase {
         descripcion TEXT NOT NULL
       )
       ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS ordenesPersonas (
+        ordenTrabajoId INTEGER NOT NULL,
+        personaId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (ordenTrabajoId) REFERENCES ordenesTrabajo(id),
+        FOREIGN KEY (personaId) REFERENCES personas(id)
+      )
+      ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS partesPersonas (
+        parteTrabajoId INTEGER NOT NULL,
+        personaId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (parteTrabajoId) REFERENCES partesTrabajo(id),
+        FOREIGN KEY (personaId) REFERENCES personas(id)
+      )
+      ''');
   }
 
   Future<void> clearDatabase() async {

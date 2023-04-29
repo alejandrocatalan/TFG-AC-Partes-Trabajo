@@ -51,7 +51,7 @@ es = Instalación
 [customer_order_code]
 tags = android,ios
 en = Customer order code
-es = Código de orden del cliente
+es = Código orden cliente
 
 [type]
 tags = android,ios

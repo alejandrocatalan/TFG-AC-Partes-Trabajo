@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 
-class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({
+class SecondaryButtonWidget extends StatelessWidget {
+  const SecondaryButtonWidget({
     Key? key,
     required this.textButton,
     required this.disabled,
@@ -35,6 +35,7 @@ class ButtonWidget extends StatelessWidget {
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
+            side: const BorderSide(color: MyColorStyles.redColor, width: 2),
           ),
         ),
         elevation: MaterialStateProperty.all<double>(0),
@@ -44,16 +45,14 @@ class ButtonWidget extends StatelessWidget {
         backgroundColor: disabled
             ? MaterialStateProperty.all<Color>(const Color(0xFFBBBBBB))
             : MaterialStateProperty.all<Color>(
-                color ?? MyColorStyles.redColor,
+                color ?? MyColorStyles.whiteColor,
               ),
       ),
       child: Text(
         textAlign: TextAlign.center,
         style: disabled
-            ? MyFontStyles(MyColorStyles.whiteColor)
-                .getSourceSansPro16SemiBold()
-            : MyFontStyles(MyColorStyles.whiteColor)
-                .getSourceSansPro16SemiBold(),
+            ? MyFontStyles(MyColorStyles.redColor).getSourceSansPro16SemiBold()
+            : MyFontStyles(MyColorStyles.redColor).getSourceSansPro16SemiBold(),
         textButton,
       ),
     );

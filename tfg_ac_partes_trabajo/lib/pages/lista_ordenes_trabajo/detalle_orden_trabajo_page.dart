@@ -5,6 +5,7 @@ import 'package:tfg_ac_partes_trabajo/generic_components/black_and_normal_text.d
 import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
@@ -85,6 +86,23 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
             ),
           ),
         ),
+        SliverToBoxAdapter(
+            child: Container(
+          color: Colors.white,
+          padding:
+              const EdgeInsets.only(top: 15, bottom: 15, left: 24, right: 24),
+          child: SecondaryButtonWidget(
+              textButton: "Personas",
+              disabled: false,
+              context: context,
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  PartesTrabajoPage.routeName,
+                  arguments: widget.ordenTrabajo,
+                );
+              }),
+        )),
         SliverFillRemaining(
           hasScrollBody: false,
           child: Column(
@@ -92,7 +110,8 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                margin: EdgeInsets.only(
+                color: Colors.white,
+                padding: EdgeInsets.only(
                     bottom: Platform.isIOS ? 30 : 15, left: 24, right: 24),
                 child: ButtonWidget(
                     textButton: context.translate("view_work_parts"),
