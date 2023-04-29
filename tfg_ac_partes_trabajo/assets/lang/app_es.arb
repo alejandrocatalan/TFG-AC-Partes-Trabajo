@@ -14,5 +14,8 @@
 "end_date":"Fecha de fin",
 "start_date":"Fecha de inicio",
 "order":"Orden",
-"part":"Parte"
+"part":"Parte",
+"person":"Persona",
+"people":"Personas",
+"people_from_order":"Personas de la orden"
 }

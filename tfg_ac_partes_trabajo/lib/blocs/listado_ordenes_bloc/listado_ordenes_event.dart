@@ -6,4 +6,10 @@ class ListadoOrdenesEvent with _$ListadoOrdenesEvent {
 
   const factory ListadoOrdenesEvent.onSearch({required String search}) =
       OnSearch;
+
+  const factory ListadoOrdenesEvent.onLoadPersonasDeOrden(
+      {required int ordenTrabajoId}) = OnLoadPersonasDeOrden;
+
+  const factory ListadoOrdenesEvent.onLoadPersonasDeOrdenPersona() =
+      OnLoadPersonasDeOrdenPersona;
 }

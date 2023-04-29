@@ -7,6 +7,7 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/orden_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -92,14 +93,16 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
           padding:
               const EdgeInsets.only(top: 15, bottom: 15, left: 24, right: 24),
           child: SecondaryButtonWidget(
-              textButton: "Personas",
+              textButton: context.translate("people"),
               disabled: false,
               context: context,
               onPressed: () {
-                Navigator.pushNamed(
+                Navigator.push(
                   context,
-                  PartesTrabajoPage.routeName,
-                  arguments: widget.ordenTrabajo,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        OrdenPersonasPage(ordenTrabajo: widget.ordenTrabajo),
+                  ),
                 );
               }),
         )),

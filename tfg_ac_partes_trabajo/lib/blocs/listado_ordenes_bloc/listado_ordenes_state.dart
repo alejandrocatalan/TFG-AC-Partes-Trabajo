@@ -6,13 +6,15 @@ class ListadoOrdenesState with _$ListadoOrdenesState {
     required bool isLoading,
     required bool isError,
     required List<OrdenTrabajo> listOrdenesTrabajo,
-    //final ErrorMessageGeneric? errorMessage,
+    required List<OrdenPersona> listOrdenPersonas,
+    required List<Persona> listPersonas,
   }) = _ListadoOrdenesState;
 
   factory ListadoOrdenesState.initial() => const ListadoOrdenesState(
         isLoading: false,
         isError: false,
         listOrdenesTrabajo: [],
-        //errorMessage: null,
+        listOrdenPersonas: [],
+        listPersonas: [],
       );
 }

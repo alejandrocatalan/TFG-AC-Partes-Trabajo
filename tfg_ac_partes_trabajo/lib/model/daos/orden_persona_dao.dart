@@ -34,6 +34,20 @@ class OrdenPersonaDao {
     });
   }
 
+  Future<List<OrdenPersona>> getAllPersonasDeOrden(
+      {required int ordenTrabajoId}) async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      _tableName,
+      where: 'ordenTrabajoId = ?',
+      whereArgs: [ordenTrabajoId],
+    );
+
+    return List.generate(maps.length, (i) {
+      return OrdenPersona.fromMap(maps[i]);
+    });
+  }
+
   Future<int> create(OrdenPersona obj) async {
     final db = await MyDatabase.instance.database;
     final id = await db.insert(_tableName, obj.toMap());

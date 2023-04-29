@@ -8,7 +8,7 @@ part 'listado_partes_state.dart';
 part 'listado_partes_bloc.freezed.dart';
 
 class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
-  final ParteTrabajoDao parteTrabajoDao = ParteTrabajoDao.instance;
+  final ParteTrabajoDao _parteTrabajoDao = ParteTrabajoDao.instance;
 
   ListadoPartesBloc() : super(ListadoPartesState.initial()) {
     on<ListadoPartesEvent>((event, emit) {});
@@ -16,7 +16,7 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     on<OnLoadPartes>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      List<ParteTrabajo> partesTrabajo = await parteTrabajoDao.getAll();
+      List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao.getAll();
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
     });
@@ -24,7 +24,7 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     on<OnLoadPartesDeOrden>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      List<ParteTrabajo> partesTrabajo = await parteTrabajoDao
+      List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao
           .getAllPartesDeOrden(ordenTrabajoId: event.ordenTrabajoId);
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
@@ -34,7 +34,7 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       emit(state.copyWith(isLoading: true));
 
       List<ParteTrabajo> partesTrabajo =
-          await parteTrabajoDao.getAllPartesDeOrdenFiltered(
+          await _parteTrabajoDao.getAllPartesDeOrdenFiltered(
         ordenTrabajoId: event.ordenTrabajoId,
         searchTerm: event.search,
       );
@@ -45,8 +45,8 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     on<OnCreateParte>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      int idParte = await parteTrabajoDao.create(event.parteTrabajo);
-      ParteTrabajo? parteCreated = await parteTrabajoDao.get(idParte);
+      int idParte = await _parteTrabajoDao.create(event.parteTrabajo);
+      ParteTrabajo? parteCreated = await _parteTrabajoDao.get(idParte);
 
       emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated!));
 
@@ -57,9 +57,9 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     on<OnUpdateParte>((event, emit) async {
       emit(state.copyWith(isLoading: true));
 
-      await parteTrabajoDao.update(event.parteTrabajo);
+      await _parteTrabajoDao.update(event.parteTrabajo);
       ParteTrabajo? parteCreated =
-          await parteTrabajoDao.get(event.parteTrabajo.id!);
+          await _parteTrabajoDao.get(event.parteTrabajo.id!);
 
       emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated!));
 

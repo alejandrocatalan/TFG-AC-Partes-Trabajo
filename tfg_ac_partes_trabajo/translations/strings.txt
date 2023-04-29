@@ -77,3 +77,18 @@ es = Orden
 tags = android,ios
 en = Part
 es = Parte
+
+[person]
+tags = android,ios
+en = Person
+es = Persona
+
+[people]
+tags = android,ios
+en = People
+es = Personas
+
+[people_from_order]
+tags = android,ios
+en = People from order
+es = Personas de la orden

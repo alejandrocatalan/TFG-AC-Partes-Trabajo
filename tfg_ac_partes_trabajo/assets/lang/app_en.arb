@@ -14,5 +14,8 @@
 "end_date":"End date",
 "start_date":"Start date",
 "order":"Order",
-"part":"Part"
+"part":"Part",
+"person":"Person",
+"people":"People",
+"people_from_order":"People from order"
 }

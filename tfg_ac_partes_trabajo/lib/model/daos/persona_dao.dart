@@ -33,4 +33,34 @@ class PersonaDao extends BaseDao<Persona> {
       return Persona.fromMap(maps[i]);
     });
   }
+
+  Future<List<Persona>> getAllPersonasDeOrdenPersona(
+      List<int> personaIds) async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      where:
+          'id IN (${List.generate(personaIds.length, (_) => '?').join(', ')})',
+      whereArgs: personaIds,
+    );
+
+    return List.generate(maps.length, (i) {
+      return Persona.fromMap(maps[i]);
+    });
+  }
+
+  Future<Persona?> getPersonaDeOrdenPersona({required int personaId}) async {
+    final db = await MyDatabase.instance.database;
+    final maps = await db.query(
+      tableName,
+      where: 'id = ?',
+      whereArgs: [personaId],
+    );
+
+    if (maps.isNotEmpty) {
+      return Persona.fromMap(maps.first);
+    } else {
+      return null;
+    }
+  }
 }

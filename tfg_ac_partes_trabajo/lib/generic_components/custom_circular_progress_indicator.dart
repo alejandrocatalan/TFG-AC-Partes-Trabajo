@@ -335,7 +335,6 @@ class _CircularProgressIndicatorState
 
   @override
   void initState() {
-    super.initState();
     _controller = AnimationController(
       duration: const Duration(milliseconds: _kIndeterminateCircularDuration),
       vsync: this,
@@ -343,6 +342,8 @@ class _CircularProgressIndicatorState
     if (widget.value == null) {
       _controller.repeat();
     }
+
+    super.initState();
   }
 
   @override
