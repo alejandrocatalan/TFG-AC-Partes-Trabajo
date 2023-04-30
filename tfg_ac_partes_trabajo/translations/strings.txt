@@ -92,3 +92,23 @@ es = Personas
 tags = android,ios
 en = People from order
 es = Personas de la orden
+
+[hours]
+tags = android,ios
+en = Hours
+es = Horas
+
+[description]
+tags = android,ios
+en = Description
+es = Descripción
+
+[personnel_in_order]
+tags = android,ios
+en = Personnel in order
+es = Personal en la orden
+
+[personnel]
+tags = android,ios
+en = Personnel
+es = Personal

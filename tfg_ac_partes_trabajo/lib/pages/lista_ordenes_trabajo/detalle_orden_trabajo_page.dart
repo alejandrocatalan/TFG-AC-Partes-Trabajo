@@ -29,109 +29,111 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       title: "${context.translate("order")} ${widget.ordenTrabajo.id}",
-      body: CustomScrollView(slivers: [
-        SliverToBoxAdapter(
-          child: Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(12),
+      body: Container(
+        color: Colors.white,
+        child: CustomScrollView(slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                      blackText: "${context.translate("start_date")}: ",
+                      normalText: widget.ordenTrabajo.fechaInicio.toString()),
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                      blackText: "${context.translate("end_date")}: ",
+                      normalText:
+                          widget.ordenTrabajo.fechaFin?.toString() ?? ""),
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                      blackText: "${context.translate("type")}: ",
+                      normalText: widget.ordenTrabajo.tipo ?? ""),
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                      blackText: "${context.translate("installation")}: ",
+                      normalText: widget.ordenTrabajo.instalacion ?? ""),
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                      blackText:
+                          "${context.translate("customer_order_code")}: ",
+                      normalText: widget.ordenTrabajo.codigoOrdenCliente),
+                  const SizedBox(height: 12),
+                  Text(
+                    '${context.translate("observations")}:',
+                    style: MyFontStyles(MyColorStyles.darkGreyColor)
+                        .getSourceSansPro18SemiBold(),
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextField(
+                    controller: TextEditingController(),
+                    hintText: widget.ordenTrabajo.observaciones ?? "",
+                    readOnly: true,
+                    onChanged: () {},
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '${context.translate("work_to_be_done")}:',
+                    style: MyFontStyles(MyColorStyles.darkGreyColor)
+                        .getSourceSansPro18SemiBold(),
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextField(
+                    controller: TextEditingController(),
+                    hintText: widget.ordenTrabajo.trabajoARealizar ?? "",
+                    readOnly: true,
+                    onChanged: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+              child: Container(
+            padding:
+                const EdgeInsets.only(top: 15, bottom: 15, left: 24, right: 24),
+            child: SecondaryButtonWidget(
+                textButton: context.translate("personnel"),
+                disabled: false,
+                context: context,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          OrdenPersonasPage(ordenTrabajo: widget.ordenTrabajo),
+                    ),
+                  );
+                }),
+          )),
+          SliverFillRemaining(
+            hasScrollBody: false,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                    blackText: "${context.translate("start_date")}: ",
-                    normalText: widget.ordenTrabajo.fechaInicio.toString()),
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                    blackText: "${context.translate("end_date")}: ",
-                    normalText: widget.ordenTrabajo.fechaFin?.toString() ?? ""),
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                    blackText: "${context.translate("type")}: ",
-                    normalText: widget.ordenTrabajo.tipo ?? ""),
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                    blackText: "${context.translate("installation")}: ",
-                    normalText: widget.ordenTrabajo.instalacion ?? ""),
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                    blackText: "${context.translate("customer_order_code")}: ",
-                    normalText: widget.ordenTrabajo.codigoOrdenCliente),
-                const SizedBox(height: 12),
-                Text(
-                  '${context.translate("observations")}:',
-                  style: MyFontStyles(MyColorStyles.darkGreyColor)
-                      .getSourceSansPro18SemiBold(),
-                ),
-                const SizedBox(height: 12),
-                CustomTextField(
-                  controller: TextEditingController(),
-                  hintText: widget.ordenTrabajo.observaciones ?? "",
-                  readOnly: true,
-                  onChanged: () {},
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  '${context.translate("work_to_be_done")}:',
-                  style: MyFontStyles(MyColorStyles.darkGreyColor)
-                      .getSourceSansPro18SemiBold(),
-                ),
-                const SizedBox(height: 12),
-                CustomTextField(
-                  controller: TextEditingController(),
-                  hintText: widget.ordenTrabajo.trabajoARealizar ?? "",
-                  readOnly: true,
-                  onChanged: () {},
-                ),
+                Container(
+                  padding: EdgeInsets.only(
+                      bottom: Platform.isIOS ? 30 : 15, left: 24, right: 24),
+                  child: ButtonWidget(
+                      textButton: context.translate("view_work_parts"),
+                      disabled: false,
+                      context: context,
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          PartesTrabajoPage.routeName,
+                          arguments: widget.ordenTrabajo,
+                        );
+                      }),
+                )
               ],
             ),
           ),
-        ),
-        SliverToBoxAdapter(
-            child: Container(
-          color: Colors.white,
-          padding:
-              const EdgeInsets.only(top: 15, bottom: 15, left: 24, right: 24),
-          child: SecondaryButtonWidget(
-              textButton: context.translate("people"),
-              disabled: false,
-              context: context,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        OrdenPersonasPage(ordenTrabajo: widget.ordenTrabajo),
-                  ),
-                );
-              }),
-        )),
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                color: Colors.white,
-                padding: EdgeInsets.only(
-                    bottom: Platform.isIOS ? 30 : 15, left: 24, right: 24),
-                child: ButtonWidget(
-                    textButton: context.translate("view_work_parts"),
-                    disabled: false,
-                    context: context,
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        PartesTrabajoPage.routeName,
-                        arguments: widget.ordenTrabajo,
-                      );
-                    }),
-              )
-            ],
-          ),
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 }

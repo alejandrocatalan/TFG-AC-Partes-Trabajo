@@ -17,5 +17,9 @@
 "part":"Part",
 "person":"Person",
 "people":"People",
-"people_from_order":"People from order"
+"people_from_order":"People from order",
+"hours":"Hours",
+"description":"Description",
+"personnel_in_order":"Personnel in order",
+"personnel":"Personnel"
 }

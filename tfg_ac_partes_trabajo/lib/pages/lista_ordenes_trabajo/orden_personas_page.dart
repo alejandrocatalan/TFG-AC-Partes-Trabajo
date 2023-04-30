@@ -9,6 +9,7 @@ import 'package:tfg_ac_partes_trabajo/model/models/persona.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
+import 'package:tfg_ac_partes_trabajo/utils/utilities.dart';
 
 class OrdenPersonasPage extends StatefulWidget {
   final OrdenTrabajo ordenTrabajo;
@@ -34,7 +35,7 @@ class _OrdenPersonasPageState extends State<OrdenPersonasPage> {
   Widget build(BuildContext context) {
     return CustomScaffold(
         title:
-            "${context.translate("people_from_order")} ${widget.ordenTrabajo.id}",
+            "${context.translate("personnel_in_order")} ${widget.ordenTrabajo.id}",
         body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading ||
@@ -50,12 +51,18 @@ class _OrdenPersonasPageState extends State<OrdenPersonasPage> {
               previous.listPersonas != current.listPersonas,
           builder: (context, state) {
             return Container(
-              color: Colors.white,
+              //color: Colors.white,
               width: double.maxFinite,
               margin: const EdgeInsets.all(12),
-              child: DataTableExample(
-                personas: state.listPersonas,
-                ordenPersonas: state.listOrdenPersonas,
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: DataTableExample(
+                      personas: state.listPersonas,
+                      ordenPersonas: state.listOrdenPersonas,
+                    ),
+                  ),
+                ],
               ),
             );
           },
@@ -77,7 +84,7 @@ class DataTableExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return DataTable(
       headingRowColor:
-          MaterialStateColor.resolveWith((states) => MyColorStyles.greyColor10),
+          MaterialStateColor.resolveWith((states) => Colors.red.shade100),
       dataRowColor:
           MaterialStateColor.resolveWith((states) => MyColorStyles.whiteColor),
       border: TableBorder.symmetric(
@@ -88,7 +95,7 @@ class DataTableExample extends StatelessWidget {
         DataColumn(
             label: Expanded(
           child: Text(
-            'Descripción',
+            context.translate("description"),
             style: MyFontStyles(MyColorStyles.darkGreyColor)
                 .getSourceSansPro18SemiBold(),
             textAlign: TextAlign.center,
@@ -97,7 +104,7 @@ class DataTableExample extends StatelessWidget {
         DataColumn(
             label: Expanded(
           child: Text(
-            'Horas',
+            context.translate("hours"),
             style: MyFontStyles(MyColorStyles.darkGreyColor)
                 .getSourceSansPro18SemiBold(),
             textAlign: TextAlign.center,
@@ -124,7 +131,8 @@ class DataTableExample extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      orden.horas.toString(),
+                      // orden.horas.toString(),
+                      convertHours(orden.horas),
                       style: MyFontStyles(MyColorStyles.darkGreyColor)
                           .getSourceSansPro16Regular(),
                     ),

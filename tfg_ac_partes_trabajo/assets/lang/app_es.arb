@@ -17,5 +17,9 @@
 "part":"Parte",
 "person":"Persona",
 "people":"Personas",
-"people_from_order":"Personas de la orden"
+"people_from_order":"Personas de la orden",
+"hours":"Horas",
+"description":"Descripción",
+"personnel_in_order":"Personal en la orden",
+"personnel":"Personal"
 }
