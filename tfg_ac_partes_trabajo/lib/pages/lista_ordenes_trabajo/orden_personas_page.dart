@@ -86,17 +86,23 @@ class DataTableExample extends StatelessWidget {
       ),
       columns: [
         DataColumn(
-            label: Align(
-                alignment: Alignment.center,
-                child: Text('Descripción',
-                    style: MyFontStyles(MyColorStyles.darkGreyColor)
-                        .getSourceSansPro16Regular()))),
+            label: Expanded(
+          child: Text(
+            'Descripción',
+            style: MyFontStyles(MyColorStyles.darkGreyColor)
+                .getSourceSansPro18SemiBold(),
+            textAlign: TextAlign.center,
+          ),
+        )),
         DataColumn(
-            label: Align(
-                alignment: Alignment.center,
-                child: Text('Horas',
-                    style: MyFontStyles(MyColorStyles.darkGreyColor)
-                        .getSourceSansPro16Regular()))),
+            label: Expanded(
+          child: Text(
+            'Horas',
+            style: MyFontStyles(MyColorStyles.darkGreyColor)
+                .getSourceSansPro18SemiBold(),
+            textAlign: TextAlign.center,
+          ),
+        )),
       ],
       rows: ordenPersonas
           .map(
