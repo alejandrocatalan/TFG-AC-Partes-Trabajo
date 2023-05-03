@@ -78,6 +78,7 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
                     child: ListViewPersonasDeParte(
                       personas: state.listPersonas,
                       partePersonas: state.listPartePersonas,
+                      parteTrabajo: widget.parteTrabajo,
                     ),
                   ),
                 ],
@@ -91,12 +92,14 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
 class ListViewPersonasDeParte extends StatefulWidget {
   final List<Persona> personas;
   final List<PartePersona> partePersonas;
+  final ParteTrabajo parteTrabajo;
 
-  const ListViewPersonasDeParte({
-    Key? key,
-    required this.personas,
-    required this.partePersonas,
-  }) : super(key: key);
+  const ListViewPersonasDeParte(
+      {Key? key,
+      required this.personas,
+      required this.partePersonas,
+      required this.parteTrabajo})
+      : super(key: key);
 
   @override
   State<ListViewPersonasDeParte> createState() =>
@@ -105,13 +108,13 @@ class ListViewPersonasDeParte extends StatefulWidget {
 
 class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
   List<Map<String, String>> _dataList = [];
-  final TextEditingController _hoursController = TextEditingController();
-  final TextEditingController _minsController = TextEditingController();
-  // TextExpandedDropdownItem<String>? _valueDropdown1;
-  // List<String> _horas = [];
+  final List<TextEditingController> _hoursControllers = [];
+  final List<TextEditingController> _minsControllers = [];
 
   @override
   void initState() {
+    // Se crea una lista combinando la descripción de Persona y las horas de PartePersona.
+    // Se formatea las horas para pasar de double a String --> 2.5 == '2h 30m'
     _dataList = widget.partePersonas
         .map(
           (partePersona) => {
@@ -122,6 +125,15 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
           },
         )
         .toList();
+    // Se ordena la lista en orden decreciente según las horas
+    _dataList.sort((a, b) => b['horas']!.compareTo(a['horas']!));
+
+    // Se inicializan los controladores para los TextField de horas y para los de
+    // minutos, según el número de elementos en la lista de datos.
+    for (int i = 0; i < _dataList.length; i++) {
+      _hoursControllers.add(TextEditingController());
+      _minsControllers.add(TextEditingController());
+    }
 
     super.initState();
   }
@@ -142,10 +154,8 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
           List<String> parts = splitHoursAndMinutes(data['horas']!);
           String hours = parts[0];
           String minutes = parts[1];
-          _hoursController.text = hours;
-          _minsController.text = minutes;
-          // _hoursController.text = data['horas']!;
-          // _minsController.text = data['horas']!;
+          _hoursControllers[index].text = hours;
+          _minsControllers[index].text = minutes;
 
           return Container(
             margin: const EdgeInsets.only(top: 10),
@@ -174,24 +184,36 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                       SizedBox(
                         width: 60,
                         child: CustomTextField(
-                            controller: _hoursController,
+                            controller: _hoursControllers[index],
                             textAlign: TextAlign.end,
                             textAlignVertical: TextAlignVertical.center,
                             height: 30,
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 0),
-                            onChanged: (String value) {}),
+                            onChanged: (String value) {
+                              _hoursControllers[index].text = value;
+                              context.read<ListadoPartesBloc>().add(
+                                  ListadoPartesEvent.onUpdateHoursPartePersona(
+                                      parteTrabajoId: widget.parteTrabajo.id!,
+                                      hours: value));
+                            }),
                       ),
                       SizedBox(
                         width: 50,
                         child: CustomTextField(
-                            controller: _minsController,
+                            controller: _minsControllers[index],
                             textAlign: TextAlign.end,
                             textAlignVertical: TextAlignVertical.center,
                             height: 30,
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 0),
-                            onChanged: (String value) {}),
+                            onChanged: (String value) {
+                              _minsControllers[index].text = value;
+                              context.read<ListadoPartesBloc>().add(
+                                  ListadoPartesEvent.onUpdateHoursPartePersona(
+                                      parteTrabajoId: widget.parteTrabajo.id!,
+                                      mins: value));
+                            }),
                       ),
                     ],
                   ),

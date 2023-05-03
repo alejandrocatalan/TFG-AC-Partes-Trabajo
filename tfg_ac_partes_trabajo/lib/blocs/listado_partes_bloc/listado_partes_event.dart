@@ -27,4 +27,9 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onSearchPersona(
       {required int parteTrabajoId, required String search}) = OnSearchPersona;
+
+  const factory ListadoPartesEvent.onUpdateHoursPartePersona(
+      {required int parteTrabajoId,
+      String? hours,
+      String? mins}) = OnUpdateHoursPartePersona;
 }

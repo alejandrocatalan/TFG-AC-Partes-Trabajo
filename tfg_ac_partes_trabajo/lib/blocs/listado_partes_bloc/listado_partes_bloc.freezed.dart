@@ -28,6 +28,8 @@ mixin _$ListadoPartesEvent {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,8 @@ mixin _$ListadoPartesEvent {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +58,8 @@ mixin _$ListadoPartesEvent {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +77,8 @@ mixin _$ListadoPartesEvent {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +93,8 @@ mixin _$ListadoPartesEvent {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +109,8 @@ mixin _$ListadoPartesEvent {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,6 +182,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartes();
   }
@@ -186,6 +200,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartes?.call();
   }
@@ -202,6 +218,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -225,6 +243,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartes(this);
   }
@@ -242,6 +262,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartes?.call(this);
   }
@@ -259,6 +281,8 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -348,6 +372,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartesDeOrden(ordenTrabajoId);
   }
@@ -364,6 +390,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartesDeOrden?.call(ordenTrabajoId);
   }
@@ -380,6 +408,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -403,6 +433,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartesDeOrden(this);
   }
@@ -420,6 +452,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPartesDeOrden?.call(this);
   }
@@ -437,6 +471,8 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -538,6 +574,8 @@ class _$OnSearch implements OnSearch {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onSearch(ordenTrabajoId, search);
   }
@@ -554,6 +592,8 @@ class _$OnSearch implements OnSearch {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onSearch?.call(ordenTrabajoId, search);
   }
@@ -570,6 +610,8 @@ class _$OnSearch implements OnSearch {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -593,6 +635,8 @@ class _$OnSearch implements OnSearch {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onSearch(this);
   }
@@ -610,6 +654,8 @@ class _$OnSearch implements OnSearch {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onSearch?.call(this);
   }
@@ -627,6 +673,8 @@ class _$OnSearch implements OnSearch {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -723,6 +771,8 @@ class _$OnCreateParte implements OnCreateParte {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onCreateParte(parteTrabajo);
   }
@@ -739,6 +789,8 @@ class _$OnCreateParte implements OnCreateParte {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onCreateParte?.call(parteTrabajo);
   }
@@ -755,6 +807,8 @@ class _$OnCreateParte implements OnCreateParte {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -778,6 +832,8 @@ class _$OnCreateParte implements OnCreateParte {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onCreateParte(this);
   }
@@ -795,6 +851,8 @@ class _$OnCreateParte implements OnCreateParte {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onCreateParte?.call(this);
   }
@@ -812,6 +870,8 @@ class _$OnCreateParte implements OnCreateParte {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -906,6 +966,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onUpdateParte(parteTrabajo);
   }
@@ -922,6 +984,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onUpdateParte?.call(parteTrabajo);
   }
@@ -938,6 +1002,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -961,6 +1027,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onUpdateParte(this);
   }
@@ -978,6 +1046,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onUpdateParte?.call(this);
   }
@@ -995,6 +1065,8 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -1063,6 +1135,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onCleanLastParteModified();
   }
@@ -1079,6 +1153,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onCleanLastParteModified?.call();
   }
@@ -1095,6 +1171,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -1118,6 +1196,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onCleanLastParteModified(this);
   }
@@ -1135,6 +1215,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onCleanLastParteModified?.call(this);
   }
@@ -1152,6 +1234,8 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -1241,6 +1325,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDeParte(parteTrabajoId);
   }
@@ -1257,6 +1343,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDeParte?.call(parteTrabajoId);
   }
@@ -1273,6 +1361,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeParte != null) {
@@ -1296,6 +1386,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDeParte(this);
   }
@@ -1313,6 +1405,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDeParte?.call(this);
   }
@@ -1330,6 +1424,8 @@ class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeParte != null) {
@@ -1401,6 +1497,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDePartePersona();
   }
@@ -1417,6 +1515,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDePartePersona?.call();
   }
@@ -1433,6 +1533,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDePartePersona != null) {
@@ -1456,6 +1558,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDePartePersona(this);
   }
@@ -1473,6 +1577,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onLoadPersonasDePartePersona?.call(this);
   }
@@ -1490,6 +1596,8 @@ class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDePartePersona != null) {
@@ -1586,6 +1694,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     required TResult Function() onLoadPersonasDePartePersona,
     required TResult Function(int parteTrabajoId, String search)
         onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
   }) {
     return onSearchPersona(parteTrabajoId, search);
   }
@@ -1602,6 +1712,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult? Function()? onLoadPersonasDePartePersona,
     TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
   }) {
     return onSearchPersona?.call(parteTrabajoId, search);
   }
@@ -1618,6 +1730,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
     TResult Function()? onLoadPersonasDePartePersona,
     TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onSearchPersona != null) {
@@ -1641,6 +1755,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     required TResult Function(OnLoadPersonasDePartePersona value)
         onLoadPersonasDePartePersona,
     required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
   }) {
     return onSearchPersona(this);
   }
@@ -1658,6 +1774,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     TResult? Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
   }) {
     return onSearchPersona?.call(this);
   }
@@ -1675,6 +1793,8 @@ class _$OnSearchPersona implements OnSearchPersona {
     TResult Function(OnLoadPersonasDePartePersona value)?
         onLoadPersonasDePartePersona,
     TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
     required TResult orElse(),
   }) {
     if (onSearchPersona != null) {
@@ -1694,6 +1814,224 @@ abstract class OnSearchPersona implements ListadoPartesEvent {
   @JsonKey(ignore: true)
   _$$OnSearchPersonaCopyWith<_$OnSearchPersona> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnUpdateHoursPartePersonaCopyWith<$Res> {
+  factory _$$OnUpdateHoursPartePersonaCopyWith(
+          _$OnUpdateHoursPartePersona value,
+          $Res Function(_$OnUpdateHoursPartePersona) then) =
+      __$$OnUpdateHoursPartePersonaCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int parteTrabajoId, String? hours, String? mins});
+}
+
+/// @nodoc
+class __$$OnUpdateHoursPartePersonaCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnUpdateHoursPartePersona>
+    implements _$$OnUpdateHoursPartePersonaCopyWith<$Res> {
+  __$$OnUpdateHoursPartePersonaCopyWithImpl(_$OnUpdateHoursPartePersona _value,
+      $Res Function(_$OnUpdateHoursPartePersona) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parteTrabajoId = null,
+    Object? hours = freezed,
+    Object? mins = freezed,
+  }) {
+    return _then(_$OnUpdateHoursPartePersona(
+      parteTrabajoId: null == parteTrabajoId
+          ? _value.parteTrabajoId
+          : parteTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      hours: freezed == hours
+          ? _value.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mins: freezed == mins
+          ? _value.mins
+          : mins // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnUpdateHoursPartePersona implements OnUpdateHoursPartePersona {
+  const _$OnUpdateHoursPartePersona(
+      {required this.parteTrabajoId, this.hours, this.mins});
+
+  @override
+  final int parteTrabajoId;
+  @override
+  final String? hours;
+  @override
+  final String? mins;
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onUpdateHoursPartePersona(parteTrabajoId: $parteTrabajoId, hours: $hours, mins: $mins)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnUpdateHoursPartePersona &&
+            (identical(other.parteTrabajoId, parteTrabajoId) ||
+                other.parteTrabajoId == parteTrabajoId) &&
+            (identical(other.hours, hours) || other.hours == hours) &&
+            (identical(other.mins, mins) || other.mins == mins));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, parteTrabajoId, hours, mins);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnUpdateHoursPartePersonaCopyWith<_$OnUpdateHoursPartePersona>
+      get copyWith => __$$OnUpdateHoursPartePersonaCopyWithImpl<
+          _$OnUpdateHoursPartePersona>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+    required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
+    required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
+    required TResult Function(int parteTrabajoId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
+  }) {
+    return onUpdateHoursPartePersona(parteTrabajoId, hours, mins);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
+  }) {
+    return onUpdateHoursPartePersona?.call(parteTrabajoId, hours, mins);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(int parteTrabajoId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
+    required TResult orElse(),
+  }) {
+    if (onUpdateHoursPartePersona != null) {
+      return onUpdateHoursPartePersona(parteTrabajoId, hours, mins);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+    required TResult Function(OnUpdateParte value) onUpdateParte,
+    required TResult Function(OnCleanLastParteModified value)
+        onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
+  }) {
+    return onUpdateHoursPartePersona(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+    TResult? Function(OnUpdateParte value)? onUpdateParte,
+    TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
+  }) {
+    return onUpdateHoursPartePersona?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    TResult Function(OnUpdateParte value)? onUpdateParte,
+    TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
+    required TResult orElse(),
+  }) {
+    if (onUpdateHoursPartePersona != null) {
+      return onUpdateHoursPartePersona(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnUpdateHoursPartePersona implements ListadoPartesEvent {
+  const factory OnUpdateHoursPartePersona(
+      {required final int parteTrabajoId,
+      final String? hours,
+      final String? mins}) = _$OnUpdateHoursPartePersona;
+
+  int get parteTrabajoId;
+  String? get hours;
+  String? get mins;
+  @JsonKey(ignore: true)
+  _$$OnUpdateHoursPartePersonaCopyWith<_$OnUpdateHoursPartePersona>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
