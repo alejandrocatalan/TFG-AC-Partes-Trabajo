@@ -24,6 +24,10 @@ mixin _$ListadoPartesEvent {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +38,9 @@ mixin _$ListadoPartesEvent {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +51,9 @@ mixin _$ListadoPartesEvent {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +66,11 @@ mixin _$ListadoPartesEvent {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +81,10 @@ mixin _$ListadoPartesEvent {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +95,10 @@ mixin _$ListadoPartesEvent {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,6 +166,10 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onLoadPartes();
   }
@@ -156,6 +183,9 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onLoadPartes?.call();
   }
@@ -169,6 +199,9 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -187,6 +220,11 @@ class _$OnLoadPartes implements OnLoadPartes {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onLoadPartes(this);
   }
@@ -200,6 +238,10 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onLoadPartes?.call(this);
   }
@@ -213,6 +255,10 @@ class _$OnLoadPartes implements OnLoadPartes {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -298,6 +344,10 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onLoadPartesDeOrden(ordenTrabajoId);
   }
@@ -311,6 +361,9 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onLoadPartesDeOrden?.call(ordenTrabajoId);
   }
@@ -324,6 +377,9 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -342,6 +398,11 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onLoadPartesDeOrden(this);
   }
@@ -355,6 +416,10 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onLoadPartesDeOrden?.call(this);
   }
@@ -368,6 +433,10 @@ class _$OnLoadPartesDeOrden implements OnLoadPartesDeOrden {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -465,6 +534,10 @@ class _$OnSearch implements OnSearch {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onSearch(ordenTrabajoId, search);
   }
@@ -478,6 +551,9 @@ class _$OnSearch implements OnSearch {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onSearch?.call(ordenTrabajoId, search);
   }
@@ -491,6 +567,9 @@ class _$OnSearch implements OnSearch {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -509,6 +588,11 @@ class _$OnSearch implements OnSearch {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onSearch(this);
   }
@@ -522,6 +606,10 @@ class _$OnSearch implements OnSearch {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onSearch?.call(this);
   }
@@ -535,6 +623,10 @@ class _$OnSearch implements OnSearch {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -627,6 +719,10 @@ class _$OnCreateParte implements OnCreateParte {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onCreateParte(parteTrabajo);
   }
@@ -640,6 +736,9 @@ class _$OnCreateParte implements OnCreateParte {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onCreateParte?.call(parteTrabajo);
   }
@@ -653,6 +752,9 @@ class _$OnCreateParte implements OnCreateParte {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -671,6 +773,11 @@ class _$OnCreateParte implements OnCreateParte {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onCreateParte(this);
   }
@@ -684,6 +791,10 @@ class _$OnCreateParte implements OnCreateParte {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onCreateParte?.call(this);
   }
@@ -697,6 +808,10 @@ class _$OnCreateParte implements OnCreateParte {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -787,6 +902,10 @@ class _$OnUpdateParte implements OnUpdateParte {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onUpdateParte(parteTrabajo);
   }
@@ -800,6 +919,9 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onUpdateParte?.call(parteTrabajo);
   }
@@ -813,6 +935,9 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -831,6 +956,11 @@ class _$OnUpdateParte implements OnUpdateParte {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onUpdateParte(this);
   }
@@ -844,6 +974,10 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onUpdateParte?.call(this);
   }
@@ -857,6 +991,10 @@ class _$OnUpdateParte implements OnUpdateParte {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -921,6 +1059,10 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
     required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
     required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
   }) {
     return onCleanLastParteModified();
   }
@@ -934,6 +1076,9 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
   }) {
     return onCleanLastParteModified?.call();
   }
@@ -947,6 +1092,9 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
     TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
     TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -965,6 +1113,11 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     required TResult Function(OnUpdateParte value) onUpdateParte,
     required TResult Function(OnCleanLastParteModified value)
         onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
   }) {
     return onCleanLastParteModified(this);
   }
@@ -978,6 +1131,10 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult? Function(OnCreateParte value)? onCreateParte,
     TResult? Function(OnUpdateParte value)? onUpdateParte,
     TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
   }) {
     return onCleanLastParteModified?.call(this);
   }
@@ -991,6 +1148,10 @@ class _$OnCleanLastParteModified implements OnCleanLastParteModified {
     TResult Function(OnCreateParte value)? onCreateParte,
     TResult Function(OnUpdateParte value)? onUpdateParte,
     TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -1005,6 +1166,537 @@ abstract class OnCleanLastParteModified implements ListadoPartesEvent {
 }
 
 /// @nodoc
+abstract class _$$OnLoadPersonasDeParteCopyWith<$Res> {
+  factory _$$OnLoadPersonasDeParteCopyWith(_$OnLoadPersonasDeParte value,
+          $Res Function(_$OnLoadPersonasDeParte) then) =
+      __$$OnLoadPersonasDeParteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int parteTrabajoId});
+}
+
+/// @nodoc
+class __$$OnLoadPersonasDeParteCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnLoadPersonasDeParte>
+    implements _$$OnLoadPersonasDeParteCopyWith<$Res> {
+  __$$OnLoadPersonasDeParteCopyWithImpl(_$OnLoadPersonasDeParte _value,
+      $Res Function(_$OnLoadPersonasDeParte) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parteTrabajoId = null,
+  }) {
+    return _then(_$OnLoadPersonasDeParte(
+      parteTrabajoId: null == parteTrabajoId
+          ? _value.parteTrabajoId
+          : parteTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnLoadPersonasDeParte implements OnLoadPersonasDeParte {
+  const _$OnLoadPersonasDeParte({required this.parteTrabajoId});
+
+  @override
+  final int parteTrabajoId;
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onLoadPersonasDeParte(parteTrabajoId: $parteTrabajoId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadPersonasDeParte &&
+            (identical(other.parteTrabajoId, parteTrabajoId) ||
+                other.parteTrabajoId == parteTrabajoId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, parteTrabajoId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnLoadPersonasDeParteCopyWith<_$OnLoadPersonasDeParte> get copyWith =>
+      __$$OnLoadPersonasDeParteCopyWithImpl<_$OnLoadPersonasDeParte>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+    required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
+    required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
+  }) {
+    return onLoadPersonasDeParte(parteTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+  }) {
+    return onLoadPersonasDeParte?.call(parteTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onLoadPersonasDeParte != null) {
+      return onLoadPersonasDeParte(parteTrabajoId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+    required TResult Function(OnUpdateParte value) onUpdateParte,
+    required TResult Function(OnCleanLastParteModified value)
+        onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
+  }) {
+    return onLoadPersonasDeParte(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+    TResult? Function(OnUpdateParte value)? onUpdateParte,
+    TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
+  }) {
+    return onLoadPersonasDeParte?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    TResult Function(OnUpdateParte value)? onUpdateParte,
+    TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onLoadPersonasDeParte != null) {
+      return onLoadPersonasDeParte(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadPersonasDeParte implements ListadoPartesEvent {
+  const factory OnLoadPersonasDeParte({required final int parteTrabajoId}) =
+      _$OnLoadPersonasDeParte;
+
+  int get parteTrabajoId;
+  @JsonKey(ignore: true)
+  _$$OnLoadPersonasDeParteCopyWith<_$OnLoadPersonasDeParte> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnLoadPersonasDePartePersonaCopyWith<$Res> {
+  factory _$$OnLoadPersonasDePartePersonaCopyWith(
+          _$OnLoadPersonasDePartePersona value,
+          $Res Function(_$OnLoadPersonasDePartePersona) then) =
+      __$$OnLoadPersonasDePartePersonaCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnLoadPersonasDePartePersonaCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res,
+        _$OnLoadPersonasDePartePersona>
+    implements _$$OnLoadPersonasDePartePersonaCopyWith<$Res> {
+  __$$OnLoadPersonasDePartePersonaCopyWithImpl(
+      _$OnLoadPersonasDePartePersona _value,
+      $Res Function(_$OnLoadPersonasDePartePersona) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnLoadPersonasDePartePersona implements OnLoadPersonasDePartePersona {
+  const _$OnLoadPersonasDePartePersona();
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onLoadPersonasDePartePersona()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadPersonasDePartePersona);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+    required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
+    required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
+  }) {
+    return onLoadPersonasDePartePersona();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+  }) {
+    return onLoadPersonasDePartePersona?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onLoadPersonasDePartePersona != null) {
+      return onLoadPersonasDePartePersona();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+    required TResult Function(OnUpdateParte value) onUpdateParte,
+    required TResult Function(OnCleanLastParteModified value)
+        onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
+  }) {
+    return onLoadPersonasDePartePersona(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+    TResult? Function(OnUpdateParte value)? onUpdateParte,
+    TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
+  }) {
+    return onLoadPersonasDePartePersona?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    TResult Function(OnUpdateParte value)? onUpdateParte,
+    TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onLoadPersonasDePartePersona != null) {
+      return onLoadPersonasDePartePersona(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadPersonasDePartePersona implements ListadoPartesEvent {
+  const factory OnLoadPersonasDePartePersona() = _$OnLoadPersonasDePartePersona;
+}
+
+/// @nodoc
+abstract class _$$OnSearchPersonaCopyWith<$Res> {
+  factory _$$OnSearchPersonaCopyWith(
+          _$OnSearchPersona value, $Res Function(_$OnSearchPersona) then) =
+      __$$OnSearchPersonaCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int parteTrabajoId, String search});
+}
+
+/// @nodoc
+class __$$OnSearchPersonaCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnSearchPersona>
+    implements _$$OnSearchPersonaCopyWith<$Res> {
+  __$$OnSearchPersonaCopyWithImpl(
+      _$OnSearchPersona _value, $Res Function(_$OnSearchPersona) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? parteTrabajoId = null,
+    Object? search = null,
+  }) {
+    return _then(_$OnSearchPersona(
+      parteTrabajoId: null == parteTrabajoId
+          ? _value.parteTrabajoId
+          : parteTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnSearchPersona implements OnSearchPersona {
+  const _$OnSearchPersona({required this.parteTrabajoId, required this.search});
+
+  @override
+  final int parteTrabajoId;
+  @override
+  final String search;
+
+  @override
+  String toString() {
+    return 'ListadoPartesEvent.onSearchPersona(parteTrabajoId: $parteTrabajoId, search: $search)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnSearchPersona &&
+            (identical(other.parteTrabajoId, parteTrabajoId) ||
+                other.parteTrabajoId == parteTrabajoId) &&
+            (identical(other.search, search) || other.search == search));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, parteTrabajoId, search);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnSearchPersonaCopyWith<_$OnSearchPersona> get copyWith =>
+      __$$OnSearchPersonaCopyWithImpl<_$OnSearchPersona>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+    required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
+    required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
+  }) {
+    return onSearchPersona(parteTrabajoId, search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+  }) {
+    return onSearchPersona?.call(parteTrabajoId, search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onSearchPersona != null) {
+      return onSearchPersona(parteTrabajoId, search);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+    required TResult Function(OnUpdateParte value) onUpdateParte,
+    required TResult Function(OnCleanLastParteModified value)
+        onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
+  }) {
+    return onSearchPersona(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+    TResult? Function(OnUpdateParte value)? onUpdateParte,
+    TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
+  }) {
+    return onSearchPersona?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    TResult Function(OnUpdateParte value)? onUpdateParte,
+    TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
+    required TResult orElse(),
+  }) {
+    if (onSearchPersona != null) {
+      return onSearchPersona(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnSearchPersona implements ListadoPartesEvent {
+  const factory OnSearchPersona(
+      {required final int parteTrabajoId,
+      required final String search}) = _$OnSearchPersona;
+
+  int get parteTrabajoId;
+  String get search;
+  @JsonKey(ignore: true)
+  _$$OnSearchPersonaCopyWith<_$OnSearchPersona> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListadoPartesState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
@@ -1012,6 +1704,9 @@ mixin _$ListadoPartesState {
       throw _privateConstructorUsedError;
   ParteTrabajo get lastParteCreated => throw _privateConstructorUsedError;
   ParteTrabajo? get lastParteModified => throw _privateConstructorUsedError;
+  List<PartePersona> get listPartePersonas =>
+      throw _privateConstructorUsedError;
+  List<Persona> get listPersonas => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListadoPartesStateCopyWith<ListadoPartesState> get copyWith =>
@@ -1029,7 +1724,9 @@ abstract class $ListadoPartesStateCopyWith<$Res> {
       bool isError,
       List<ParteTrabajo> listPartesTrabajo,
       ParteTrabajo lastParteCreated,
-      ParteTrabajo? lastParteModified});
+      ParteTrabajo? lastParteModified,
+      List<PartePersona> listPartePersonas,
+      List<Persona> listPersonas});
 }
 
 /// @nodoc
@@ -1050,6 +1747,8 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
     Object? listPartesTrabajo = null,
     Object? lastParteCreated = null,
     Object? lastParteModified = freezed,
+    Object? listPartePersonas = null,
+    Object? listPersonas = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -1072,6 +1771,14 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
           ? _value.lastParteModified
           : lastParteModified // ignore: cast_nullable_to_non_nullable
               as ParteTrabajo?,
+      listPartePersonas: null == listPartePersonas
+          ? _value.listPartePersonas
+          : listPartePersonas // ignore: cast_nullable_to_non_nullable
+              as List<PartePersona>,
+      listPersonas: null == listPersonas
+          ? _value.listPersonas
+          : listPersonas // ignore: cast_nullable_to_non_nullable
+              as List<Persona>,
     ) as $Val);
   }
 }
@@ -1089,7 +1796,9 @@ abstract class _$$_ListadoPartesStateCopyWith<$Res>
       bool isError,
       List<ParteTrabajo> listPartesTrabajo,
       ParteTrabajo lastParteCreated,
-      ParteTrabajo? lastParteModified});
+      ParteTrabajo? lastParteModified,
+      List<PartePersona> listPartePersonas,
+      List<Persona> listPersonas});
 }
 
 /// @nodoc
@@ -1108,6 +1817,8 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
     Object? listPartesTrabajo = null,
     Object? lastParteCreated = null,
     Object? lastParteModified = freezed,
+    Object? listPartePersonas = null,
+    Object? listPersonas = null,
   }) {
     return _then(_$_ListadoPartesState(
       isLoading: null == isLoading
@@ -1130,6 +1841,14 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
           ? _value.lastParteModified
           : lastParteModified // ignore: cast_nullable_to_non_nullable
               as ParteTrabajo?,
+      listPartePersonas: null == listPartePersonas
+          ? _value._listPartePersonas
+          : listPartePersonas // ignore: cast_nullable_to_non_nullable
+              as List<PartePersona>,
+      listPersonas: null == listPersonas
+          ? _value._listPersonas
+          : listPersonas // ignore: cast_nullable_to_non_nullable
+              as List<Persona>,
     ));
   }
 }
@@ -1142,8 +1861,12 @@ class _$_ListadoPartesState implements _ListadoPartesState {
       required this.isError,
       required final List<ParteTrabajo> listPartesTrabajo,
       required this.lastParteCreated,
-      required this.lastParteModified})
-      : _listPartesTrabajo = listPartesTrabajo;
+      required this.lastParteModified,
+      required final List<PartePersona> listPartePersonas,
+      required final List<Persona> listPersonas})
+      : _listPartesTrabajo = listPartesTrabajo,
+        _listPartePersonas = listPartePersonas,
+        _listPersonas = listPersonas;
 
   @override
   final bool isLoading;
@@ -1162,10 +1885,26 @@ class _$_ListadoPartesState implements _ListadoPartesState {
   final ParteTrabajo lastParteCreated;
   @override
   final ParteTrabajo? lastParteModified;
+  final List<PartePersona> _listPartePersonas;
+  @override
+  List<PartePersona> get listPartePersonas {
+    if (_listPartePersonas is EqualUnmodifiableListView)
+      return _listPartePersonas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listPartePersonas);
+  }
+
+  final List<Persona> _listPersonas;
+  @override
+  List<Persona> get listPersonas {
+    if (_listPersonas is EqualUnmodifiableListView) return _listPersonas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listPersonas);
+  }
 
   @override
   String toString() {
-    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified)';
+    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified, listPartePersonas: $listPartePersonas, listPersonas: $listPersonas)';
   }
 
   @override
@@ -1181,7 +1920,11 @@ class _$_ListadoPartesState implements _ListadoPartesState {
             (identical(other.lastParteCreated, lastParteCreated) ||
                 other.lastParteCreated == lastParteCreated) &&
             (identical(other.lastParteModified, lastParteModified) ||
-                other.lastParteModified == lastParteModified));
+                other.lastParteModified == lastParteModified) &&
+            const DeepCollectionEquality()
+                .equals(other._listPartePersonas, _listPartePersonas) &&
+            const DeepCollectionEquality()
+                .equals(other._listPersonas, _listPersonas));
   }
 
   @override
@@ -1191,7 +1934,9 @@ class _$_ListadoPartesState implements _ListadoPartesState {
       isError,
       const DeepCollectionEquality().hash(_listPartesTrabajo),
       lastParteCreated,
-      lastParteModified);
+      lastParteModified,
+      const DeepCollectionEquality().hash(_listPartePersonas),
+      const DeepCollectionEquality().hash(_listPersonas));
 
   @JsonKey(ignore: true)
   @override
@@ -1207,7 +1952,9 @@ abstract class _ListadoPartesState implements ListadoPartesState {
       required final bool isError,
       required final List<ParteTrabajo> listPartesTrabajo,
       required final ParteTrabajo lastParteCreated,
-      required final ParteTrabajo? lastParteModified}) = _$_ListadoPartesState;
+      required final ParteTrabajo? lastParteModified,
+      required final List<PartePersona> listPartePersonas,
+      required final List<Persona> listPersonas}) = _$_ListadoPartesState;
 
   @override
   bool get isLoading;
@@ -1219,6 +1966,10 @@ abstract class _ListadoPartesState implements ListadoPartesState {
   ParteTrabajo get lastParteCreated;
   @override
   ParteTrabajo? get lastParteModified;
+  @override
+  List<PartePersona> get listPartePersonas;
+  @override
+  List<Persona> get listPersonas;
   @override
   @JsonKey(ignore: true)
   _$$_ListadoPartesStateCopyWith<_$_ListadoPartesState> get copyWith =>

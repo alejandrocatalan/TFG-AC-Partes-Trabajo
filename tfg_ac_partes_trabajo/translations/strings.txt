@@ -112,3 +112,8 @@ es = Personal en la orden
 tags = android,ios
 en = Personnel
 es = Personal
+
+[personnel_in_part]
+tags = android,ios
+en = Personnel in part
+es = Personal en el parte

@@ -57,7 +57,7 @@ class _OrdenPersonasPageState extends State<OrdenPersonasPage> {
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
-                    child: DataTableExample(
+                    child: DataTablePersonasDeOrden(
                       personas: state.listPersonas,
                       ordenPersonas: state.listOrdenPersonas,
                     ),
@@ -70,11 +70,11 @@ class _OrdenPersonasPageState extends State<OrdenPersonasPage> {
   }
 }
 
-class DataTableExample extends StatelessWidget {
+class DataTablePersonasDeOrden extends StatelessWidget {
   final List<Persona> personas;
   final List<OrdenPersona> ordenPersonas;
 
-  const DataTableExample({
+  const DataTablePersonasDeOrden({
     Key? key,
     required this.personas,
     required this.ordenPersonas,

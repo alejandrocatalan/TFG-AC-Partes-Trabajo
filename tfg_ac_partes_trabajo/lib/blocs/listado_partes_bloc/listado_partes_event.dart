@@ -18,4 +18,13 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onCleanLastParteModified() =
       OnCleanLastParteModified;
+
+  const factory ListadoPartesEvent.onLoadPersonasDeParte(
+      {required int parteTrabajoId}) = OnLoadPersonasDeParte;
+
+  const factory ListadoPartesEvent.onLoadPersonasDePartePersona() =
+      OnLoadPersonasDePartePersona;
+
+  const factory ListadoPartesEvent.onSearchPersona(
+      {required int parteTrabajoId, required String search}) = OnSearchPersona;
 }

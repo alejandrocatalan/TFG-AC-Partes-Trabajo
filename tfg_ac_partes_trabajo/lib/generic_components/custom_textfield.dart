@@ -9,6 +9,9 @@ class CustomTextField extends StatelessWidget {
   final double height;
   final bool readOnly;
   final Function onChanged;
+  final TextAlign textAlign;
+  final TextAlignVertical textAlignVertical;
+  final EdgeInsets contentPadding;
 
   const CustomTextField({
     Key? key,
@@ -18,6 +21,10 @@ class CustomTextField extends StatelessWidget {
     this.height = 150,
     this.readOnly = false,
     required this.onChanged,
+    this.textAlign = TextAlign.start,
+    this.textAlignVertical = TextAlignVertical.top,
+    this.contentPadding =
+        const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
   }) : super(key: key);
 
   @override
@@ -31,16 +38,15 @@ class CustomTextField extends StatelessWidget {
         expands: true,
         style: MyFontStyles(MyColorStyles.darkGreyColor)
             .getSourceSansPro16Regular(),
-        textAlign: TextAlign.start,
-        textAlignVertical: TextAlignVertical.top,
+        textAlign: textAlign,
+        textAlignVertical: textAlignVertical,
         readOnly: readOnly,
         cursorColor: MyColorStyles.redColor,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle:
               MyFontStyles(MyColorStyles.greyColor).getSourceSansPro16Regular(),
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          contentPadding: contentPadding,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: MyColorStyles.greyColor80,

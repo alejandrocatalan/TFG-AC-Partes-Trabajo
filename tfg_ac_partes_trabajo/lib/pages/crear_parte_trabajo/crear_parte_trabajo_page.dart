@@ -11,6 +11,7 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
+import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/parte_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
@@ -151,13 +152,13 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                     disabled: false,
                     context: context,
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) =>
-                      //         OrdenPersonasPage(ordenTrabajo: widget.ordenTrabajo),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              PartePersonasPage(parteTrabajo: _parteTrabajo),
+                        ),
+                      );
                     }),
               )),
               SliverFillRemaining(

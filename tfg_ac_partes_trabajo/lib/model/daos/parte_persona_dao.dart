@@ -34,6 +34,38 @@ class PartePersonaDao {
     });
   }
 
+  Future<List<PartePersona>> getAllPersonasDeParte(
+      {required int parteTrabajoId}) async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      _tableName,
+      where: 'parteTrabajoId = ?',
+      whereArgs: [parteTrabajoId],
+    );
+
+    return List.generate(maps.length, (i) {
+      return PartePersona.fromMap(maps[i]);
+    });
+  }
+
+  Future<PartePersona?> getPersonaDeParteFiltered({
+    required int parteTrabajoId,
+    required int personaId,
+  }) async {
+    final db = await MyDatabase.instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      _tableName,
+      where: 'parteTrabajoId = ? AND personaId = ?',
+      whereArgs: [parteTrabajoId, personaId],
+    );
+
+    if (maps.isNotEmpty) {
+      return PartePersona.fromMap(maps.first);
+    } else {
+      return null;
+    }
+  }
+
   Future<int> create(PartePersona obj) async {
     final db = await MyDatabase.instance.database;
     final id = await db.insert(_tableName, obj.toMap());

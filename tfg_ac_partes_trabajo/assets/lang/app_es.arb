@@ -21,5 +21,6 @@
 "hours":"Horas",
 "description":"Descripción",
 "personnel_in_order":"Personal en la orden",
-"personnel":"Personal"
+"personnel":"Personal",
+"personnel_in_part":"Personal en el parte"
 }

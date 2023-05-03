@@ -10,6 +10,7 @@ class SearchTextField extends StatelessWidget {
   final double height;
   final double? width;
   final Function onChanged;
+  final TextInputType keyboardType;
 
   const SearchTextField(
       {Key? key,
@@ -18,7 +19,8 @@ class SearchTextField extends StatelessWidget {
       this.obscureText = false,
       this.height = 50,
       this.width,
-      required this.onChanged})
+      required this.onChanged,
+      this.keyboardType = TextInputType.number})
       : super(key: key);
 
   @override
@@ -36,8 +38,10 @@ class SearchTextField extends StatelessWidget {
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.center,
         cursorColor: MyColorStyles.redColor,
-        keyboardType: TextInputType.number,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+        keyboardType: keyboardType,
+        inputFormatters: keyboardType == TextInputType.number
+            ? [FilteringTextInputFormatter.digitsOnly]
+            : [],
         decoration: InputDecoration(
             hintText: hintText,
             hintStyle: MyFontStyles(MyColorStyles.greyColor)
