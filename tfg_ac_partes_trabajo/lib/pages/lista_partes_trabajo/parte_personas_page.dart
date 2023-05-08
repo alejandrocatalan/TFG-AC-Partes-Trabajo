@@ -118,10 +118,12 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
     _dataList = widget.partePersonas
         .map(
           (partePersona) => {
+            'parteTrabajoId': partePersona.parteTrabajoId.toString(),
+            'personaId': partePersona.personaId.toString(),
             'descripcion': widget.personas
                 .firstWhere((p) => p.id == partePersona.personaId)
                 .descripcion,
-            'horas': convertHours(partePersona.horas)
+            'horas': convertHours(partePersona.horas),
           },
         )
         .toList();
@@ -143,7 +145,7 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
     return Container(
       decoration: const BoxDecoration(
         border: Border.symmetric(
-          horizontal: BorderSide(width: 0.5, color: MyColorStyles.redColor),
+          horizontal: BorderSide(width: 3, color: MyColorStyles.redColor),
         ),
       ),
       child: ListView.builder(
@@ -158,17 +160,17 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
           _minsControllers[index].text = minutes;
 
           return Container(
-            margin: const EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 7),
             padding: const EdgeInsets.all(12),
             decoration: const BoxDecoration(
               color: Colors.white,
               border: Border.fromBorderSide(BorderSide(
-                width: 2,
+                width: 1,
                 style: BorderStyle.solid,
                 color: MyColorStyles.redColor,
               )),
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(5),
               ),
             ),
             child: Row(
@@ -194,10 +196,13 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                               _hoursControllers[index].text = value;
                               context.read<ListadoPartesBloc>().add(
                                   ListadoPartesEvent.onUpdateHoursPartePersona(
-                                      parteTrabajoId: widget.parteTrabajo.id!,
+                                      parteTrabajoId:
+                                          int.parse(data['parteTrabajoId']!),
+                                      personaId: int.parse(data['personaId']!),
                                       hours: value));
                             }),
                       ),
+                      const Text("horas"),
                       SizedBox(
                         width: 50,
                         child: CustomTextField(
@@ -211,10 +216,13 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                               _minsControllers[index].text = value;
                               context.read<ListadoPartesBloc>().add(
                                   ListadoPartesEvent.onUpdateHoursPartePersona(
-                                      parteTrabajoId: widget.parteTrabajo.id!,
+                                      parteTrabajoId:
+                                          int.parse(data['parteTrabajoId']!),
+                                      personaId: int.parse(data['personaId']!),
                                       mins: value));
                             }),
                       ),
+                      const Text("minutos"),
                     ],
                   ),
                 ]),

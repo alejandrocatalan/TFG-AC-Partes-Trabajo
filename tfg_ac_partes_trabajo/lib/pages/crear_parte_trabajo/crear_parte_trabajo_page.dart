@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:intl/intl.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/black_and_normal_text.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
@@ -91,14 +92,16 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                     children: [
                       const SizedBox(height: 12),
                       BlackAndNormalText(
-                          blackText: "${context.translate("start_date")}: ",
-                          normalText: _parteTrabajo.fechaInicio
-                              .toString()), // widget.parteTrabajo.fechaInicio.toString()
+                        blackText: "${context.translate("start_date")}: ",
+                        normalText: DateFormat('dd-MM-yyyy – kk:mm')
+                            .format(_parteTrabajo.fechaInicio),
+                      ),
                       const SizedBox(height: 12),
                       BlackAndNormalText(
-                          blackText: "${context.translate("end_date")}: ",
-                          normalText: _parteTrabajo.fechaFin
-                              .toString()), // widget.parteTrabajo.fechaFin.toString()
+                        blackText: "${context.translate("end_date")}: ",
+                        normalText: DateFormat('dd-MM-yyyy – kk:mm')
+                            .format(_parteTrabajo.fechaFin),
+                      ),
                       const SizedBox(height: 12),
                       Text(
                         '${context.translate("observations")}:',

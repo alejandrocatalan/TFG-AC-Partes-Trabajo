@@ -149,22 +149,18 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     });
 
     on<OnUpdateHoursPartePersona>((event, emit) async {
-      // emit(state.copyWith(isLoading: true));
+      emit(state.copyWith(isLoading: true));
 
-      // List<PartePersona> partePersonas = [];
-      // for (var persona in personas) {
-      //   PartePersona? partePersona =
-      //       await _partePersonaDao.getPersonaDeParteFiltered(
-      //           parteTrabajoId: event.parteTrabajoId, personaId: persona.id!);
-      //   if (partePersona != null) {
-      //     partePersonas.add(partePersona);
-      //   }
-      // }
+      int parteTrabajoId = event.parteTrabajoId;
+      int personaId = event.personaId;
 
-      // emit(state.copyWith(
-      //     isLoading: false,
-      //     listPartePersonas: partePersonas,
-      //     listPersonas: personas));
+      double horas = double.parse(event.hours ?? "0.0") +
+          double.parse(event.mins ?? "0.0");
+
+      _partePersonaDao.update(PartePersona(
+          parteTrabajoId: parteTrabajoId, personaId: personaId, horas: horas));
+
+      add(OnLoadPersonasDeParte(parteTrabajoId: parteTrabajoId));
     });
 
     // on<OnLoadPersonasDePartePersona>((event, emit) async {

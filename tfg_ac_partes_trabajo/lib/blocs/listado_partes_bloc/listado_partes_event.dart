@@ -30,6 +30,7 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
 
   const factory ListadoPartesEvent.onUpdateHoursPartePersona(
       {required int parteTrabajoId,
+      required int personaId,
       String? hours,
       String? mins}) = OnUpdateHoursPartePersona;
 }

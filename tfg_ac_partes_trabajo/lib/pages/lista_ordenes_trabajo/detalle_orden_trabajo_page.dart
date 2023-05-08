@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/black_and_normal_text.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
@@ -41,12 +42,16 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                   const SizedBox(height: 12),
                   BlackAndNormalText(
                       blackText: "${context.translate("start_date")}: ",
-                      normalText: widget.ordenTrabajo.fechaInicio.toString()),
+                      normalText: DateFormat('dd-MM-yyyy – kk:mm')
+                          .format(widget.ordenTrabajo.fechaInicio)),
                   const SizedBox(height: 12),
                   BlackAndNormalText(
-                      blackText: "${context.translate("end_date")}: ",
-                      normalText:
-                          widget.ordenTrabajo.fechaFin?.toString() ?? ""),
+                    blackText: "${context.translate("end_date")}: ",
+                    normalText: widget.ordenTrabajo.fechaFin != null
+                        ? DateFormat('dd-MM-yyyy – kk:mm')
+                            .format(widget.ordenTrabajo.fechaFin!)
+                        : "",
+                  ),
                   const SizedBox(height: 12),
                   BlackAndNormalText(
                       blackText: "${context.translate("type")}: ",
