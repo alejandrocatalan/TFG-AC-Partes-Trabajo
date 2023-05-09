@@ -55,8 +55,8 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
               previous.listPartePersonas != current.listPartePersonas ||
               previous.listPersonas != current.listPersonas,
           builder: (context, state) {
-            debugPrint(
-                "11111111111111111    ${widget.parteTrabajo.id.toString()}");
+            // debugPrint(
+            //     "11111111111111111    ${widget.parteTrabajo.id.toString()}");
             return Container(
               width: double.maxFinite,
               margin: const EdgeInsets.all(12),
@@ -70,6 +70,7 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
                       width: MediaQuery.of(context).size.width * 0.95,
                       keyboardType: TextInputType.text,
                       onChanged: (String value) {
+                        debugPrint(value);
                         context.read<ListadoPartesBloc>().add(
                             ListadoPartesEvent.onSearchPersona(
                                 parteTrabajoId: widget.parteTrabajo.id!,
@@ -110,12 +111,16 @@ class ListViewPersonasDeParte extends StatefulWidget {
 }
 
 class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
-  List<Map<String, String>> _dataList = [];
+  late List<Map<String, String>> _dataList;
   final List<TextEditingController> _hoursControllers = [];
   final List<TextEditingController> _minsControllers = [];
 
   @override
   void initState() {
+    super.initState();
+  }
+
+  void initialiseDataList() {
     // Se crea una lista combinando la descripción de Persona y las horas de PartePersona.
     // Se formatea las horas para pasar de double a String --> 2.5 == '2h 30m'
     _dataList = widget.partePersonas
@@ -145,12 +150,11 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
           ListadoPartesEvent.onChangeButtonMapState(
               buttonState: false, index: i));
     }
-
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    initialiseDataList();
     return Container(
       decoration: const BoxDecoration(
         border: Border.symmetric(
@@ -166,9 +170,10 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
               convertDoubleToHourString(double.parse(data['horas']!));
           String hours = parts[0];
           String minutes = parts[1];
-          debugPrint("22222222222222222     ${data['parteTrabajoId']!}");
-          debugPrint(
-              "33333333333333333    ${widget.parteTrabajo.id.toString()}");
+
+          // debugPrint("22222222222222222     ${data['parteTrabajoId']!}");
+          // debugPrint(
+          //     "33333333333333333    ${widget.parteTrabajo.id.toString()}");
           return Container(
             margin: const EdgeInsets.only(top: 7),
             padding: const EdgeInsets.all(12),
