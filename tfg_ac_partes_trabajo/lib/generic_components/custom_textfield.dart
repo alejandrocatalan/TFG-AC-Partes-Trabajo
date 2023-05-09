@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 
@@ -12,6 +13,9 @@ class CustomTextField extends StatelessWidget {
   final TextAlign textAlign;
   final TextAlignVertical textAlignVertical;
   final EdgeInsets contentPadding;
+  final TextInputType keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
+  final TextDirection textDirection;
 
   const CustomTextField({
     Key? key,
@@ -25,6 +29,9 @@ class CustomTextField extends StatelessWidget {
     this.textAlignVertical = TextAlignVertical.top,
     this.contentPadding =
         const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+    this.keyboardType = TextInputType.text,
+    this.inputFormatters,
+    this.textDirection = TextDirection.ltr,
   }) : super(key: key);
 
   @override
@@ -33,13 +40,16 @@ class CustomTextField extends StatelessWidget {
       height: height,
       child: TextField(
         controller: controller,
+        inputFormatters: inputFormatters,
         obscureText: obscureText,
+        textDirection: textDirection,
         maxLines: null,
         expands: true,
         style: MyFontStyles(MyColorStyles.darkGreyColor)
             .getSourceSansPro16Regular(),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
+        keyboardType: keyboardType,
         readOnly: readOnly,
         cursorColor: MyColorStyles.redColor,
         decoration: InputDecoration(

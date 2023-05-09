@@ -5,6 +5,7 @@ import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_b
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/tiny_button.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_persona.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/persona.dart';
@@ -42,8 +43,7 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
             "${context.translate("personnel_in_part")} ${widget.parteTrabajo.id}",
         body: BlocConsumer<ListadoPartesBloc, ListadoPartesState>(
           listenWhen: (previous, current) =>
-              previous.isLoading != current.isLoading ||
-              previous.listPartePersonas != current.listPartePersonas,
+              previous.isLoading != current.isLoading,
           listener: (context, state) {
             if (state.isLoading) {
               EasyLoading.show();
@@ -52,8 +52,11 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
             }
           },
           buildWhen: (previous, current) =>
-              previous.listPartePersonas != current.listPartePersonas,
+              previous.listPartePersonas != current.listPartePersonas ||
+              previous.listPersonas != current.listPersonas,
           builder: (context, state) {
+            debugPrint(
+                "11111111111111111    ${widget.parteTrabajo.id.toString()}");
             return Container(
               width: double.maxFinite,
               margin: const EdgeInsets.all(12),
@@ -123,7 +126,8 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
             'descripcion': widget.personas
                 .firstWhere((p) => p.id == partePersona.personaId)
                 .descripcion,
-            'horas': convertHours(partePersona.horas),
+            'horas': partePersona.horas.toString(),
+            //'horas': convertHours(partePersona.horas),
           },
         )
         .toList();
@@ -131,10 +135,15 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
     _dataList.sort((a, b) => b['horas']!.compareTo(a['horas']!));
 
     // Se inicializan los controladores para los TextField de horas y para los de
-    // minutos, según el número de elementos en la lista de datos.
+    // minutos, según el número de elementos en la lista de datos. Además se
+    // inicializan los botones de cada persona
     for (int i = 0; i < _dataList.length; i++) {
       _hoursControllers.add(TextEditingController());
       _minsControllers.add(TextEditingController());
+
+      context.read<ListadoPartesBloc>().add(
+          ListadoPartesEvent.onChangeButtonMapState(
+              buttonState: false, index: i));
     }
 
     super.initState();
@@ -153,12 +162,13 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
         itemCount: _dataList.length,
         itemBuilder: (BuildContext context, int index) {
           final data = _dataList[index];
-          List<String> parts = splitHoursAndMinutes(data['horas']!);
+          List<String> parts =
+              convertDoubleToHourString(double.parse(data['horas']!));
           String hours = parts[0];
           String minutes = parts[1];
-          _hoursControllers[index].text = hours;
-          _minsControllers[index].text = minutes;
-
+          debugPrint("22222222222222222     ${data['parteTrabajoId']!}");
+          debugPrint(
+              "33333333333333333    ${widget.parteTrabajo.id.toString()}");
           return Container(
             margin: const EdgeInsets.only(top: 7),
             padding: const EdgeInsets.all(12),
@@ -187,42 +197,106 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                         width: 60,
                         child: CustomTextField(
                             controller: _hoursControllers[index],
+                            hintText: hours,
                             textAlign: TextAlign.end,
                             textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.number,
                             height: 30,
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 0),
                             onChanged: (String value) {
-                              _hoursControllers[index].text = value;
-                              context.read<ListadoPartesBloc>().add(
-                                  ListadoPartesEvent.onUpdateHoursPartePersona(
-                                      parteTrabajoId:
-                                          int.parse(data['parteTrabajoId']!),
-                                      personaId: int.parse(data['personaId']!),
-                                      hours: value));
+                              if (_hoursControllers[index].text.isNotEmpty) {
+                                context.read<ListadoPartesBloc>().add(
+                                    ListadoPartesEvent.onChangeButtonMapState(
+                                        buttonState: true, index: index));
+                              } else {
+                                context.read<ListadoPartesBloc>().add(
+                                    ListadoPartesEvent.onChangeButtonMapState(
+                                        buttonState: false, index: index));
+                              }
                             }),
                       ),
-                      const Text("horas"),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        "h",
+                        style: MyFontStyles(MyColorStyles.darkGreyColor)
+                            .getSourceSansPro16Regular(),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
                       SizedBox(
                         width: 50,
                         child: CustomTextField(
                             controller: _minsControllers[index],
+                            hintText: minutes,
                             textAlign: TextAlign.end,
                             textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [HourMinuteTextInputFormatter()],
                             height: 30,
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 0),
                             onChanged: (String value) {
-                              _minsControllers[index].text = value;
-                              context.read<ListadoPartesBloc>().add(
-                                  ListadoPartesEvent.onUpdateHoursPartePersona(
-                                      parteTrabajoId:
-                                          int.parse(data['parteTrabajoId']!),
-                                      personaId: int.parse(data['personaId']!),
-                                      mins: value));
+                              if (_minsControllers[index].text.isNotEmpty) {
+                                context.read<ListadoPartesBloc>().add(
+                                    ListadoPartesEvent.onChangeButtonMapState(
+                                        buttonState: true, index: index));
+                              } else {
+                                context.read<ListadoPartesBloc>().add(
+                                    ListadoPartesEvent.onChangeButtonMapState(
+                                        buttonState: false, index: index));
+                              }
                             }),
                       ),
-                      const Text("minutos"),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        "m",
+                        style: MyFontStyles(MyColorStyles.darkGreyColor)
+                            .getSourceSansPro16Regular(),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      BlocBuilder<ListadoPartesBloc, ListadoPartesState>(
+                        buildWhen: (previous, current) =>
+                            previous.isButtonEnabledMap !=
+                            current.isButtonEnabledMap,
+                        builder: (context, state) {
+                          if (context
+                              .read<ListadoPartesBloc>()
+                              .state
+                              .isButtonEnabledMap
+                              .containsKey(index)) {
+                            return TinyButton(
+                                disabled: !context
+                                    .read<ListadoPartesBloc>()
+                                    .state
+                                    .isButtonEnabledMap[index]!,
+                                context: context,
+                                onPressed: () {
+                                  context.read<ListadoPartesBloc>().add(
+                                      ListadoPartesEvent
+                                          .onUpdateHoursPartePersona(
+                                              parteTrabajoId:
+                                                  int.parse(
+                                                      data['parteTrabajoId']!),
+                                              personaId:
+                                                  int.parse(data['personaId']!),
+                                              hours:
+                                                  _hoursControllers[index].text,
+                                              mins: _minsControllers[index]
+                                                  .text));
+                                });
+                          } else {
+                            return Container();
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ]),

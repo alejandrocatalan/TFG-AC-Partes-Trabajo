@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/parte_persona_dao.dart';
@@ -154,8 +155,16 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       int parteTrabajoId = event.parteTrabajoId;
       int personaId = event.personaId;
 
-      double horas = double.parse(event.hours ?? "0.0") +
-          double.parse(event.mins ?? "0.0");
+      PartePersona? partePersonaActual =
+          await _partePersonaDao.get(parteTrabajoId, personaId);
+      List<String> tiempoActual =
+          partePersonaActual!.horas.toString().split(".");
+
+      String horasNuevas = event.hours != null ? event.hours! : tiempoActual[0];
+      String minsNuevas = event.mins != null ? event.mins! : tiempoActual[1];
+
+      double horas =
+          double.parse("$horasNuevas.0") + double.parse("0.$minsNuevas");
 
       _partePersonaDao.update(PartePersona(
           parteTrabajoId: parteTrabajoId, personaId: personaId, horas: horas));
@@ -163,21 +172,12 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       add(OnLoadPersonasDeParte(parteTrabajoId: parteTrabajoId));
     });
 
-    // on<OnLoadPersonasDePartePersona>((event, emit) async {
-    //   List<int> personaIds = state.listPartePersonas
-    //       .map((partePersona) => partePersona.personaId)
-    //       .toList();
-    //   List<Persona> listPersonas =
-    //       await _personaDao.getAllPersonasDeOrdenOPartePersona(personaIds);
-
-    //   emit(state.copyWith(
-    //     isLoading: false,
-    //     listPersonas: listPersonas,
-    //   ));
-    // });
-
-    // on<OnCleanLastParteModified>((event, emit) async {
-    //   emit(state.copyWith(lastParteModified: ParteTrabajo.initial()));
-    // });
+    on<OnChangeButtonMapState>((event, emit) async {
+      emit(state.copyWith(
+        isButtonEnabledMap: Map<int, bool>.from(
+          state.isButtonEnabledMap,
+        )..[event.index] = event.buttonState,
+      ));
+    });
   }
 }

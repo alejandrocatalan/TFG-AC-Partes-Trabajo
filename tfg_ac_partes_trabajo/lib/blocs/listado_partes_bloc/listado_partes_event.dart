@@ -33,4 +33,9 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
       required int personaId,
       String? hours,
       String? mins}) = OnUpdateHoursPartePersona;
+
+  const factory ListadoPartesEvent.onChangeButtonMapState({
+    required bool buttonState,
+    required int index,
+  }) = OnChangeButtonMapState;
 }
