@@ -33,6 +33,7 @@ mixin _$ListadoPartesEvent {
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +51,7 @@ mixin _$ListadoPartesEvent {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +69,7 @@ mixin _$ListadoPartesEvent {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,6 +91,7 @@ mixin _$ListadoPartesEvent {
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,6 +109,7 @@ mixin _$ListadoPartesEvent {
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +127,7 @@ mixin _$ListadoPartesEvent {
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -205,6 +211,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onLoadPartes();
   }
@@ -225,6 +232,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onLoadPartes?.call();
   }
@@ -245,6 +253,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -272,6 +281,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onLoadPartes(this);
   }
@@ -292,6 +302,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onLoadPartes?.call(this);
   }
@@ -312,6 +323,7 @@ class _$OnLoadPartes with DiagnosticableTreeMixin implements OnLoadPartes {
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPartes != null) {
@@ -417,6 +429,7 @@ class _$OnLoadPartesDeOrden
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onLoadPartesDeOrden(ordenTrabajoId);
   }
@@ -437,6 +450,7 @@ class _$OnLoadPartesDeOrden
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onLoadPartesDeOrden?.call(ordenTrabajoId);
   }
@@ -457,6 +471,7 @@ class _$OnLoadPartesDeOrden
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -484,6 +499,7 @@ class _$OnLoadPartesDeOrden
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onLoadPartesDeOrden(this);
   }
@@ -504,6 +520,7 @@ class _$OnLoadPartesDeOrden
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onLoadPartesDeOrden?.call(this);
   }
@@ -524,6 +541,7 @@ class _$OnLoadPartesDeOrden
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPartesDeOrden != null) {
@@ -639,6 +657,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onSearch(ordenTrabajoId, search);
   }
@@ -659,6 +678,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onSearch?.call(ordenTrabajoId, search);
   }
@@ -679,6 +699,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -706,6 +727,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onSearch(this);
   }
@@ -726,6 +748,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onSearch?.call(this);
   }
@@ -746,6 +769,7 @@ class _$OnSearch with DiagnosticableTreeMixin implements OnSearch {
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -855,6 +879,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onCreateParte(parteTrabajo);
   }
@@ -875,6 +900,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onCreateParte?.call(parteTrabajo);
   }
@@ -895,6 +921,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -922,6 +949,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onCreateParte(this);
   }
@@ -942,6 +970,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onCreateParte?.call(this);
   }
@@ -962,6 +991,7 @@ class _$OnCreateParte with DiagnosticableTreeMixin implements OnCreateParte {
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onCreateParte != null) {
@@ -1069,6 +1099,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onUpdateParte(parteTrabajo);
   }
@@ -1089,6 +1120,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onUpdateParte?.call(parteTrabajo);
   }
@@ -1109,6 +1141,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -1136,6 +1169,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onUpdateParte(this);
   }
@@ -1156,6 +1190,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onUpdateParte?.call(this);
   }
@@ -1176,6 +1211,7 @@ class _$OnUpdateParte with DiagnosticableTreeMixin implements OnUpdateParte {
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onUpdateParte != null) {
@@ -1258,6 +1294,7 @@ class _$OnCleanLastParteModified
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onCleanLastParteModified();
   }
@@ -1278,6 +1315,7 @@ class _$OnCleanLastParteModified
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onCleanLastParteModified?.call();
   }
@@ -1298,6 +1336,7 @@ class _$OnCleanLastParteModified
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -1325,6 +1364,7 @@ class _$OnCleanLastParteModified
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onCleanLastParteModified(this);
   }
@@ -1345,6 +1385,7 @@ class _$OnCleanLastParteModified
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onCleanLastParteModified?.call(this);
   }
@@ -1365,6 +1406,7 @@ class _$OnCleanLastParteModified
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onCleanLastParteModified != null) {
@@ -1470,6 +1512,7 @@ class _$OnLoadPersonasDeParte
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onLoadPersonasDeParte(parteTrabajoId);
   }
@@ -1490,6 +1533,7 @@ class _$OnLoadPersonasDeParte
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onLoadPersonasDeParte?.call(parteTrabajoId);
   }
@@ -1510,6 +1554,7 @@ class _$OnLoadPersonasDeParte
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeParte != null) {
@@ -1537,6 +1582,7 @@ class _$OnLoadPersonasDeParte
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onLoadPersonasDeParte(this);
   }
@@ -1557,6 +1603,7 @@ class _$OnLoadPersonasDeParte
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onLoadPersonasDeParte?.call(this);
   }
@@ -1577,6 +1624,7 @@ class _$OnLoadPersonasDeParte
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeParte != null) {
@@ -1662,6 +1710,7 @@ class _$OnLoadPersonasDePartePersona
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onLoadPersonasDePartePersona();
   }
@@ -1682,6 +1731,7 @@ class _$OnLoadPersonasDePartePersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onLoadPersonasDePartePersona?.call();
   }
@@ -1702,6 +1752,7 @@ class _$OnLoadPersonasDePartePersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDePartePersona != null) {
@@ -1729,6 +1780,7 @@ class _$OnLoadPersonasDePartePersona
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onLoadPersonasDePartePersona(this);
   }
@@ -1749,6 +1801,7 @@ class _$OnLoadPersonasDePartePersona
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onLoadPersonasDePartePersona?.call(this);
   }
@@ -1769,6 +1822,7 @@ class _$OnLoadPersonasDePartePersona
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDePartePersona != null) {
@@ -1881,6 +1935,7 @@ class _$OnSearchPersona
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onSearchPersona(parteTrabajoId, search);
   }
@@ -1901,6 +1956,7 @@ class _$OnSearchPersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onSearchPersona?.call(parteTrabajoId, search);
   }
@@ -1921,6 +1977,7 @@ class _$OnSearchPersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onSearchPersona != null) {
@@ -1948,6 +2005,7 @@ class _$OnSearchPersona
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onSearchPersona(this);
   }
@@ -1968,6 +2026,7 @@ class _$OnSearchPersona
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onSearchPersona?.call(this);
   }
@@ -1988,6 +2047,7 @@ class _$OnSearchPersona
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onSearchPersona != null) {
@@ -2135,6 +2195,7 @@ class _$OnUpdateHoursPartePersona
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onUpdateHoursPartePersona(parteTrabajoId, personaId, hours, mins);
   }
@@ -2155,6 +2216,7 @@ class _$OnUpdateHoursPartePersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onUpdateHoursPartePersona?.call(
         parteTrabajoId, personaId, hours, mins);
@@ -2176,6 +2238,7 @@ class _$OnUpdateHoursPartePersona
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onUpdateHoursPartePersona != null) {
@@ -2203,6 +2266,7 @@ class _$OnUpdateHoursPartePersona
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onUpdateHoursPartePersona(this);
   }
@@ -2223,6 +2287,7 @@ class _$OnUpdateHoursPartePersona
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onUpdateHoursPartePersona?.call(this);
   }
@@ -2243,6 +2308,7 @@ class _$OnUpdateHoursPartePersona
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onUpdateHoursPartePersona != null) {
@@ -2370,6 +2436,7 @@ class _$OnChangeButtonMapState
         onUpdateHoursPartePersona,
     required TResult Function(bool buttonState, int index)
         onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
   }) {
     return onChangeButtonMapState(buttonState, index);
   }
@@ -2390,6 +2457,7 @@ class _$OnChangeButtonMapState
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
   }) {
     return onChangeButtonMapState?.call(buttonState, index);
   }
@@ -2410,6 +2478,7 @@ class _$OnChangeButtonMapState
             int parteTrabajoId, int personaId, String? hours, String? mins)?
         onUpdateHoursPartePersona,
     TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onChangeButtonMapState != null) {
@@ -2437,6 +2506,7 @@ class _$OnChangeButtonMapState
         onUpdateHoursPartePersona,
     required TResult Function(OnChangeButtonMapState value)
         onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
   }) {
     return onChangeButtonMapState(this);
   }
@@ -2457,6 +2527,7 @@ class _$OnChangeButtonMapState
     TResult? Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
   }) {
     return onChangeButtonMapState?.call(this);
   }
@@ -2477,6 +2548,7 @@ class _$OnChangeButtonMapState
     TResult Function(OnUpdateHoursPartePersona value)?
         onUpdateHoursPartePersona,
     TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
     required TResult orElse(),
   }) {
     if (onChangeButtonMapState != null) {
@@ -2499,6 +2571,230 @@ abstract class OnChangeButtonMapState implements ListadoPartesEvent {
 }
 
 /// @nodoc
+abstract class _$$OnChangeButtonStateCopyWith<$Res> {
+  factory _$$OnChangeButtonStateCopyWith(_$OnChangeButtonState value,
+          $Res Function(_$OnChangeButtonState) then) =
+      __$$OnChangeButtonStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool buttonState});
+}
+
+/// @nodoc
+class __$$OnChangeButtonStateCopyWithImpl<$Res>
+    extends _$ListadoPartesEventCopyWithImpl<$Res, _$OnChangeButtonState>
+    implements _$$OnChangeButtonStateCopyWith<$Res> {
+  __$$OnChangeButtonStateCopyWithImpl(
+      _$OnChangeButtonState _value, $Res Function(_$OnChangeButtonState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? buttonState = null,
+  }) {
+    return _then(_$OnChangeButtonState(
+      buttonState: null == buttonState
+          ? _value.buttonState
+          : buttonState // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnChangeButtonState
+    with DiagnosticableTreeMixin
+    implements OnChangeButtonState {
+  const _$OnChangeButtonState({required this.buttonState});
+
+  @override
+  final bool buttonState;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ListadoPartesEvent.onChangeButtonState(buttonState: $buttonState)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ListadoPartesEvent.onChangeButtonState'))
+      ..add(DiagnosticsProperty('buttonState', buttonState));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnChangeButtonState &&
+            (identical(other.buttonState, buttonState) ||
+                other.buttonState == buttonState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, buttonState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnChangeButtonStateCopyWith<_$OnChangeButtonState> get copyWith =>
+      __$$OnChangeButtonStateCopyWithImpl<_$OnChangeButtonState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadPartes,
+    required TResult Function(int ordenTrabajoId) onLoadPartesDeOrden,
+    required TResult Function(int ordenTrabajoId, String search) onSearch,
+    required TResult Function(ParteTrabajo parteTrabajo) onCreateParte,
+    required TResult Function(ParteTrabajo parteTrabajo) onUpdateParte,
+    required TResult Function() onCleanLastParteModified,
+    required TResult Function(int parteTrabajoId) onLoadPersonasDeParte,
+    required TResult Function() onLoadPersonasDePartePersona,
+    required TResult Function(int parteTrabajoId, String search)
+        onSearchPersona,
+    required TResult Function(
+            int parteTrabajoId, int personaId, String? hours, String? mins)
+        onUpdateHoursPartePersona,
+    required TResult Function(bool buttonState, int index)
+        onChangeButtonMapState,
+    required TResult Function(bool buttonState) onChangeButtonState,
+  }) {
+    return onChangeButtonState(buttonState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadPartes,
+    TResult? Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult? Function(int ordenTrabajoId, String search)? onSearch,
+    TResult? Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult? Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult? Function()? onCleanLastParteModified,
+    TResult? Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult? Function()? onLoadPersonasDePartePersona,
+    TResult? Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult? Function(
+            int parteTrabajoId, int personaId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
+    TResult? Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult? Function(bool buttonState)? onChangeButtonState,
+  }) {
+    return onChangeButtonState?.call(buttonState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadPartes,
+    TResult Function(int ordenTrabajoId)? onLoadPartesDeOrden,
+    TResult Function(int ordenTrabajoId, String search)? onSearch,
+    TResult Function(ParteTrabajo parteTrabajo)? onCreateParte,
+    TResult Function(ParteTrabajo parteTrabajo)? onUpdateParte,
+    TResult Function()? onCleanLastParteModified,
+    TResult Function(int parteTrabajoId)? onLoadPersonasDeParte,
+    TResult Function()? onLoadPersonasDePartePersona,
+    TResult Function(int parteTrabajoId, String search)? onSearchPersona,
+    TResult Function(
+            int parteTrabajoId, int personaId, String? hours, String? mins)?
+        onUpdateHoursPartePersona,
+    TResult Function(bool buttonState, int index)? onChangeButtonMapState,
+    TResult Function(bool buttonState)? onChangeButtonState,
+    required TResult orElse(),
+  }) {
+    if (onChangeButtonState != null) {
+      return onChangeButtonState(buttonState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadPartes value) onLoadPartes,
+    required TResult Function(OnLoadPartesDeOrden value) onLoadPartesDeOrden,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnCreateParte value) onCreateParte,
+    required TResult Function(OnUpdateParte value) onUpdateParte,
+    required TResult Function(OnCleanLastParteModified value)
+        onCleanLastParteModified,
+    required TResult Function(OnLoadPersonasDeParte value)
+        onLoadPersonasDeParte,
+    required TResult Function(OnLoadPersonasDePartePersona value)
+        onLoadPersonasDePartePersona,
+    required TResult Function(OnSearchPersona value) onSearchPersona,
+    required TResult Function(OnUpdateHoursPartePersona value)
+        onUpdateHoursPartePersona,
+    required TResult Function(OnChangeButtonMapState value)
+        onChangeButtonMapState,
+    required TResult Function(OnChangeButtonState value) onChangeButtonState,
+  }) {
+    return onChangeButtonState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadPartes value)? onLoadPartes,
+    TResult? Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnCreateParte value)? onCreateParte,
+    TResult? Function(OnUpdateParte value)? onUpdateParte,
+    TResult? Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult? Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult? Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult? Function(OnSearchPersona value)? onSearchPersona,
+    TResult? Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
+    TResult? Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult? Function(OnChangeButtonState value)? onChangeButtonState,
+  }) {
+    return onChangeButtonState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadPartes value)? onLoadPartes,
+    TResult Function(OnLoadPartesDeOrden value)? onLoadPartesDeOrden,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnCreateParte value)? onCreateParte,
+    TResult Function(OnUpdateParte value)? onUpdateParte,
+    TResult Function(OnCleanLastParteModified value)? onCleanLastParteModified,
+    TResult Function(OnLoadPersonasDeParte value)? onLoadPersonasDeParte,
+    TResult Function(OnLoadPersonasDePartePersona value)?
+        onLoadPersonasDePartePersona,
+    TResult Function(OnSearchPersona value)? onSearchPersona,
+    TResult Function(OnUpdateHoursPartePersona value)?
+        onUpdateHoursPartePersona,
+    TResult Function(OnChangeButtonMapState value)? onChangeButtonMapState,
+    TResult Function(OnChangeButtonState value)? onChangeButtonState,
+    required TResult orElse(),
+  }) {
+    if (onChangeButtonState != null) {
+      return onChangeButtonState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnChangeButtonState implements ListadoPartesEvent {
+  const factory OnChangeButtonState({required final bool buttonState}) =
+      _$OnChangeButtonState;
+
+  bool get buttonState;
+  @JsonKey(ignore: true)
+  _$$OnChangeButtonStateCopyWith<_$OnChangeButtonState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListadoPartesState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
@@ -2510,6 +2806,7 @@ mixin _$ListadoPartesState {
       throw _privateConstructorUsedError;
   List<Persona> get listPersonas => throw _privateConstructorUsedError;
   Map<int, bool> get isButtonEnabledMap => throw _privateConstructorUsedError;
+  bool get isButtonEnabled => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListadoPartesStateCopyWith<ListadoPartesState> get copyWith =>
@@ -2530,7 +2827,8 @@ abstract class $ListadoPartesStateCopyWith<$Res> {
       ParteTrabajo? lastParteModified,
       List<PartePersona> listPartePersonas,
       List<Persona> listPersonas,
-      Map<int, bool> isButtonEnabledMap});
+      Map<int, bool> isButtonEnabledMap,
+      bool isButtonEnabled});
 }
 
 /// @nodoc
@@ -2554,6 +2852,7 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
     Object? listPartePersonas = null,
     Object? listPersonas = null,
     Object? isButtonEnabledMap = null,
+    Object? isButtonEnabled = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -2588,6 +2887,10 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
           ? _value.isButtonEnabledMap
           : isButtonEnabledMap // ignore: cast_nullable_to_non_nullable
               as Map<int, bool>,
+      isButtonEnabled: null == isButtonEnabled
+          ? _value.isButtonEnabled
+          : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -2608,7 +2911,8 @@ abstract class _$$_ListadoPartesStateCopyWith<$Res>
       ParteTrabajo? lastParteModified,
       List<PartePersona> listPartePersonas,
       List<Persona> listPersonas,
-      Map<int, bool> isButtonEnabledMap});
+      Map<int, bool> isButtonEnabledMap,
+      bool isButtonEnabled});
 }
 
 /// @nodoc
@@ -2630,6 +2934,7 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
     Object? listPartePersonas = null,
     Object? listPersonas = null,
     Object? isButtonEnabledMap = null,
+    Object? isButtonEnabled = null,
   }) {
     return _then(_$_ListadoPartesState(
       isLoading: null == isLoading
@@ -2664,6 +2969,10 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
           ? _value._isButtonEnabledMap
           : isButtonEnabledMap // ignore: cast_nullable_to_non_nullable
               as Map<int, bool>,
+      isButtonEnabled: null == isButtonEnabled
+          ? _value.isButtonEnabled
+          : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2681,7 +2990,8 @@ class _$_ListadoPartesState
       required this.lastParteModified,
       required final List<PartePersona> listPartePersonas,
       required final List<Persona> listPersonas,
-      required final Map<int, bool> isButtonEnabledMap})
+      required final Map<int, bool> isButtonEnabledMap,
+      required this.isButtonEnabled})
       : _listPartesTrabajo = listPartesTrabajo,
         _listPartePersonas = listPartePersonas,
         _listPersonas = listPersonas,
@@ -2731,8 +3041,11 @@ class _$_ListadoPartesState
   }
 
   @override
+  final bool isButtonEnabled;
+
+  @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified, listPartePersonas: $listPartePersonas, listPersonas: $listPersonas, isButtonEnabledMap: $isButtonEnabledMap)';
+    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified, listPartePersonas: $listPartePersonas, listPersonas: $listPersonas, isButtonEnabledMap: $isButtonEnabledMap, isButtonEnabled: $isButtonEnabled)';
   }
 
   @override
@@ -2747,7 +3060,8 @@ class _$_ListadoPartesState
       ..add(DiagnosticsProperty('lastParteModified', lastParteModified))
       ..add(DiagnosticsProperty('listPartePersonas', listPartePersonas))
       ..add(DiagnosticsProperty('listPersonas', listPersonas))
-      ..add(DiagnosticsProperty('isButtonEnabledMap', isButtonEnabledMap));
+      ..add(DiagnosticsProperty('isButtonEnabledMap', isButtonEnabledMap))
+      ..add(DiagnosticsProperty('isButtonEnabled', isButtonEnabled));
   }
 
   @override
@@ -2769,7 +3083,9 @@ class _$_ListadoPartesState
             const DeepCollectionEquality()
                 .equals(other._listPersonas, _listPersonas) &&
             const DeepCollectionEquality()
-                .equals(other._isButtonEnabledMap, _isButtonEnabledMap));
+                .equals(other._isButtonEnabledMap, _isButtonEnabledMap) &&
+            (identical(other.isButtonEnabled, isButtonEnabled) ||
+                other.isButtonEnabled == isButtonEnabled));
   }
 
   @override
@@ -2782,7 +3098,8 @@ class _$_ListadoPartesState
       lastParteModified,
       const DeepCollectionEquality().hash(_listPartePersonas),
       const DeepCollectionEquality().hash(_listPersonas),
-      const DeepCollectionEquality().hash(_isButtonEnabledMap));
+      const DeepCollectionEquality().hash(_isButtonEnabledMap),
+      isButtonEnabled);
 
   @JsonKey(ignore: true)
   @override
@@ -2794,15 +3111,15 @@ class _$_ListadoPartesState
 
 abstract class _ListadoPartesState implements ListadoPartesState {
   const factory _ListadoPartesState(
-          {required final bool isLoading,
-          required final bool isError,
-          required final List<ParteTrabajo> listPartesTrabajo,
-          required final ParteTrabajo lastParteCreated,
-          required final ParteTrabajo? lastParteModified,
-          required final List<PartePersona> listPartePersonas,
-          required final List<Persona> listPersonas,
-          required final Map<int, bool> isButtonEnabledMap}) =
-      _$_ListadoPartesState;
+      {required final bool isLoading,
+      required final bool isError,
+      required final List<ParteTrabajo> listPartesTrabajo,
+      required final ParteTrabajo lastParteCreated,
+      required final ParteTrabajo? lastParteModified,
+      required final List<PartePersona> listPartePersonas,
+      required final List<Persona> listPersonas,
+      required final Map<int, bool> isButtonEnabledMap,
+      required final bool isButtonEnabled}) = _$_ListadoPartesState;
 
   @override
   bool get isLoading;
@@ -2820,6 +3137,8 @@ abstract class _ListadoPartesState implements ListadoPartesState {
   List<Persona> get listPersonas;
   @override
   Map<int, bool> get isButtonEnabledMap;
+  @override
+  bool get isButtonEnabled;
   @override
   @JsonKey(ignore: true)
   _$$_ListadoPartesStateCopyWith<_$_ListadoPartesState> get copyWith =>

@@ -11,6 +11,7 @@ class ListadoPartesState with _$ListadoPartesState {
     required List<PartePersona> listPartePersonas,
     required List<Persona> listPersonas,
     required Map<int, bool> isButtonEnabledMap,
+    required bool isButtonEnabled,
   }) = _ListadoPartesState;
 
   factory ListadoPartesState.initial() => ListadoPartesState(
@@ -22,5 +23,6 @@ class ListadoPartesState with _$ListadoPartesState {
         listPartePersonas: [],
         listPersonas: [],
         isButtonEnabledMap: {},
+        isButtonEnabled: false,
       );
 }

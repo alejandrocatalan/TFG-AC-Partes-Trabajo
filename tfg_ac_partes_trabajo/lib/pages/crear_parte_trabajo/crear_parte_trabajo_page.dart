@@ -12,7 +12,7 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
-import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/parte_personas_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/parte_personas/parte_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
@@ -93,13 +93,13 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                       const SizedBox(height: 12),
                       BlackAndNormalText(
                         blackText: "${context.translate("start_date")}: ",
-                        normalText: DateFormat('dd-MM-yyyy – kk:mm')
+                        normalText: DateFormat('dd-MM-yyyy - kk:mm')
                             .format(_parteTrabajo.fechaInicio),
                       ),
                       const SizedBox(height: 12),
                       BlackAndNormalText(
                         blackText: "${context.translate("end_date")}: ",
-                        normalText: DateFormat('dd-MM-yyyy – kk:mm')
+                        normalText: DateFormat('dd-MM-yyyy - kk:mm')
                             .format(_parteTrabajo.fechaFin),
                       ),
                       const SizedBox(height: 12),

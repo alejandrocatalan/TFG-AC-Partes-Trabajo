@@ -172,11 +172,17 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       add(OnLoadPersonasDeParte(parteTrabajoId: parteTrabajoId));
     });
 
-    on<OnChangeButtonMapState>((event, emit) async {
+    // on<OnChangeButtonMapState>((event, emit) async {
+    //   emit(state.copyWith(
+    //     isButtonEnabledMap: Map<int, bool>.from(
+    //       state.isButtonEnabledMap,
+    //     )..[event.index] = event.buttonState,
+    //   ));
+    // });
+
+    on<OnChangeButtonState>((event, emit) async {
       emit(state.copyWith(
-        isButtonEnabledMap: Map<int, bool>.from(
-          state.isButtonEnabledMap,
-        )..[event.index] = event.buttonState,
+        isButtonEnabled: event.buttonState,
       ));
     });
   }

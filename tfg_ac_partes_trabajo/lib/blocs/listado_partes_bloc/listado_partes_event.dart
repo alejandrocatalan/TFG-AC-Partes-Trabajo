@@ -38,4 +38,8 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
     required bool buttonState,
     required int index,
   }) = OnChangeButtonMapState;
+
+  const factory ListadoPartesEvent.onChangeButtonState({
+    required bool buttonState,
+  }) = OnChangeButtonState;
 }

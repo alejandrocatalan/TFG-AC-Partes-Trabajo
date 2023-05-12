@@ -11,6 +11,7 @@ class SecondaryButtonWidget extends StatelessWidget {
     required this.onPressed,
     this.color,
     this.unFocus = false,
+    this.widthPercentage = 1.0,
   }) : super(key: key);
 
   final String textButton;
@@ -18,6 +19,7 @@ class SecondaryButtonWidget extends StatelessWidget {
   final BuildContext context;
   final Function onPressed;
   final Color? color;
+  final double widthPercentage;
 
   // Dismis keyboard when press button
   final bool unFocus;
@@ -40,7 +42,7 @@ class SecondaryButtonWidget extends StatelessWidget {
         ),
         elevation: MaterialStateProperty.all<double>(0),
         minimumSize: MaterialStateProperty.all<Size>(
-          Size(MediaQuery.of(context).size.width * 1, 50),
+          Size(MediaQuery.of(context).size.width * widthPercentage, 50),
         ),
         backgroundColor: disabled
             ? MaterialStateProperty.all<Color>(const Color(0xFFBBBBBB))
