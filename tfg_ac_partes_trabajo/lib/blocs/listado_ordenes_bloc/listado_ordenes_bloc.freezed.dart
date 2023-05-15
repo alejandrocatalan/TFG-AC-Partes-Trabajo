@@ -22,6 +22,10 @@ mixin _$ListadoOrdenesEvent {
     required TResult Function(String search) onSearch,
     required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
     required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +34,10 @@ mixin _$ListadoOrdenesEvent {
     TResult? Function(String search)? onSearch,
     TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +46,10 @@ mixin _$ListadoOrdenesEvent {
     TResult Function(String search)? onSearch,
     TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +61,14 @@ mixin _$ListadoOrdenesEvent {
         onLoadPersonasDeOrden,
     required TResult Function(OnLoadPersonasDeOrdenPersona value)
         onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +78,12 @@ mixin _$ListadoOrdenesEvent {
     TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult? Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +93,12 @@ mixin _$ListadoOrdenesEvent {
     TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,6 +164,10 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
     required TResult Function(String search) onSearch,
     required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
     required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadOrdenes();
   }
@@ -143,6 +179,10 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
     TResult? Function(String search)? onSearch,
     TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadOrdenes?.call();
   }
@@ -154,6 +194,10 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
     TResult Function(String search)? onSearch,
     TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadOrdenes != null) {
@@ -171,6 +215,14 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
         onLoadPersonasDeOrden,
     required TResult Function(OnLoadPersonasDeOrdenPersona value)
         onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadOrdenes(this);
   }
@@ -183,6 +235,12 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
     TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult? Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadOrdenes?.call(this);
   }
@@ -195,6 +253,12 @@ class _$OnLoadOrdenes implements OnLoadOrdenes {
     TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadOrdenes != null) {
@@ -275,6 +339,10 @@ class _$OnSearch implements OnSearch {
     required TResult Function(String search) onSearch,
     required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
     required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
   }) {
     return onSearch(search);
   }
@@ -286,6 +354,10 @@ class _$OnSearch implements OnSearch {
     TResult? Function(String search)? onSearch,
     TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
   }) {
     return onSearch?.call(search);
   }
@@ -297,6 +369,10 @@ class _$OnSearch implements OnSearch {
     TResult Function(String search)? onSearch,
     TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -314,6 +390,14 @@ class _$OnSearch implements OnSearch {
         onLoadPersonasDeOrden,
     required TResult Function(OnLoadPersonasDeOrdenPersona value)
         onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onSearch(this);
   }
@@ -326,6 +410,12 @@ class _$OnSearch implements OnSearch {
     TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult? Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onSearch?.call(this);
   }
@@ -338,6 +428,12 @@ class _$OnSearch implements OnSearch {
     TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onSearch != null) {
@@ -426,6 +522,10 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
     required TResult Function(String search) onSearch,
     required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
     required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrden(ordenTrabajoId);
   }
@@ -437,6 +537,10 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
     TResult? Function(String search)? onSearch,
     TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrden?.call(ordenTrabajoId);
   }
@@ -448,6 +552,10 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
     TResult Function(String search)? onSearch,
     TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeOrden != null) {
@@ -465,6 +573,14 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
         onLoadPersonasDeOrden,
     required TResult Function(OnLoadPersonasDeOrdenPersona value)
         onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrden(this);
   }
@@ -477,6 +593,12 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
     TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult? Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrden?.call(this);
   }
@@ -489,6 +611,12 @@ class _$OnLoadPersonasDeOrden implements OnLoadPersonasDeOrden {
     TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeOrden != null) {
@@ -554,6 +682,10 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
     required TResult Function(String search) onSearch,
     required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
     required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrdenPersona();
   }
@@ -565,6 +697,10 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
     TResult? Function(String search)? onSearch,
     TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrdenPersona?.call();
   }
@@ -576,6 +712,10 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
     TResult Function(String search)? onSearch,
     TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
     TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeOrdenPersona != null) {
@@ -593,6 +733,14 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
         onLoadPersonasDeOrden,
     required TResult Function(OnLoadPersonasDeOrdenPersona value)
         onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrdenPersona(this);
   }
@@ -605,6 +753,12 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
     TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult? Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
   }) {
     return onLoadPersonasDeOrdenPersona?.call(this);
   }
@@ -617,6 +771,12 @@ class _$OnLoadPersonasDeOrdenPersona implements OnLoadPersonasDeOrdenPersona {
     TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
     TResult Function(OnLoadPersonasDeOrdenPersona value)?
         onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
     required TResult orElse(),
   }) {
     if (onLoadPersonasDeOrdenPersona != null) {
@@ -631,14 +791,704 @@ abstract class OnLoadPersonasDeOrdenPersona implements ListadoOrdenesEvent {
 }
 
 /// @nodoc
+abstract class _$$OnLoadMaterialesDeOrdenCopyWith<$Res> {
+  factory _$$OnLoadMaterialesDeOrdenCopyWith(_$OnLoadMaterialesDeOrden value,
+          $Res Function(_$OnLoadMaterialesDeOrden) then) =
+      __$$OnLoadMaterialesDeOrdenCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int ordenTrabajoId});
+}
+
+/// @nodoc
+class __$$OnLoadMaterialesDeOrdenCopyWithImpl<$Res>
+    extends _$ListadoOrdenesEventCopyWithImpl<$Res, _$OnLoadMaterialesDeOrden>
+    implements _$$OnLoadMaterialesDeOrdenCopyWith<$Res> {
+  __$$OnLoadMaterialesDeOrdenCopyWithImpl(_$OnLoadMaterialesDeOrden _value,
+      $Res Function(_$OnLoadMaterialesDeOrden) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ordenTrabajoId = null,
+  }) {
+    return _then(_$OnLoadMaterialesDeOrden(
+      ordenTrabajoId: null == ordenTrabajoId
+          ? _value.ordenTrabajoId
+          : ordenTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnLoadMaterialesDeOrden implements OnLoadMaterialesDeOrden {
+  const _$OnLoadMaterialesDeOrden({required this.ordenTrabajoId});
+
+  @override
+  final int ordenTrabajoId;
+
+  @override
+  String toString() {
+    return 'ListadoOrdenesEvent.onLoadMaterialesDeOrden(ordenTrabajoId: $ordenTrabajoId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadMaterialesDeOrden &&
+            (identical(other.ordenTrabajoId, ordenTrabajoId) ||
+                other.ordenTrabajoId == ordenTrabajoId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ordenTrabajoId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnLoadMaterialesDeOrdenCopyWith<_$OnLoadMaterialesDeOrden> get copyWith =>
+      __$$OnLoadMaterialesDeOrdenCopyWithImpl<_$OnLoadMaterialesDeOrden>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
+    required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
+    required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrden(ordenTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
+    TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrden?.call(ordenTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
+    TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaterialesDeOrden != null) {
+      return onLoadMaterialesDeOrden(ordenTrabajoId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnLoadPersonasDeOrden value)
+        onLoadPersonasDeOrden,
+    required TResult Function(OnLoadPersonasDeOrdenPersona value)
+        onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrden(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult? Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrden?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaterialesDeOrden != null) {
+      return onLoadMaterialesDeOrden(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadMaterialesDeOrden implements ListadoOrdenesEvent {
+  const factory OnLoadMaterialesDeOrden({required final int ordenTrabajoId}) =
+      _$OnLoadMaterialesDeOrden;
+
+  int get ordenTrabajoId;
+  @JsonKey(ignore: true)
+  _$$OnLoadMaterialesDeOrdenCopyWith<_$OnLoadMaterialesDeOrden> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnLoadMaterialesDeOrdenMaterialCopyWith<$Res> {
+  factory _$$OnLoadMaterialesDeOrdenMaterialCopyWith(
+          _$OnLoadMaterialesDeOrdenMaterial value,
+          $Res Function(_$OnLoadMaterialesDeOrdenMaterial) then) =
+      __$$OnLoadMaterialesDeOrdenMaterialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnLoadMaterialesDeOrdenMaterialCopyWithImpl<$Res>
+    extends _$ListadoOrdenesEventCopyWithImpl<$Res,
+        _$OnLoadMaterialesDeOrdenMaterial>
+    implements _$$OnLoadMaterialesDeOrdenMaterialCopyWith<$Res> {
+  __$$OnLoadMaterialesDeOrdenMaterialCopyWithImpl(
+      _$OnLoadMaterialesDeOrdenMaterial _value,
+      $Res Function(_$OnLoadMaterialesDeOrdenMaterial) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnLoadMaterialesDeOrdenMaterial
+    implements OnLoadMaterialesDeOrdenMaterial {
+  const _$OnLoadMaterialesDeOrdenMaterial();
+
+  @override
+  String toString() {
+    return 'ListadoOrdenesEvent.onLoadMaterialesDeOrdenMaterial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadMaterialesDeOrdenMaterial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
+    required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
+    required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrdenMaterial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
+    TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrdenMaterial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
+    TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaterialesDeOrdenMaterial != null) {
+      return onLoadMaterialesDeOrdenMaterial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnLoadPersonasDeOrden value)
+        onLoadPersonasDeOrden,
+    required TResult Function(OnLoadPersonasDeOrdenPersona value)
+        onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrdenMaterial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult? Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaterialesDeOrdenMaterial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaterialesDeOrdenMaterial != null) {
+      return onLoadMaterialesDeOrdenMaterial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadMaterialesDeOrdenMaterial implements ListadoOrdenesEvent {
+  const factory OnLoadMaterialesDeOrdenMaterial() =
+      _$OnLoadMaterialesDeOrdenMaterial;
+}
+
+/// @nodoc
+abstract class _$$OnLoadMaquinasDeOrdenCopyWith<$Res> {
+  factory _$$OnLoadMaquinasDeOrdenCopyWith(_$OnLoadMaquinasDeOrden value,
+          $Res Function(_$OnLoadMaquinasDeOrden) then) =
+      __$$OnLoadMaquinasDeOrdenCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int ordenTrabajoId});
+}
+
+/// @nodoc
+class __$$OnLoadMaquinasDeOrdenCopyWithImpl<$Res>
+    extends _$ListadoOrdenesEventCopyWithImpl<$Res, _$OnLoadMaquinasDeOrden>
+    implements _$$OnLoadMaquinasDeOrdenCopyWith<$Res> {
+  __$$OnLoadMaquinasDeOrdenCopyWithImpl(_$OnLoadMaquinasDeOrden _value,
+      $Res Function(_$OnLoadMaquinasDeOrden) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ordenTrabajoId = null,
+  }) {
+    return _then(_$OnLoadMaquinasDeOrden(
+      ordenTrabajoId: null == ordenTrabajoId
+          ? _value.ordenTrabajoId
+          : ordenTrabajoId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnLoadMaquinasDeOrden implements OnLoadMaquinasDeOrden {
+  const _$OnLoadMaquinasDeOrden({required this.ordenTrabajoId});
+
+  @override
+  final int ordenTrabajoId;
+
+  @override
+  String toString() {
+    return 'ListadoOrdenesEvent.onLoadMaquinasDeOrden(ordenTrabajoId: $ordenTrabajoId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadMaquinasDeOrden &&
+            (identical(other.ordenTrabajoId, ordenTrabajoId) ||
+                other.ordenTrabajoId == ordenTrabajoId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ordenTrabajoId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnLoadMaquinasDeOrdenCopyWith<_$OnLoadMaquinasDeOrden> get copyWith =>
+      __$$OnLoadMaquinasDeOrdenCopyWithImpl<_$OnLoadMaquinasDeOrden>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
+    required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
+    required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrden(ordenTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
+    TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrden?.call(ordenTrabajoId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
+    TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaquinasDeOrden != null) {
+      return onLoadMaquinasDeOrden(ordenTrabajoId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnLoadPersonasDeOrden value)
+        onLoadPersonasDeOrden,
+    required TResult Function(OnLoadPersonasDeOrdenPersona value)
+        onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrden(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult? Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrden?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaquinasDeOrden != null) {
+      return onLoadMaquinasDeOrden(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadMaquinasDeOrden implements ListadoOrdenesEvent {
+  const factory OnLoadMaquinasDeOrden({required final int ordenTrabajoId}) =
+      _$OnLoadMaquinasDeOrden;
+
+  int get ordenTrabajoId;
+  @JsonKey(ignore: true)
+  _$$OnLoadMaquinasDeOrdenCopyWith<_$OnLoadMaquinasDeOrden> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnLoadMaquinasDeOrdenMaquinaCopyWith<$Res> {
+  factory _$$OnLoadMaquinasDeOrdenMaquinaCopyWith(
+          _$OnLoadMaquinasDeOrdenMaquina value,
+          $Res Function(_$OnLoadMaquinasDeOrdenMaquina) then) =
+      __$$OnLoadMaquinasDeOrdenMaquinaCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnLoadMaquinasDeOrdenMaquinaCopyWithImpl<$Res>
+    extends _$ListadoOrdenesEventCopyWithImpl<$Res,
+        _$OnLoadMaquinasDeOrdenMaquina>
+    implements _$$OnLoadMaquinasDeOrdenMaquinaCopyWith<$Res> {
+  __$$OnLoadMaquinasDeOrdenMaquinaCopyWithImpl(
+      _$OnLoadMaquinasDeOrdenMaquina _value,
+      $Res Function(_$OnLoadMaquinasDeOrdenMaquina) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnLoadMaquinasDeOrdenMaquina implements OnLoadMaquinasDeOrdenMaquina {
+  const _$OnLoadMaquinasDeOrdenMaquina();
+
+  @override
+  String toString() {
+    return 'ListadoOrdenesEvent.onLoadMaquinasDeOrdenMaquina()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnLoadMaquinasDeOrdenMaquina);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onLoadOrdenes,
+    required TResult Function(String search) onSearch,
+    required TResult Function(int ordenTrabajoId) onLoadPersonasDeOrden,
+    required TResult Function() onLoadPersonasDeOrdenPersona,
+    required TResult Function(int ordenTrabajoId) onLoadMaterialesDeOrden,
+    required TResult Function() onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(int ordenTrabajoId) onLoadMaquinasDeOrden,
+    required TResult Function() onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrdenMaquina();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onLoadOrdenes,
+    TResult? Function(String search)? onSearch,
+    TResult? Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult? Function()? onLoadPersonasDeOrdenPersona,
+    TResult? Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult? Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult? Function()? onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrdenMaquina?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onLoadOrdenes,
+    TResult Function(String search)? onSearch,
+    TResult Function(int ordenTrabajoId)? onLoadPersonasDeOrden,
+    TResult Function()? onLoadPersonasDeOrdenPersona,
+    TResult Function(int ordenTrabajoId)? onLoadMaterialesDeOrden,
+    TResult Function()? onLoadMaterialesDeOrdenMaterial,
+    TResult Function(int ordenTrabajoId)? onLoadMaquinasDeOrden,
+    TResult Function()? onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaquinasDeOrdenMaquina != null) {
+      return onLoadMaquinasDeOrdenMaquina();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnLoadOrdenes value) onLoadOrdenes,
+    required TResult Function(OnSearch value) onSearch,
+    required TResult Function(OnLoadPersonasDeOrden value)
+        onLoadPersonasDeOrden,
+    required TResult Function(OnLoadPersonasDeOrdenPersona value)
+        onLoadPersonasDeOrdenPersona,
+    required TResult Function(OnLoadMaterialesDeOrden value)
+        onLoadMaterialesDeOrden,
+    required TResult Function(OnLoadMaterialesDeOrdenMaterial value)
+        onLoadMaterialesDeOrdenMaterial,
+    required TResult Function(OnLoadMaquinasDeOrden value)
+        onLoadMaquinasDeOrden,
+    required TResult Function(OnLoadMaquinasDeOrdenMaquina value)
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrdenMaquina(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult? Function(OnSearch value)? onSearch,
+    TResult? Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult? Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult? Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult? Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult? Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult? Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+  }) {
+    return onLoadMaquinasDeOrdenMaquina?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnLoadOrdenes value)? onLoadOrdenes,
+    TResult Function(OnSearch value)? onSearch,
+    TResult Function(OnLoadPersonasDeOrden value)? onLoadPersonasDeOrden,
+    TResult Function(OnLoadPersonasDeOrdenPersona value)?
+        onLoadPersonasDeOrdenPersona,
+    TResult Function(OnLoadMaterialesDeOrden value)? onLoadMaterialesDeOrden,
+    TResult Function(OnLoadMaterialesDeOrdenMaterial value)?
+        onLoadMaterialesDeOrdenMaterial,
+    TResult Function(OnLoadMaquinasDeOrden value)? onLoadMaquinasDeOrden,
+    TResult Function(OnLoadMaquinasDeOrdenMaquina value)?
+        onLoadMaquinasDeOrdenMaquina,
+    required TResult orElse(),
+  }) {
+    if (onLoadMaquinasDeOrdenMaquina != null) {
+      return onLoadMaquinasDeOrdenMaquina(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnLoadMaquinasDeOrdenMaquina implements ListadoOrdenesEvent {
+  const factory OnLoadMaquinasDeOrdenMaquina() = _$OnLoadMaquinasDeOrdenMaquina;
+}
+
+/// @nodoc
 mixin _$ListadoOrdenesState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   List<OrdenTrabajo> get listOrdenesTrabajo =>
       throw _privateConstructorUsedError;
+
+  /// Personas
   List<OrdenPersona> get listOrdenPersonas =>
       throw _privateConstructorUsedError;
   List<Persona> get listPersonas => throw _privateConstructorUsedError;
+
+  /// Materiales
+  List<OrdenMaterial> get listOrdenMateriales =>
+      throw _privateConstructorUsedError;
+  List<Materiall> get listMateriales => throw _privateConstructorUsedError;
+
+  /// Máquinas
+  List<OrdenMaquina> get listOrdenMaquinas =>
+      throw _privateConstructorUsedError;
+  List<Maquina> get listMaquinas => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListadoOrdenesStateCopyWith<ListadoOrdenesState> get copyWith =>
@@ -656,7 +1506,11 @@ abstract class $ListadoOrdenesStateCopyWith<$Res> {
       bool isError,
       List<OrdenTrabajo> listOrdenesTrabajo,
       List<OrdenPersona> listOrdenPersonas,
-      List<Persona> listPersonas});
+      List<Persona> listPersonas,
+      List<OrdenMaterial> listOrdenMateriales,
+      List<Materiall> listMateriales,
+      List<OrdenMaquina> listOrdenMaquinas,
+      List<Maquina> listMaquinas});
 }
 
 /// @nodoc
@@ -677,6 +1531,10 @@ class _$ListadoOrdenesStateCopyWithImpl<$Res, $Val extends ListadoOrdenesState>
     Object? listOrdenesTrabajo = null,
     Object? listOrdenPersonas = null,
     Object? listPersonas = null,
+    Object? listOrdenMateriales = null,
+    Object? listMateriales = null,
+    Object? listOrdenMaquinas = null,
+    Object? listMaquinas = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -699,6 +1557,22 @@ class _$ListadoOrdenesStateCopyWithImpl<$Res, $Val extends ListadoOrdenesState>
           ? _value.listPersonas
           : listPersonas // ignore: cast_nullable_to_non_nullable
               as List<Persona>,
+      listOrdenMateriales: null == listOrdenMateriales
+          ? _value.listOrdenMateriales
+          : listOrdenMateriales // ignore: cast_nullable_to_non_nullable
+              as List<OrdenMaterial>,
+      listMateriales: null == listMateriales
+          ? _value.listMateriales
+          : listMateriales // ignore: cast_nullable_to_non_nullable
+              as List<Materiall>,
+      listOrdenMaquinas: null == listOrdenMaquinas
+          ? _value.listOrdenMaquinas
+          : listOrdenMaquinas // ignore: cast_nullable_to_non_nullable
+              as List<OrdenMaquina>,
+      listMaquinas: null == listMaquinas
+          ? _value.listMaquinas
+          : listMaquinas // ignore: cast_nullable_to_non_nullable
+              as List<Maquina>,
     ) as $Val);
   }
 }
@@ -716,7 +1590,11 @@ abstract class _$$_ListadoOrdenesStateCopyWith<$Res>
       bool isError,
       List<OrdenTrabajo> listOrdenesTrabajo,
       List<OrdenPersona> listOrdenPersonas,
-      List<Persona> listPersonas});
+      List<Persona> listPersonas,
+      List<OrdenMaterial> listOrdenMateriales,
+      List<Materiall> listMateriales,
+      List<OrdenMaquina> listOrdenMaquinas,
+      List<Maquina> listMaquinas});
 }
 
 /// @nodoc
@@ -735,6 +1613,10 @@ class __$$_ListadoOrdenesStateCopyWithImpl<$Res>
     Object? listOrdenesTrabajo = null,
     Object? listOrdenPersonas = null,
     Object? listPersonas = null,
+    Object? listOrdenMateriales = null,
+    Object? listMateriales = null,
+    Object? listOrdenMaquinas = null,
+    Object? listMaquinas = null,
   }) {
     return _then(_$_ListadoOrdenesState(
       isLoading: null == isLoading
@@ -757,6 +1639,22 @@ class __$$_ListadoOrdenesStateCopyWithImpl<$Res>
           ? _value._listPersonas
           : listPersonas // ignore: cast_nullable_to_non_nullable
               as List<Persona>,
+      listOrdenMateriales: null == listOrdenMateriales
+          ? _value._listOrdenMateriales
+          : listOrdenMateriales // ignore: cast_nullable_to_non_nullable
+              as List<OrdenMaterial>,
+      listMateriales: null == listMateriales
+          ? _value._listMateriales
+          : listMateriales // ignore: cast_nullable_to_non_nullable
+              as List<Materiall>,
+      listOrdenMaquinas: null == listOrdenMaquinas
+          ? _value._listOrdenMaquinas
+          : listOrdenMaquinas // ignore: cast_nullable_to_non_nullable
+              as List<OrdenMaquina>,
+      listMaquinas: null == listMaquinas
+          ? _value._listMaquinas
+          : listMaquinas // ignore: cast_nullable_to_non_nullable
+              as List<Maquina>,
     ));
   }
 }
@@ -769,10 +1667,18 @@ class _$_ListadoOrdenesState implements _ListadoOrdenesState {
       required this.isError,
       required final List<OrdenTrabajo> listOrdenesTrabajo,
       required final List<OrdenPersona> listOrdenPersonas,
-      required final List<Persona> listPersonas})
+      required final List<Persona> listPersonas,
+      required final List<OrdenMaterial> listOrdenMateriales,
+      required final List<Materiall> listMateriales,
+      required final List<OrdenMaquina> listOrdenMaquinas,
+      required final List<Maquina> listMaquinas})
       : _listOrdenesTrabajo = listOrdenesTrabajo,
         _listOrdenPersonas = listOrdenPersonas,
-        _listPersonas = listPersonas;
+        _listPersonas = listPersonas,
+        _listOrdenMateriales = listOrdenMateriales,
+        _listMateriales = listMateriales,
+        _listOrdenMaquinas = listOrdenMaquinas,
+        _listMaquinas = listMaquinas;
 
   @override
   final bool isLoading;
@@ -787,7 +1693,10 @@ class _$_ListadoOrdenesState implements _ListadoOrdenesState {
     return EqualUnmodifiableListView(_listOrdenesTrabajo);
   }
 
+  /// Personas
   final List<OrdenPersona> _listOrdenPersonas;
+
+  /// Personas
   @override
   List<OrdenPersona> get listOrdenPersonas {
     if (_listOrdenPersonas is EqualUnmodifiableListView)
@@ -804,9 +1713,49 @@ class _$_ListadoOrdenesState implements _ListadoOrdenesState {
     return EqualUnmodifiableListView(_listPersonas);
   }
 
+  /// Materiales
+  final List<OrdenMaterial> _listOrdenMateriales;
+
+  /// Materiales
+  @override
+  List<OrdenMaterial> get listOrdenMateriales {
+    if (_listOrdenMateriales is EqualUnmodifiableListView)
+      return _listOrdenMateriales;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listOrdenMateriales);
+  }
+
+  final List<Materiall> _listMateriales;
+  @override
+  List<Materiall> get listMateriales {
+    if (_listMateriales is EqualUnmodifiableListView) return _listMateriales;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listMateriales);
+  }
+
+  /// Máquinas
+  final List<OrdenMaquina> _listOrdenMaquinas;
+
+  /// Máquinas
+  @override
+  List<OrdenMaquina> get listOrdenMaquinas {
+    if (_listOrdenMaquinas is EqualUnmodifiableListView)
+      return _listOrdenMaquinas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listOrdenMaquinas);
+  }
+
+  final List<Maquina> _listMaquinas;
+  @override
+  List<Maquina> get listMaquinas {
+    if (_listMaquinas is EqualUnmodifiableListView) return _listMaquinas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listMaquinas);
+  }
+
   @override
   String toString() {
-    return 'ListadoOrdenesState(isLoading: $isLoading, isError: $isError, listOrdenesTrabajo: $listOrdenesTrabajo, listOrdenPersonas: $listOrdenPersonas, listPersonas: $listPersonas)';
+    return 'ListadoOrdenesState(isLoading: $isLoading, isError: $isError, listOrdenesTrabajo: $listOrdenesTrabajo, listOrdenPersonas: $listOrdenPersonas, listPersonas: $listPersonas, listOrdenMateriales: $listOrdenMateriales, listMateriales: $listMateriales, listOrdenMaquinas: $listOrdenMaquinas, listMaquinas: $listMaquinas)';
   }
 
   @override
@@ -822,7 +1771,15 @@ class _$_ListadoOrdenesState implements _ListadoOrdenesState {
             const DeepCollectionEquality()
                 .equals(other._listOrdenPersonas, _listOrdenPersonas) &&
             const DeepCollectionEquality()
-                .equals(other._listPersonas, _listPersonas));
+                .equals(other._listPersonas, _listPersonas) &&
+            const DeepCollectionEquality()
+                .equals(other._listOrdenMateriales, _listOrdenMateriales) &&
+            const DeepCollectionEquality()
+                .equals(other._listMateriales, _listMateriales) &&
+            const DeepCollectionEquality()
+                .equals(other._listOrdenMaquinas, _listOrdenMaquinas) &&
+            const DeepCollectionEquality()
+                .equals(other._listMaquinas, _listMaquinas));
   }
 
   @override
@@ -832,7 +1789,11 @@ class _$_ListadoOrdenesState implements _ListadoOrdenesState {
       isError,
       const DeepCollectionEquality().hash(_listOrdenesTrabajo),
       const DeepCollectionEquality().hash(_listOrdenPersonas),
-      const DeepCollectionEquality().hash(_listPersonas));
+      const DeepCollectionEquality().hash(_listPersonas),
+      const DeepCollectionEquality().hash(_listOrdenMateriales),
+      const DeepCollectionEquality().hash(_listMateriales),
+      const DeepCollectionEquality().hash(_listOrdenMaquinas),
+      const DeepCollectionEquality().hash(_listMaquinas));
 
   @JsonKey(ignore: true)
   @override
@@ -848,7 +1809,11 @@ abstract class _ListadoOrdenesState implements ListadoOrdenesState {
       required final bool isError,
       required final List<OrdenTrabajo> listOrdenesTrabajo,
       required final List<OrdenPersona> listOrdenPersonas,
-      required final List<Persona> listPersonas}) = _$_ListadoOrdenesState;
+      required final List<Persona> listPersonas,
+      required final List<OrdenMaterial> listOrdenMateriales,
+      required final List<Materiall> listMateriales,
+      required final List<OrdenMaquina> listOrdenMaquinas,
+      required final List<Maquina> listMaquinas}) = _$_ListadoOrdenesState;
 
   @override
   bool get isLoading;
@@ -857,9 +1822,23 @@ abstract class _ListadoOrdenesState implements ListadoOrdenesState {
   @override
   List<OrdenTrabajo> get listOrdenesTrabajo;
   @override
+
+  /// Personas
   List<OrdenPersona> get listOrdenPersonas;
   @override
   List<Persona> get listPersonas;
+  @override
+
+  /// Materiales
+  List<OrdenMaterial> get listOrdenMateriales;
+  @override
+  List<Materiall> get listMateriales;
+  @override
+
+  /// Máquinas
+  List<OrdenMaquina> get listOrdenMaquinas;
+  @override
+  List<Maquina> get listMaquinas;
   @override
   @JsonKey(ignore: true)
   _$$_ListadoOrdenesStateCopyWith<_$_ListadoOrdenesState> get copyWith =>

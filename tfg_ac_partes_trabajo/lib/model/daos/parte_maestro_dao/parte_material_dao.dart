@@ -1,40 +1,40 @@
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
-import 'package:tfg_ac_partes_trabajo/model/models/parte_persona.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/parte_maestro/parte_material.dart';
 
-class PartePersonaDao {
-  static final PartePersonaDao _instance = PartePersonaDao._internal();
+class ParteMaterialDao {
+  static final ParteMaterialDao _instance = ParteMaterialDao._internal();
 
-  PartePersonaDao._internal();
+  ParteMaterialDao._internal();
 
-  static PartePersonaDao get instance => _instance;
+  static ParteMaterialDao get instance => _instance;
 
-  final String _tableName = 'partesPersonas';
+  final String _tableName = 'partesMateriales';
 
-  Future<PartePersona?> get(int parteTrabajoId, int personaId) async {
+  Future<ParteMaterial?> get(int parteTrabajoId, int materialId) async {
     final db = await MyDatabase.instance.database;
     final maps = await db.query(
       _tableName,
-      where: 'parteTrabajoId = ? AND personaId = ?',
-      whereArgs: [parteTrabajoId, personaId],
+      where: 'parteTrabajoId = ? AND materialId = ?',
+      whereArgs: [parteTrabajoId, materialId],
     );
 
     if (maps.isNotEmpty) {
-      return PartePersona.fromMap(maps.first);
+      return ParteMaterial.fromMap(maps.first);
     } else {
       return null;
     }
   }
 
-  Future<List<PartePersona>> getAll() async {
+  Future<List<ParteMaterial>> getAll() async {
     final db = await MyDatabase.instance.database;
     final List<Map<String, dynamic>> maps = await db.query(_tableName);
 
     return List.generate(maps.length, (i) {
-      return PartePersona.fromMap(maps[i]);
+      return ParteMaterial.fromMap(maps[i]);
     });
   }
 
-  Future<List<PartePersona>> getAllPersonasDeParte(
+  Future<List<ParteMaterial>> getAllMaterialesDeParte(
       {required int parteTrabajoId}) async {
     final db = await MyDatabase.instance.database;
     final List<Map<String, dynamic>> maps = await db.query(
@@ -44,29 +44,29 @@ class PartePersonaDao {
     );
 
     return List.generate(maps.length, (i) {
-      return PartePersona.fromMap(maps[i]);
+      return ParteMaterial.fromMap(maps[i]);
     });
   }
 
-  Future<PartePersona?> getPersonaDeParteFiltered({
+  Future<ParteMaterial?> getMaterialDeParteFiltered({
     required int parteTrabajoId,
-    required int personaId,
+    required int materialId,
   }) async {
     final db = await MyDatabase.instance.database;
     final List<Map<String, dynamic>> maps = await db.query(
       _tableName,
-      where: 'parteTrabajoId = ? AND personaId = ?',
-      whereArgs: [parteTrabajoId, personaId],
+      where: 'parteTrabajoId = ? AND materialId = ?',
+      whereArgs: [parteTrabajoId, materialId],
     );
 
     if (maps.isNotEmpty) {
-      return PartePersona.fromMap(maps.first);
+      return ParteMaterial.fromMap(maps.first);
     } else {
       return null;
     }
   }
 
-  Future<int> create(PartePersona obj) async {
+  Future<int> create(ParteMaterial obj) async {
     final db = await MyDatabase.instance.database;
     final id = await db.insert(_tableName, obj.toMap());
     // obj.id = id;
@@ -74,22 +74,22 @@ class PartePersonaDao {
   }
 
   // Devuelve el número de filas afectadas
-  Future<int> update(PartePersona obj) async {
+  Future<int> update(ParteMaterial obj) async {
     final db = await MyDatabase.instance.database;
     return await db.update(
       _tableName,
       obj.toMap(),
-      where: 'parteTrabajoId = ? AND personaId = ?',
-      whereArgs: [obj.parteTrabajoId, obj.personaId],
+      where: 'parteTrabajoId = ? AND materialId = ?',
+      whereArgs: [obj.parteTrabajoId, obj.materialId],
     );
   }
 
-  Future<int> delete(int parteTrabajoId, int personaId) async {
+  Future<int> delete(int parteTrabajoId, int materialId) async {
     final db = await MyDatabase.instance.database;
     return await db.delete(
       _tableName,
-      where: 'parteTrabajoId = ? AND personaId = ?',
-      whereArgs: [parteTrabajoId, personaId],
+      where: 'parteTrabajoId = ? AND materialId = ?',
+      whereArgs: [parteTrabajoId, materialId],
     );
   }
 

@@ -8,7 +8,9 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
-import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/orden_personas_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/orden_maestros/orden_maquinas_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/orden_maestros/orden_materiales_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/orden_maestros/orden_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -109,6 +111,42 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                     MaterialPageRoute(
                       builder: (context) =>
                           OrdenPersonasPage(ordenTrabajo: widget.ordenTrabajo),
+                    ),
+                  );
+                }),
+          )),
+          SliverToBoxAdapter(
+              child: Container(
+            padding:
+                const EdgeInsets.only(top: 0, bottom: 15, left: 24, right: 24),
+            child: SecondaryButtonWidget(
+                textButton: "Materiales",
+                disabled: false,
+                context: context,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrdenMaterialesPage(
+                          ordenTrabajo: widget.ordenTrabajo),
+                    ),
+                  );
+                }),
+          )),
+          SliverToBoxAdapter(
+              child: Container(
+            padding:
+                const EdgeInsets.only(top: 0, bottom: 15, left: 24, right: 24),
+            child: SecondaryButtonWidget(
+                textButton: "Maquinaria",
+                disabled: false,
+                context: context,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          OrdenMaquinasPage(ordenTrabajo: widget.ordenTrabajo),
                     ),
                   );
                 }),

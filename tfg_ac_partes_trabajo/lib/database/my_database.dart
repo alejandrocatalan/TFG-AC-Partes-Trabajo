@@ -83,12 +83,12 @@ class MyDatabase {
       )
       ''');
 
-    await db.execute('''
-      CREATE TABLE IF NOT EXISTS subcontratas (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        descripcion TEXT NOT NULL
-      )
-      ''');
+    // await db.execute('''
+    //   CREATE TABLE IF NOT EXISTS subcontratas (
+    //     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    //     descripcion TEXT NOT NULL
+    //   )
+    //   ''');
 
     await db.execute('''
       CREATE TABLE IF NOT EXISTS ordenesPersonas (
@@ -109,6 +109,46 @@ class MyDatabase {
         FOREIGN KEY (personaId) REFERENCES personas(id)
       )
       ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS ordenesMateriales (
+        ordenTrabajoId INTEGER NOT NULL,
+        materialId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (ordenTrabajoId) REFERENCES ordenesTrabajo(id),
+        FOREIGN KEY (materialId) REFERENCES materiales(id)
+      )
+      ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS partesMateriales (
+        parteTrabajoId INTEGER NOT NULL,
+        materialId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (parteTrabajoId) REFERENCES partesTrabajo(id),
+        FOREIGN KEY (materialId) REFERENCES materiales(id)
+      )
+      ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS ordenesMaquinas (
+        ordenTrabajoId INTEGER NOT NULL,
+        maquinaId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (ordenTrabajoId) REFERENCES ordenesTrabajo(id),
+        FOREIGN KEY (maquinaId) REFERENCES maquinas(id)
+      )
+      ''');
+
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS partesMaquinas (
+        parteTrabajoId INTEGER NOT NULL,
+        maquinaId INTEGER NOT NULL,
+        horas DOUBLE NOT NULL,
+        FOREIGN KEY (parteTrabajoId) REFERENCES partesTrabajo(id),
+        FOREIGN KEY (maquinaId) REFERENCES maquinas(id)
+      )
+      ''');
   }
 
   Future<void> clearDatabase() async {
@@ -120,7 +160,12 @@ class MyDatabase {
     await db.delete('personas');
     await db.delete('maquinas');
     await db.delete('materiales');
-    await db.delete('subcontratas');
+    await db.delete('ordenesPersonas');
+    await db.delete('partesPersonas');
+    await db.delete('ordenesMateriales');
+    await db.delete('partesMateriales');
+    await db.delete('ordenesMaquinas');
+    await db.delete('partesMaquinas');
 
     // Reiniciar el valor del autoincrement de todas las tablas
     await db
@@ -129,7 +174,18 @@ class MyDatabase {
     await db.execute('DELETE FROM sqlite_sequence WHERE name="personas";');
     await db.execute('DELETE FROM sqlite_sequence WHERE name="maquinas";');
     await db.execute('DELETE FROM sqlite_sequence WHERE name="materiales";');
-    await db.execute('DELETE FROM sqlite_sequence WHERE name="subcontratas";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="ordenesPersonas";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="partesPersonas";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="ordenesMateriales";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="partesMateriales";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="ordenesMaquinas";');
+    await db
+        .execute('DELETE FROM sqlite_sequence WHERE name="partesMaquinas";');
   }
 
   Future close() async {

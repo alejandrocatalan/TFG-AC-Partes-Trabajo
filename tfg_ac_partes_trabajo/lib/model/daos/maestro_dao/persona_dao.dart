@@ -1,6 +1,6 @@
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
-import 'package:tfg_ac_partes_trabajo/model/models/persona.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/maestro/persona.dart';
 
 class PersonaDao extends BaseDao<Persona> {
   static final PersonaDao _instance = PersonaDao._internal();

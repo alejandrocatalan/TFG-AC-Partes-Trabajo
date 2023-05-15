@@ -16,9 +16,19 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
   const factory ListadoPartesEvent.onUpdateParte(
       {required ParteTrabajo parteTrabajo}) = OnUpdateParte;
 
-  const factory ListadoPartesEvent.onCleanLastParteModified() =
-      OnCleanLastParteModified;
+  // const factory ListadoPartesEvent.onCleanLastParteModified() =
+  //     OnCleanLastParteModified;
 
+  // const factory ListadoPartesEvent.onChangeButtonMapState({
+  //   required bool buttonState,
+  //   required int index,
+  // }) = OnChangeButtonMapState;
+
+  const factory ListadoPartesEvent.onChangeButtonState({
+    required bool buttonState,
+  }) = OnChangeButtonState;
+
+  /// Personas
   const factory ListadoPartesEvent.onLoadPersonasDeParte(
       {required int parteTrabajoId}) = OnLoadPersonasDeParte;
 
@@ -34,12 +44,34 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
       String? hours,
       String? mins}) = OnUpdateHoursPartePersona;
 
-  const factory ListadoPartesEvent.onChangeButtonMapState({
-    required bool buttonState,
-    required int index,
-  }) = OnChangeButtonMapState;
+  /// Materiales
+  const factory ListadoPartesEvent.onLoadMaterialesDeParte(
+      {required int parteTrabajoId}) = OnLoadMaterialesDeParte;
 
-  const factory ListadoPartesEvent.onChangeButtonState({
-    required bool buttonState,
-  }) = OnChangeButtonState;
+  const factory ListadoPartesEvent.onLoadMaterialesDeParteMaterial() =
+      OnLoadMaterialesDeParteMaterial;
+
+  const factory ListadoPartesEvent.onSearchMaterial(
+      {required int parteTrabajoId, required String search}) = OnSearchMaterial;
+
+  const factory ListadoPartesEvent.onUpdateUnidadesParteMaterial(
+      {required int parteTrabajoId,
+      required int materialId,
+      required String unidades}) = OnUpdateUnidadesParteMaterial;
+
+  /// Máquinas
+  const factory ListadoPartesEvent.onLoadMaquinasDeParte(
+      {required int parteTrabajoId}) = OnLoadMaquinasDeParte;
+
+  const factory ListadoPartesEvent.onLoadMaquinasDeParteMaquina() =
+      OnLoadMaquinasDeParteMaquina;
+
+  const factory ListadoPartesEvent.onSearchMaquina(
+      {required int parteTrabajoId, required String search}) = OnSearchMaquina;
+
+  const factory ListadoPartesEvent.onUpdateHoursParteMaquina(
+      {required int parteTrabajoId,
+      required int maquinaId,
+      String? hours,
+      String? mins}) = OnUpdateHoursParteMaquina;
 }

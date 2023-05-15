@@ -7,31 +7,31 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
-import 'package:tfg_ac_partes_trabajo/model/models/parte_persona.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/maestro/maquina.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/parte_maestro/parte_maquina.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
-import 'package:tfg_ac_partes_trabajo/model/models/persona.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 import 'package:tfg_ac_partes_trabajo/utils/utilities.dart';
 
-class PartePersonasPage extends StatefulWidget {
+class ParteMaquinasPage extends StatefulWidget {
   final ParteTrabajo parteTrabajo;
 
-  const PartePersonasPage({Key? key, required this.parteTrabajo})
+  const ParteMaquinasPage({Key? key, required this.parteTrabajo})
       : super(key: key);
 
   @override
-  State<PartePersonasPage> createState() => _PartePersonasPageState();
+  State<ParteMaquinasPage> createState() => _ParteMaquinasPageState();
 }
 
-class _PartePersonasPageState extends State<PartePersonasPage> {
+class _ParteMaquinasPageState extends State<ParteMaquinasPage> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     context.read<ListadoPartesBloc>().add(
-        ListadoPartesEvent.onLoadPersonasDeParte(
+        ListadoPartesEvent.onLoadMaquinasDeParte(
             parteTrabajoId: widget.parteTrabajo.id!));
 
     super.initState();
@@ -53,8 +53,8 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
             }
           },
           buildWhen: (previous, current) =>
-              previous.listPartePersonas != current.listPartePersonas ||
-              previous.listPersonas != current.listPersonas,
+              previous.listParteMaquinas != current.listParteMaquinas ||
+              previous.listMaquinas != current.listMaquinas,
           builder: (context, state) {
             return Container(
               width: double.maxFinite,
@@ -70,7 +70,7 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
                       keyboardType: TextInputType.text,
                       onChanged: (String value) {
                         context.read<ListadoPartesBloc>().add(
-                            ListadoPartesEvent.onSearchPersona(
+                            ListadoPartesEvent.onSearchMaquina(
                                 parteTrabajoId: widget.parteTrabajo.id!,
                                 search: value));
                       },
@@ -83,9 +83,9 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
                     margin: const EdgeInsets.only(bottom: 8),
                   ),
                   Expanded(
-                    child: ListViewPersonasDeParte(
-                      personas: state.listPersonas,
-                      partePersonas: state.listPartePersonas,
+                    child: ListViewMaquinasDeParte(
+                      maquinas: state.listMaquinas,
+                      parteMaquinas: state.listParteMaquinas,
                       parteTrabajo: widget.parteTrabajo,
                     ),
                   ),
@@ -97,29 +97,27 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
   }
 }
 
-class ListViewPersonasDeParte extends StatefulWidget {
-  final List<Persona> personas;
-  final List<PartePersona> partePersonas;
+class ListViewMaquinasDeParte extends StatefulWidget {
+  final List<Maquina> maquinas;
+  final List<ParteMaquina> parteMaquinas;
   final ParteTrabajo parteTrabajo;
 
-  const ListViewPersonasDeParte(
+  const ListViewMaquinasDeParte(
       {Key? key,
-      required this.personas,
-      required this.partePersonas,
+      required this.maquinas,
+      required this.parteMaquinas,
       required this.parteTrabajo})
       : super(key: key);
 
   @override
-  State<ListViewPersonasDeParte> createState() =>
-      _ListViewPersonasDeParteState();
+  State<ListViewMaquinasDeParte> createState() =>
+      _ListViewMaquinasDeParteState();
 }
 
-class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
+class _ListViewMaquinasDeParteState extends State<ListViewMaquinasDeParte> {
   late List<Map<String, String>> _dataList;
   final List<TextEditingController> _hoursControllers = [];
   final List<TextEditingController> _minsControllers = [];
-  bool firstTime = true;
-  bool secondTime = false;
 
   @override
   void initState() {
@@ -127,18 +125,17 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
   }
 
   void initialiseDataList() {
-    // Se crea una lista combinando la descripción de Persona y las horas de PartePersona.
+    // Se crea una lista combinando la descripción de Maquina y las horas de ParteMaquina.
     // Se formatea las horas para pasar de double a String --> 2.5 == '2h 30m'
-    _dataList = widget.partePersonas
+    _dataList = widget.parteMaquinas
         .map(
-          (partePersona) => {
-            'parteTrabajoId': partePersona.parteTrabajoId.toString(),
-            'personaId': partePersona.personaId.toString(),
-            'descripcion': widget.personas
-                .firstWhere((p) => p.id == partePersona.personaId)
+          (parteMaquina) => {
+            'parteTrabajoId': parteMaquina.parteTrabajoId.toString(),
+            'maquinaId': parteMaquina.maquinaId.toString(),
+            'descripcion': widget.maquinas
+                .firstWhere((p) => p.id == parteMaquina.maquinaId)
                 .descripcion,
-            'horas': partePersona.horas.toString(),
-            //'horas': convertHours(partePersona.horas),
+            'horas': parteMaquina.horas.toString(),
           },
         )
         .toList();
@@ -150,21 +147,6 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
     for (int i = 0; i < _dataList.length; i++) {
       _hoursControllers.add(TextEditingController());
       _minsControllers.add(TextEditingController());
-
-      // bool buttonState = false;
-      // if (context
-      //     .read<ListadoPartesBloc>()
-      //     .state
-      //     .isButtonEnabledMap
-      //     .containsKey(i)) {
-      //   buttonState =
-      //       context.read<ListadoPartesBloc>().state.isButtonEnabledMap[i]!;
-      //   // debugPrint(buttonState.toString());
-      // } else {
-      //   context.read<ListadoPartesBloc>().add(
-      //       ListadoPartesEvent.onChangeButtonMapState(
-      //           buttonState: false, index: i));
-      // }
     }
   }
 
@@ -210,20 +192,17 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                         if (_hoursControllers[i].text.isNotEmpty ||
                             _minsControllers[i].text.isNotEmpty) {
                           context.read<ListadoPartesBloc>().add(
-                              ListadoPartesEvent.onUpdateHoursPartePersona(
+                              ListadoPartesEvent.onUpdateHoursParteMaquina(
                                   parteTrabajoId: int.parse(
                                       _dataList[i]['parteTrabajoId']!),
-                                  personaId:
-                                      int.parse(_dataList[i]['personaId']!),
+                                  maquinaId:
+                                      int.parse(_dataList[i]['maquinaId']!),
                                   hours: _hoursControllers[i].text.isNotEmpty
                                       ? _hoursControllers[i].text
                                       : null,
                                   mins: _minsControllers[i].text.isNotEmpty
                                       ? _minsControllers[i].text
                                       : null));
-
-                          // _hoursControllers[i].clear();
-                          // _minsControllers[i].clear();
 
                           // Verificar y limpiar los controladores solo si tienen un valor
                           if (_hoursControllers[i].text.isNotEmpty) {
@@ -293,21 +272,11 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                                           .text
                                           .isNotEmpty ||
                                       _minsControllers[index].text.isNotEmpty) {
-                                    // context.read<ListadoPartesBloc>().add(
-                                    //     ListadoPartesEvent
-                                    //         .onChangeButtonMapState(
-                                    //             buttonState: true,
-                                    //             index: index));
                                     context.read<ListadoPartesBloc>().add(
                                         const ListadoPartesEvent
                                                 .onChangeButtonState(
                                             buttonState: true));
                                   } else {
-                                    // context.read<ListadoPartesBloc>().add(
-                                    //     ListadoPartesEvent
-                                    //         .onChangeButtonMapState(
-                                    //             buttonState: false,
-                                    //             index: index));
                                     context.read<ListadoPartesBloc>().add(
                                         const ListadoPartesEvent
                                                 .onChangeButtonState(
@@ -345,21 +314,11 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                                       _hoursControllers[index]
                                           .text
                                           .isNotEmpty) {
-                                    // context.read<ListadoPartesBloc>().add(
-                                    //     ListadoPartesEvent
-                                    //         .onChangeButtonMapState(
-                                    //             buttonState: true,
-                                    //             index: index));
                                     context.read<ListadoPartesBloc>().add(
                                         const ListadoPartesEvent
                                                 .onChangeButtonState(
                                             buttonState: true));
                                   } else {
-                                    // context.read<ListadoPartesBloc>().add(
-                                    //     ListadoPartesEvent
-                                    //         .onChangeButtonMapState(
-                                    //             buttonState: false,
-                                    //             index: index));
                                     context.read<ListadoPartesBloc>().add(
                                         const ListadoPartesEvent
                                                 .onChangeButtonState(
@@ -375,54 +334,6 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                             style: MyFontStyles(MyColorStyles.darkGreyColor)
                                 .getSourceSansPro16Regular(),
                           ),
-                          // const SizedBox(
-                          //   width: 10,
-                          // ),
-                          // BlocBuilder<ListadoPartesBloc, ListadoPartesState>(
-                          //   buildWhen: (previous, current) =>
-                          //       previous.isButtonEnabledMap !=
-                          //       current.isButtonEnabledMap,
-                          //   builder: (context, state) {
-                          //     if (context
-                          //         .read<ListadoPartesBloc>()
-                          //         .state
-                          //         .isButtonEnabledMap
-                          //         .containsKey(index)) {
-                          //       return TinyButton(
-                          //           disabled: !context
-                          //               .read<ListadoPartesBloc>()
-                          //               .state
-                          //               .isButtonEnabledMap[index]!,
-                          //           context: context,
-                          //           onPressed: () {
-                          //             bool buttonState = context
-                          //                 .read<ListadoPartesBloc>()
-                          //                 .state
-                          //                 .isButtonEnabledMap[index]!;
-
-                          //             context.read<ListadoPartesBloc>().add(
-                          //                 ListadoPartesEvent.onChangeButtonMapState(
-                          //                     buttonState: !buttonState,
-                          //                     index: index));
-
-                          //             context.read<ListadoPartesBloc>().add(
-                          //                 ListadoPartesEvent
-                          //                     .onUpdateHoursPartePersona(
-                          //                         parteTrabajoId:
-                          //                             int.parse(
-                          //                                 data['parteTrabajoId']!),
-                          //                         personaId:
-                          //                             int.parse(data['personaId']!),
-                          //                         hours:
-                          //                             _hoursControllers[index].text,
-                          //                         mins: _minsControllers[index]
-                          //                             .text));
-                          //           });
-                          //     } else {
-                          //       return Container();
-                          //     }
-                          //   },
-                          // ),
                         ],
                       ),
                     ]),
