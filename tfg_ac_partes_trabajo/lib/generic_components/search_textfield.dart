@@ -11,17 +11,21 @@ class SearchTextField extends StatelessWidget {
   final double? width;
   final Function onChanged;
   final TextInputType keyboardType;
+  final Widget? suffixIcon;
+  final bool copyFocusedBorder;
 
-  const SearchTextField(
-      {Key? key,
-      this.hintText = "",
-      required this.controller,
-      this.obscureText = false,
-      this.height = 50,
-      this.width,
-      required this.onChanged,
-      this.keyboardType = TextInputType.number})
-      : super(key: key);
+  const SearchTextField({
+    Key? key,
+    this.hintText = "",
+    required this.controller,
+    this.obscureText = false,
+    this.height = 50,
+    this.width,
+    required this.onChanged,
+    this.keyboardType = TextInputType.number,
+    this.suffixIcon,
+    this.copyFocusedBorder = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +52,21 @@ class SearchTextField extends StatelessWidget {
                 .getSourceSansPro16Regular(),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: MyColorStyles.greyColor80,
-                width: 1,
-              ),
-              borderRadius: BorderRadius.circular(8),
-            ),
+            enabledBorder: copyFocusedBorder
+                ? OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: MyColorStyles.redColor,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  )
+                : OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: MyColorStyles.greyColor80,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 color: MyColorStyles.redColor,
@@ -64,7 +76,7 @@ class SearchTextField extends StatelessWidget {
             ),
             filled: true,
             fillColor: MyColorStyles.whiteColor,
-            suffixIcon: const Icon(Icons.search),
+            suffixIcon: suffixIcon ?? const Icon(Icons.search),
             suffixIconColor: MyColorStyles.redColor),
         onChanged: (value) => onChanged(value),
       ),

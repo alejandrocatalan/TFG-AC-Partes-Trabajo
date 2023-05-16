@@ -40,7 +40,7 @@ class OrdenesTrabajoView extends StatefulWidget {
 
 class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   /// Variables
-  final bool _isFirstTime = true;
+  // final bool _isFirstTime = true;
 
   // DAOs
 
@@ -63,57 +63,79 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
 
     // Obtener los datos de la tabla 'ordenesTrabajo'
     final ordenesTrabajoData = await database.query('ordenesTrabajo');
+    // ignore: avoid_print
     print('Datos de la tabla ordenesTrabajo:');
+    // ignore: avoid_print
     print(ordenesTrabajoData);
 
     // Obtener los datos de la tabla 'partesTrabajo'
     final partesTrabajoData = await database.query('partesTrabajo');
+    // ignore: avoid_print
     print('Datos de la tabla partesTrabajo:');
+    // ignore: avoid_print
     print(partesTrabajoData);
 
     // Obtener los datos de la tabla 'personas'
     final personasData = await database.query('personas');
+    // ignore: avoid_print
     print('Datos de la tabla personas:');
+    // ignore: avoid_print
     print(personasData);
 
     // Obtener los datos de la tabla 'maquinas'
     final maquinasData = await database.query('maquinas');
+    // ignore: avoid_print
     print('Datos de la tabla maquinas:');
+    // ignore: avoid_print
     print(maquinasData);
 
     // Obtener los datos de la tabla 'materiales'
     final materialesData = await database.query('materiales');
+    // ignore: avoid_print
     print('Datos de la tabla materiales:');
+    // ignore: avoid_print
     print(materialesData);
 
     // Obtener los datos de la tabla 'ordenesPersonas'
     final ordenesPersonasData = await database.query('ordenesPersonas');
+    // ignore: avoid_print
     print('Datos de la tabla ordenesPersonas:');
+    // ignore: avoid_print
     print(ordenesPersonasData);
 
     // Obtener los datos de la tabla 'partesPersonas'
     final partesPersonasData = await database.query('partesPersonas');
+    // ignore: avoid_print
     print('Datos de la tabla partesPersonas:');
+    // ignore: avoid_print
     print(partesPersonasData);
 
     // Obtener los datos de la tabla 'ordenesMateriales'
     final ordenesMaterialesData = await database.query('ordenesMateriales');
+    // ignore: avoid_print
     print('Datos de la tabla ordenesMateriales:');
+    // ignore: avoid_print
     print(ordenesMaterialesData);
 
     // Obtener los datos de la tabla 'partesMateriales'
     final partesMaterialesData = await database.query('partesMateriales');
+    // ignore: avoid_print
     print('Datos de la tabla partesMateriales:');
+    // ignore: avoid_print
     print(partesMaterialesData);
 
     // Obtener los datos de la tabla 'ordenesMaquinas'
     final ordenesMaquinasData = await database.query('ordenesMaquinas');
+    // ignore: avoid_print
     print('Datos de la tabla ordenesMaquinas:');
+    // ignore: avoid_print
     print(ordenesMaquinasData);
 
     // Obtener los datos de la tabla 'partesMaquinas'
     final partesMaquinasData = await database.query('partesMaquinas');
+    // ignore: avoid_print
     print('Datos de la tabla partesMaquinas:');
+    // ignore: avoid_print
     print(partesMaquinasData);
   }
 
