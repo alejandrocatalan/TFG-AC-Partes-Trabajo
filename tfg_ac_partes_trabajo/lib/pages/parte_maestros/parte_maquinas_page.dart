@@ -12,7 +12,6 @@ import 'package:tfg_ac_partes_trabajo/model/models/parte_maestro/parte_maquina.d
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
-import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 import 'package:tfg_ac_partes_trabajo/utils/utilities.dart';
 
 class ParteMaquinasPage extends StatefulWidget {
@@ -40,8 +39,7 @@ class _ParteMaquinasPageState extends State<ParteMaquinasPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title:
-            "${context.translate("personnel_in_part")} ${widget.parteTrabajo.id}",
+        title: "Máquinas en el parte ${widget.parteTrabajo.id}",
         body: BlocConsumer<ListadoPartesBloc, ListadoPartesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading,
@@ -58,7 +56,8 @@ class _ParteMaquinasPageState extends State<ParteMaquinasPage> {
           builder: (context, state) {
             return Container(
               width: double.maxFinite,
-              margin: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
+              color: Colors.grey.shade100,
               child: Column(
                 children: [
                   Container(

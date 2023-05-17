@@ -13,6 +13,7 @@ class SearchTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final Widget? suffixIcon;
   final bool copyFocusedBorder;
+  final Function? onTap;
 
   const SearchTextField({
     Key? key,
@@ -25,6 +26,7 @@ class SearchTextField extends StatelessWidget {
     this.keyboardType = TextInputType.number,
     this.suffixIcon,
     this.copyFocusedBorder = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class SearchTextField extends StatelessWidget {
       child: TextField(
         controller: controller,
         obscureText: obscureText,
-        maxLines: null,
+        maxLines: obscureText ? 1 : null,
         expands: false,
         style: MyFontStyles(MyColorStyles.darkGreyColor)
             .getSourceSansPro16Regular(),
@@ -79,6 +81,7 @@ class SearchTextField extends StatelessWidget {
             suffixIcon: suffixIcon ?? const Icon(Icons.search),
             suffixIconColor: MyColorStyles.redColor),
         onChanged: (value) => onChanged(value),
+        onTap: () => onTap != null ? onTap!() : () {},
       ),
     );
   }

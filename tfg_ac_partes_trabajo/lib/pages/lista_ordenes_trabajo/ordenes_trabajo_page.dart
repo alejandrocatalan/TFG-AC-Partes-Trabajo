@@ -195,14 +195,14 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       title: context.translate("work_orders_list"),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // clearDB();
-          // initialiseOrdenesYPersonas();
-          // initialiseOrdenPersona();
-          viewDataDB();
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // clearDB();
+      //     // initialiseOrdenesYPersonas();
+      //     // initialiseOrdenPersona();
+      //     viewDataDB();
+      //   },
+      // ),
       body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
         listenWhen: (previous, current) =>
             previous.isLoading != current.isLoading,
@@ -239,27 +239,24 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                   ),
                 ),
                 SliverFillRemaining(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 6),
-                    child: ListView.builder(
-                      itemCount: state.listOrdenesTrabajo.length,
-                      itemBuilder: (context, index) {
-                        final OrdenTrabajo ordenTrabajo =
-                            state.listOrdenesTrabajo[index];
-                        return OrdenTrabajoCard(
-                          ordenTrabajo: ordenTrabajo,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DetallesOrdenTrabajoPage(
-                                    ordenTrabajo: ordenTrabajo),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    ),
+                  child: ListView.builder(
+                    itemCount: state.listOrdenesTrabajo.length,
+                    itemBuilder: (context, index) {
+                      final OrdenTrabajo ordenTrabajo =
+                          state.listOrdenesTrabajo[index];
+                      return OrdenTrabajoCard(
+                        ordenTrabajo: ordenTrabajo,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetallesOrdenTrabajoPage(
+                                  ordenTrabajo: ordenTrabajo),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ],

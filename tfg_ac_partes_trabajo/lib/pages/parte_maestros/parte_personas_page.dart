@@ -58,7 +58,8 @@ class _PartePersonasPageState extends State<PartePersonasPage> {
           builder: (context, state) {
             return Container(
               width: double.maxFinite,
-              margin: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
+              color: Colors.grey.shade100,
               child: Column(
                 children: [
                   Container(

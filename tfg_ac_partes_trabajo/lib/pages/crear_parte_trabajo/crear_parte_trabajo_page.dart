@@ -9,6 +9,8 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
+import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_maquinas_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_materiales_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -144,7 +146,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
               SliverToBoxAdapter(
                   child: Container(
                 padding: const EdgeInsets.only(
-                    top: 15, bottom: 15, left: 24, right: 24),
+                    top: 15, bottom: 15, left: 12, right: 12),
                 child: SecondaryButtonWidget(
                     textButton: context.translate("personnel"),
                     disabled: false,
@@ -155,6 +157,42 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                         MaterialPageRoute(
                           builder: (context) =>
                               PartePersonasPage(parteTrabajo: _parteTrabajo),
+                        ),
+                      );
+                    }),
+              )),
+              SliverToBoxAdapter(
+                  child: Container(
+                padding: const EdgeInsets.only(
+                    top: 0, bottom: 15, left: 12, right: 12),
+                child: SecondaryButtonWidget(
+                    textButton: "Materiales",
+                    disabled: false,
+                    context: context,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ParteMaterialesPage(parteTrabajo: _parteTrabajo),
+                        ),
+                      );
+                    }),
+              )),
+              SliverToBoxAdapter(
+                  child: Container(
+                padding: const EdgeInsets.only(
+                    top: 0, bottom: 15, left: 12, right: 12),
+                child: SecondaryButtonWidget(
+                    textButton: "Maquinaria",
+                    disabled: false,
+                    context: context,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ParteMaquinasPage(parteTrabajo: _parteTrabajo),
                         ),
                       );
                     }),

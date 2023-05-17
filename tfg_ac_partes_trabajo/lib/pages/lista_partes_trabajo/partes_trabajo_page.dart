@@ -112,7 +112,7 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
                 ),
                 SliverFillRemaining(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 6),
+                    padding: const EdgeInsets.only(top: 0),
                     child: ListView.builder(
                       itemCount: state.listPartesTrabajo.length,
                       itemBuilder: (context, index) {
