@@ -36,7 +36,7 @@ class SecondaryButtonWidget extends StatelessWidget {
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
+            borderRadius: BorderRadius.circular(8),
             side: const BorderSide(color: MyColorStyles.redColor, width: 2),
           ),
         ),

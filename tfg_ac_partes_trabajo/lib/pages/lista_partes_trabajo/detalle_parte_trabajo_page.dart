@@ -64,7 +64,7 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
     return CustomScaffold(
       title: "Editar ${context.translate("part")} ${widget.parteTrabajo.id}",
       body: Container(
-        color: Colors.white,
+        color: Colors.grey.shade100,
         padding: const EdgeInsets.all(12),
         child: CustomScrollView(slivers: [
           SliverToBoxAdapter(

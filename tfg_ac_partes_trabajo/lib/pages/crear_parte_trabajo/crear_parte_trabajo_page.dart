@@ -79,7 +79,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
         return CustomScaffold(
           title: "${context.translate("create_part")} ${_parteTrabajo.id}",
           body: Container(
-            color: Colors.white,
+            color: Colors.grey.shade100,
             padding: const EdgeInsets.all(12),
             child: CustomScrollView(slivers: [
               SliverToBoxAdapter(
@@ -144,9 +144,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
               SliverToBoxAdapter(
                   child: Container(
                 padding: const EdgeInsets.only(
-                  top: 15,
-                  bottom: 15,
-                ),
+                    top: 15, bottom: 15, left: 24, right: 24),
                 child: SecondaryButtonWidget(
                     textButton: context.translate("personnel"),
                     disabled: false,

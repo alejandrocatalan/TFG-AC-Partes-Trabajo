@@ -33,7 +33,7 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
     return CustomScaffold(
       title: "${context.translate("order")} ${widget.ordenTrabajo.id}",
       body: Container(
-        color: Colors.white,
+        color: Colors.grey.shade100,
         child: CustomScrollView(slivers: [
           SliverToBoxAdapter(
             child: Container(

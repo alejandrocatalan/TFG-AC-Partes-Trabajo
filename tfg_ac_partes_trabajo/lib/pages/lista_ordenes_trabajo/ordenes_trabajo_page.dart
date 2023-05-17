@@ -214,55 +214,56 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
           }
         },
         builder: (context, state) {
-          return CustomScrollView(
-            clipBehavior: Clip.hardEdge,
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  color: Colors.white,
-                  height: 70,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SearchTextField(
-                        controller: _searchController,
-                        height: 50,
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        onChanged: (value) {
-                          context
-                              .read<ListadoOrdenesBloc>()
-                              .add(ListadoOrdenesEvent.onSearch(search: value));
-                        },
-                      ),
-                    ],
+          return Container(
+            color: Colors.grey.shade100,
+            child: CustomScrollView(
+              clipBehavior: Clip.hardEdge,
+              slivers: [
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: 70,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SearchTextField(
+                          controller: _searchController,
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          onChanged: (value) {
+                            context.read<ListadoOrdenesBloc>().add(
+                                ListadoOrdenesEvent.onSearch(search: value));
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SliverFillRemaining(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 6),
-                  child: ListView.builder(
-                    itemCount: state.listOrdenesTrabajo.length,
-                    itemBuilder: (context, index) {
-                      final OrdenTrabajo ordenTrabajo =
-                          state.listOrdenesTrabajo[index];
-                      return OrdenTrabajoCard(
-                        ordenTrabajo: ordenTrabajo,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetallesOrdenTrabajoPage(
-                                  ordenTrabajo: ordenTrabajo),
-                            ),
-                          );
-                        },
-                      );
-                    },
+                SliverFillRemaining(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: ListView.builder(
+                      itemCount: state.listOrdenesTrabajo.length,
+                      itemBuilder: (context, index) {
+                        final OrdenTrabajo ordenTrabajo =
+                            state.listOrdenesTrabajo[index];
+                        return OrdenTrabajoCard(
+                          ordenTrabajo: ordenTrabajo,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetallesOrdenTrabajoPage(
+                                    ordenTrabajo: ordenTrabajo),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

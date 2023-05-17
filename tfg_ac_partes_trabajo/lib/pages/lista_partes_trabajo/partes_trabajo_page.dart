@@ -85,54 +85,56 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
           }
         },
         builder: (context, state) {
-          return CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  color: Colors.white,
-                  height: 70,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SearchTextField(
-                        controller: _searchController,
-                        height: 50,
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        onChanged: (value) {
-                          context.read<ListadoPartesBloc>().add(
-                              ListadoPartesEvent.onSearch(
-                                  ordenTrabajoId: widget.ordenTrabajo.id!,
-                                  search: value));
-                        },
-                      ),
-                    ],
+          return Container(
+            color: Colors.grey.shade100,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: 70,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SearchTextField(
+                          controller: _searchController,
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          onChanged: (value) {
+                            context.read<ListadoPartesBloc>().add(
+                                ListadoPartesEvent.onSearch(
+                                    ordenTrabajoId: widget.ordenTrabajo.id!,
+                                    search: value));
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SliverFillRemaining(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 6),
-                  child: ListView.builder(
-                    itemCount: state.listPartesTrabajo.length,
-                    itemBuilder: (context, index) {
-                      final parteTrabajo = state.listPartesTrabajo[index];
-                      return ParteTrabajoCard(
-                        parteTrabajo: parteTrabajo,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetallesParteTrabajoPage(
-                                  parteTrabajo: parteTrabajo),
-                            ),
-                          );
-                        },
-                      );
-                    },
+                SliverFillRemaining(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: ListView.builder(
+                      itemCount: state.listPartesTrabajo.length,
+                      itemBuilder: (context, index) {
+                        final parteTrabajo = state.listPartesTrabajo[index];
+                        return ParteTrabajoCard(
+                          parteTrabajo: parteTrabajo,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetallesParteTrabajoPage(
+                                    parteTrabajo: parteTrabajo),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),
