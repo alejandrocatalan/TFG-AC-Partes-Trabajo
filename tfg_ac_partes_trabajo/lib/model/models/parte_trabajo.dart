@@ -3,7 +3,7 @@ import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
 class ParteTrabajo extends ObjectWithMap {
   final int ordenTrabajoId;
   final DateTime fechaInicio;
-  final DateTime fechaFin;
+  final DateTime? fechaFin;
   final String observaciones;
   final String trabajoRealizado;
   final String identificadorDispositivo;
@@ -12,7 +12,7 @@ class ParteTrabajo extends ObjectWithMap {
   ParteTrabajo({
     required this.ordenTrabajoId,
     required this.fechaInicio,
-    required this.fechaFin,
+    this.fechaFin,
     required this.observaciones,
     required this.trabajoRealizado,
     required this.identificadorDispositivo,
@@ -24,7 +24,6 @@ class ParteTrabajo extends ObjectWithMap {
     return ParteTrabajo(
       ordenTrabajoId: -1,
       fechaInicio: DateTime.now(),
-      fechaFin: DateTime.now(),
       observaciones: '',
       trabajoRealizado: '',
       identificadorDispositivo: '',
@@ -55,15 +54,21 @@ class ParteTrabajo extends ObjectWithMap {
   }
 
   factory ParteTrabajo.fromMap(Map<String, dynamic> map) {
-    return ParteTrabajo(
+    ParteTrabajo pt = ParteTrabajo(
       ordenTrabajoId: map['ordenTrabajoId'],
       fechaInicio: DateTime.parse(map['fechaInicio']),
-      fechaFin: DateTime.parse(map['fechaFin']),
       observaciones: map['observaciones'],
       trabajoRealizado: map['trabajoRealizado'],
       identificadorDispositivo: map['identificadorDispositivo'],
       coordenadas: map['coordenadas'],
     )..id = map['id'];
+
+    if (map['fechaFin'] != null && map['fechaFin'].isNotEmpty) {
+      return pt.copyWith(
+        fechaFin: DateTime.parse(map['fechaFin']),
+      );
+    }
+    return pt;
   }
 
   @override
@@ -71,7 +76,7 @@ class ParteTrabajo extends ObjectWithMap {
     final map = {
       'ordenTrabajoId': ordenTrabajoId,
       'fechaInicio': fechaInicio.toIso8601String(),
-      'fechaFin': fechaFin.toIso8601String(),
+      'fechaFin': fechaFin != null ? fechaFin!.toIso8601String() : fechaFin,
       'observaciones': observaciones,
       'trabajoRealizado': trabajoRealizado,
       'identificadorDispositivo': identificadorDispositivo,

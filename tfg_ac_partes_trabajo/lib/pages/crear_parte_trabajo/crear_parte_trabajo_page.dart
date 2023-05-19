@@ -27,7 +27,6 @@ class CrearParteTrabajoPage extends StatelessWidget {
     ParteTrabajo parteTrabajo = ParteTrabajo(
         ordenTrabajoId: ordenTrabajo.id!,
         fechaInicio: DateTime.now(),
-        fechaFin: DateTime.now(),
         observaciones: "",
         trabajoRealizado: "",
         identificadorDispositivo: "");
@@ -94,12 +93,15 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                       normalText: DateFormat('dd/MM/yyyy - kk:mm')
                           .format(_parteTrabajo.fechaInicio),
                     ),
-                    const SizedBox(height: 12),
-                    BlackAndNormalText(
-                      blackText: "${context.translate("end_date")}: ",
-                      normalText: DateFormat('dd/MM/yyyy - kk:mm')
-                          .format(_parteTrabajo.fechaFin),
-                    ),
+                    if (_parteTrabajo.fechaFin != null &&
+                        _parteTrabajo.fechaFin!.toString().isNotEmpty) ...[
+                      const SizedBox(height: 12),
+                      BlackAndNormalText(
+                        blackText: "${context.translate("end_date")}: ",
+                        normalText: DateFormat('dd/MM/yyyy - kk:mm')
+                            .format(_parteTrabajo.fechaFin!),
+                      ),
+                    ],
                     const SizedBox(height: 12),
                     Text(
                       '${context.translate("observations")}:',

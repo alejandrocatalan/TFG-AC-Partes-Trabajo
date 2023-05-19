@@ -44,7 +44,7 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
     });
 
     on<OnLoadPartesDeOrden>((event, emit) async {
-      emit(state.copyWith(isLoading: true));
+      emit(state.copyWith(isLoading: true, isParteClosed: false));
 
       List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao
           .getAllPartesDeOrden(ordenTrabajoId: event.ordenTrabajoId);
@@ -83,7 +83,19 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
       ParteTrabajo? parteCreated =
           await _parteTrabajoDao.get(event.parteTrabajo.id!);
 
-      emit(state.copyWith(isLoading: false, lastParteCreated: parteCreated!));
+      if (event.parteTrabajo.fechaFin != null &&
+          event.parteTrabajo.fechaFin!.toString().isNotEmpty) {
+        emit(state.copyWith(
+            isLoading: false,
+            lastParteCreated: parteCreated!,
+            isParteClosed: true));
+      } else {
+        emit(state.copyWith(
+          isLoading: false,
+          lastParteCreated: parteCreated!,
+          isParteClosed: false,
+        ));
+      }
 
       add(OnLoadPartesDeOrden(
           ordenTrabajoId: event.parteTrabajo.ordenTrabajoId));

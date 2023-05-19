@@ -9,7 +9,6 @@ import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
-import 'package:tfg_ac_partes_trabajo/utils/utilities.dart';
 
 class OrdenMaterialesPage extends StatefulWidget {
   final OrdenTrabajo ordenTrabajo;
@@ -34,8 +33,7 @@ class _OrdenMaterialesPageState extends State<OrdenMaterialesPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title:
-            "${context.translate("personnel_in_order")} ${widget.ordenTrabajo.id}",
+        title: "Materiales en la orden ${widget.ordenTrabajo.id}",
         body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading ||
@@ -132,7 +130,7 @@ class DataTableMaterialesDeOrden extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       // orden.horas.toString(),
-                      convertHours(orden.unidades),
+                      orden.unidades.toString(),
                       style: MyFontStyles(MyColorStyles.darkGreyColor)
                           .getSourceSansPro16Regular(),
                     ),

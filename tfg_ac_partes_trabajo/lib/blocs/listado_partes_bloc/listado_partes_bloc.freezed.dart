@@ -5322,6 +5322,7 @@ mixin _$ListadoPartesState {
   ParteTrabajo? get lastParteModified =>
       throw _privateConstructorUsedError; // required Map<int, bool> isButtonEnabledMap,
   bool get isButtonEnabled => throw _privateConstructorUsedError;
+  bool get isParteClosed => throw _privateConstructorUsedError;
 
   /// Personas
   List<PartePersona> get listPartePersonas =>
@@ -5356,6 +5357,7 @@ abstract class $ListadoPartesStateCopyWith<$Res> {
       ParteTrabajo lastParteCreated,
       ParteTrabajo? lastParteModified,
       bool isButtonEnabled,
+      bool isParteClosed,
       List<PartePersona> listPartePersonas,
       List<Persona> listPersonas,
       List<ParteMaterial> listParteMateriales,
@@ -5383,6 +5385,7 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
     Object? lastParteCreated = null,
     Object? lastParteModified = freezed,
     Object? isButtonEnabled = null,
+    Object? isParteClosed = null,
     Object? listPartePersonas = null,
     Object? listPersonas = null,
     Object? listParteMateriales = null,
@@ -5414,6 +5417,10 @@ class _$ListadoPartesStateCopyWithImpl<$Res, $Val extends ListadoPartesState>
       isButtonEnabled: null == isButtonEnabled
           ? _value.isButtonEnabled
           : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isParteClosed: null == isParteClosed
+          ? _value.isParteClosed
+          : isParteClosed // ignore: cast_nullable_to_non_nullable
               as bool,
       listPartePersonas: null == listPartePersonas
           ? _value.listPartePersonas
@@ -5458,6 +5465,7 @@ abstract class _$$_ListadoPartesStateCopyWith<$Res>
       ParteTrabajo lastParteCreated,
       ParteTrabajo? lastParteModified,
       bool isButtonEnabled,
+      bool isParteClosed,
       List<PartePersona> listPartePersonas,
       List<Persona> listPersonas,
       List<ParteMaterial> listParteMateriales,
@@ -5483,6 +5491,7 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
     Object? lastParteCreated = null,
     Object? lastParteModified = freezed,
     Object? isButtonEnabled = null,
+    Object? isParteClosed = null,
     Object? listPartePersonas = null,
     Object? listPersonas = null,
     Object? listParteMateriales = null,
@@ -5514,6 +5523,10 @@ class __$$_ListadoPartesStateCopyWithImpl<$Res>
       isButtonEnabled: null == isButtonEnabled
           ? _value.isButtonEnabled
           : isButtonEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isParteClosed: null == isParteClosed
+          ? _value.isParteClosed
+          : isParteClosed // ignore: cast_nullable_to_non_nullable
               as bool,
       listPartePersonas: null == listPartePersonas
           ? _value._listPartePersonas
@@ -5555,6 +5568,7 @@ class _$_ListadoPartesState
       required this.lastParteCreated,
       required this.lastParteModified,
       required this.isButtonEnabled,
+      required this.isParteClosed,
       required final List<PartePersona> listPartePersonas,
       required final List<Persona> listPersonas,
       required final List<ParteMaterial> listParteMateriales,
@@ -5589,6 +5603,8 @@ class _$_ListadoPartesState
 // required Map<int, bool> isButtonEnabledMap,
   @override
   final bool isButtonEnabled;
+  @override
+  final bool isParteClosed;
 
   /// Personas
   final List<PartePersona> _listPartePersonas;
@@ -5652,7 +5668,7 @@ class _$_ListadoPartesState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified, isButtonEnabled: $isButtonEnabled, listPartePersonas: $listPartePersonas, listPersonas: $listPersonas, listParteMateriales: $listParteMateriales, listMateriales: $listMateriales, listParteMaquinas: $listParteMaquinas, listMaquinas: $listMaquinas)';
+    return 'ListadoPartesState(isLoading: $isLoading, isError: $isError, listPartesTrabajo: $listPartesTrabajo, lastParteCreated: $lastParteCreated, lastParteModified: $lastParteModified, isButtonEnabled: $isButtonEnabled, isParteClosed: $isParteClosed, listPartePersonas: $listPartePersonas, listPersonas: $listPersonas, listParteMateriales: $listParteMateriales, listMateriales: $listMateriales, listParteMaquinas: $listParteMaquinas, listMaquinas: $listMaquinas)';
   }
 
   @override
@@ -5666,6 +5682,7 @@ class _$_ListadoPartesState
       ..add(DiagnosticsProperty('lastParteCreated', lastParteCreated))
       ..add(DiagnosticsProperty('lastParteModified', lastParteModified))
       ..add(DiagnosticsProperty('isButtonEnabled', isButtonEnabled))
+      ..add(DiagnosticsProperty('isParteClosed', isParteClosed))
       ..add(DiagnosticsProperty('listPartePersonas', listPartePersonas))
       ..add(DiagnosticsProperty('listPersonas', listPersonas))
       ..add(DiagnosticsProperty('listParteMateriales', listParteMateriales))
@@ -5690,6 +5707,8 @@ class _$_ListadoPartesState
                 other.lastParteModified == lastParteModified) &&
             (identical(other.isButtonEnabled, isButtonEnabled) ||
                 other.isButtonEnabled == isButtonEnabled) &&
+            (identical(other.isParteClosed, isParteClosed) ||
+                other.isParteClosed == isParteClosed) &&
             const DeepCollectionEquality()
                 .equals(other._listPartePersonas, _listPartePersonas) &&
             const DeepCollectionEquality()
@@ -5713,6 +5732,7 @@ class _$_ListadoPartesState
       lastParteCreated,
       lastParteModified,
       isButtonEnabled,
+      isParteClosed,
       const DeepCollectionEquality().hash(_listPartePersonas),
       const DeepCollectionEquality().hash(_listPersonas),
       const DeepCollectionEquality().hash(_listParteMateriales),
@@ -5736,6 +5756,7 @@ abstract class _ListadoPartesState implements ListadoPartesState {
       required final ParteTrabajo lastParteCreated,
       required final ParteTrabajo? lastParteModified,
       required final bool isButtonEnabled,
+      required final bool isParteClosed,
       required final List<PartePersona> listPartePersonas,
       required final List<Persona> listPersonas,
       required final List<ParteMaterial> listParteMateriales,
@@ -5755,6 +5776,8 @@ abstract class _ListadoPartesState implements ListadoPartesState {
   ParteTrabajo? get lastParteModified;
   @override // required Map<int, bool> isButtonEnabledMap,
   bool get isButtonEnabled;
+  @override
+  bool get isParteClosed;
   @override
 
   /// Personas

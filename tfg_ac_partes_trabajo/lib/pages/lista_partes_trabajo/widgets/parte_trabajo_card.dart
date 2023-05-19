@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -31,9 +32,16 @@ class ParteTrabajoCard extends StatelessWidget {
                       .getSourceSansPro18Bold()),
               const SizedBox(height: 8),
               Text(
-                  '${context.translate("start_date")}: ${parteTrabajo.fechaInicio.toString()}',
+                  '${context.translate("start_date")}: ${DateFormat('dd/MM/yyyy - kk:mm').format(parteTrabajo.fechaInicio)}',
                   style: MyFontStyles(MyColorStyles.darkGreyColor)
                       .getSourceSansPro16Regular()),
+              if (parteTrabajo.fechaFin != null &&
+                  parteTrabajo.fechaFin!.toString().isNotEmpty) ...[
+                Text(
+                    '${context.translate("end_date")}: ${DateFormat('dd/MM/yyyy - kk:mm').format(parteTrabajo.fechaFin!)}',
+                    style: MyFontStyles(MyColorStyles.darkGreyColor)
+                        .getSourceSansPro16Regular()),
+              ]
             ],
           ),
         ),

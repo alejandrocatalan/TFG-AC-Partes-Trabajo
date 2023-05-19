@@ -11,6 +11,8 @@ import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/secondary_button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
+import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_maquinas_page.dart';
+import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_materiales_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/parte_maestros/parte_personas_page.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -61,108 +63,156 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
-      title: "Editar ${context.translate("part")} ${widget.parteTrabajo.id}",
-      body: Container(
-        color: Colors.grey.shade100,
-        padding: const EdgeInsets.all(12),
-        child: CustomScrollView(slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                  blackText: "${context.translate("start_date")}: ",
-                  normalText: DateFormat('dd/MM/yyyy - kk:mm')
-                      .format(widget.parteTrabajo.fechaInicio),
-                ),
-                const SizedBox(height: 12),
-                BlackAndNormalText(
-                  blackText: "${context.translate("end_date")}: ",
-                  normalText: DateFormat('dd/MM/yyyy - kk:mm')
-                      .format(widget.parteTrabajo.fechaFin),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  '${context.translate("observations")}:',
-                  style: MyFontStyles(MyColorStyles.darkGreyColor)
-                      .getSourceSansPro18SemiBold(),
-                ),
-                const SizedBox(height: 12),
-                CustomTextField(
-                  controller: TextEditingController(),
-                  hintText: widget.parteTrabajo.observaciones,
-                  readOnly: false,
-                  onChanged: (value) {
-                    _parteTrabajo =
-                        _parteTrabajo.copyWith(observaciones: value);
-                    BlocProvider.of<ListadoPartesBloc>(context).add(
-                        ListadoPartesEvent.onUpdateParte(
-                            parteTrabajo: _parteTrabajo));
-                  },
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  '${context.translate("work_to_be_done")}:',
-                  style: MyFontStyles(MyColorStyles.darkGreyColor)
-                      .getSourceSansPro18SemiBold(),
-                ),
-                const SizedBox(height: 12),
-                CustomTextField(
-                  controller: TextEditingController(),
-                  hintText: widget.parteTrabajo.trabajoRealizado,
-                  readOnly: false,
-                  onChanged: (value) {
-                    _parteTrabajo =
-                        _parteTrabajo.copyWith(trabajoRealizado: value);
-                    BlocProvider.of<ListadoPartesBloc>(context).add(
-                        ListadoPartesEvent.onUpdateParte(
-                            parteTrabajo: _parteTrabajo));
-                  },
-                ),
-              ],
-            ),
-          ),
-          SliverToBoxAdapter(
-              child: Container(
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
-            child: SecondaryButtonWidget(
-                textButton: context.translate("personnel"),
-                disabled: false,
-                context: context,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          PartePersonasPage(parteTrabajo: widget.parteTrabajo),
+    return BlocListener<ListadoPartesBloc, ListadoPartesState>(
+      listenWhen: (previous, current) =>
+          previous.isParteClosed != current.isParteClosed,
+      listener: (context, state) {
+        if (state.isParteClosed) {
+          showDialogCerrarParte(context);
+        }
+      },
+      child: CustomScaffold(
+        title: "Editar ${context.translate("part")} ${widget.parteTrabajo.id}",
+        body: Container(
+          color: Colors.grey.shade100,
+          padding: const EdgeInsets.all(12),
+          child: CustomScrollView(slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 12),
+                  BlackAndNormalText(
+                    blackText: "${context.translate("start_date")}: ",
+                    normalText: DateFormat('dd/MM/yyyy - kk:mm')
+                        .format(widget.parteTrabajo.fechaInicio),
+                  ),
+                  if (widget.parteTrabajo.fechaFin != null &&
+                      widget.parteTrabajo.fechaFin!.toString().isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    BlackAndNormalText(
+                      blackText: "${context.translate("end_date")}: ",
+                      normalText: DateFormat('dd/MM/yyyy - kk:mm')
+                          .format(widget.parteTrabajo.fechaFin!),
                     ),
-                  );
-                }),
-          )),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(
-                      bottom: Platform.isIOS ? 30 : 15, left: 24, right: 24),
-                  child: ButtonWidget(
-                      textButton: "Cerrar parte",
-                      disabled: false,
-                      context: context,
-                      onPressed: () {
-                        showDialogCerrarParte(context);
-                        // Navigator.pop(context);
-                      }),
-                )
-              ],
+                  ],
+                  const SizedBox(height: 12),
+                  Text(
+                    '${context.translate("observations")}:',
+                    style: MyFontStyles(MyColorStyles.darkGreyColor)
+                        .getSourceSansPro18SemiBold(),
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextField(
+                    controller: TextEditingController(
+                        text: widget.parteTrabajo.observaciones),
+                    readOnly: false,
+                    onChanged: (value) {
+                      _parteTrabajo =
+                          _parteTrabajo.copyWith(observaciones: value);
+                      BlocProvider.of<ListadoPartesBloc>(context).add(
+                          ListadoPartesEvent.onUpdateParte(
+                              parteTrabajo: _parteTrabajo));
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'Trabajo realizado:',
+                    style: MyFontStyles(MyColorStyles.darkGreyColor)
+                        .getSourceSansPro18SemiBold(),
+                  ),
+                  const SizedBox(height: 12),
+                  CustomTextField(
+                    controller: TextEditingController(
+                        text: widget.parteTrabajo.trabajoRealizado),
+                    readOnly: false,
+                    onChanged: (value) {
+                      _parteTrabajo =
+                          _parteTrabajo.copyWith(trabajoRealizado: value);
+                      BlocProvider.of<ListadoPartesBloc>(context).add(
+                          ListadoPartesEvent.onUpdateParte(
+                              parteTrabajo: _parteTrabajo));
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-        ]),
+            SliverToBoxAdapter(
+                child: Container(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: SecondaryButtonWidget(
+                  textButton: context.translate("personnel"),
+                  disabled: false,
+                  context: context,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PartePersonasPage(
+                            parteTrabajo: widget.parteTrabajo),
+                      ),
+                    );
+                  }),
+            )),
+            SliverToBoxAdapter(
+                child: Container(
+              padding: const EdgeInsets.only(top: 0, bottom: 15),
+              child: SecondaryButtonWidget(
+                  textButton: "Materiales",
+                  disabled: false,
+                  context: context,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ParteMaterialesPage(
+                            parteTrabajo: widget.parteTrabajo),
+                      ),
+                    );
+                  }),
+            )),
+            SliverToBoxAdapter(
+                child: Container(
+              padding: const EdgeInsets.only(top: 0, bottom: 15),
+              child: SecondaryButtonWidget(
+                  textButton: "Maquinaria",
+                  disabled: false,
+                  context: context,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ParteMaquinasPage(
+                            parteTrabajo: widget.parteTrabajo),
+                      ),
+                    );
+                  }),
+            )),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(bottom: Platform.isIOS ? 30 : 15),
+                    child: ButtonWidget(
+                        textButton: "Cerrar parte",
+                        disabled: false,
+                        context: context,
+                        onPressed: () {
+                          context.read<ListadoPartesBloc>().add(
+                              ListadoPartesEvent.onUpdateParte(
+                                  parteTrabajo: _parteTrabajo.copyWith(
+                                      fechaFin: DateTime.now())));
+                          // Navigator.pop(context);
+                        }),
+                  )
+                ],
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }

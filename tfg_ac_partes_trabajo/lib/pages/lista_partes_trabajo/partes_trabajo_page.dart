@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
+import 'package:tfg_ac_partes_trabajo/generic_components/disabled_widget_wrapper.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/crear_parte_trabajo/crear_parte_trabajo_page.dart';
@@ -117,17 +118,22 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
                       itemCount: state.listPartesTrabajo.length,
                       itemBuilder: (context, index) {
                         final parteTrabajo = state.listPartesTrabajo[index];
-                        return ParteTrabajoCard(
-                          parteTrabajo: parteTrabajo,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DetallesParteTrabajoPage(
-                                    parteTrabajo: parteTrabajo),
-                              ),
-                            );
-                          },
+                        return DisabledWidgetWrapper(
+                          disabled: parteTrabajo.fechaFin != null &&
+                              parteTrabajo.fechaFin.toString().isNotEmpty,
+                          child: ParteTrabajoCard(
+                            parteTrabajo: parteTrabajo,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetallesParteTrabajoPage(
+                                          parteTrabajo: parteTrabajo),
+                                ),
+                              );
+                            },
+                          ),
                         );
                       },
                     ),

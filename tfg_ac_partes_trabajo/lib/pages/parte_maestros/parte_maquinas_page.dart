@@ -215,6 +215,8 @@ class _ListViewMaquinasDeParteState extends State<ListViewMaquinasDeParte> {
                       context.read<ListadoPartesBloc>().add(
                           const ListadoPartesEvent.onChangeButtonState(
                               buttonState: false));
+
+                      FocusScope.of(context).unfocus();
                     }),
               ],
             );

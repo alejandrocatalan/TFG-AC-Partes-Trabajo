@@ -34,8 +34,7 @@ class _OrdenMaquinasPageState extends State<OrdenMaquinasPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title:
-            "${context.translate("personnel_in_order")} ${widget.ordenTrabajo.id}",
+        title: "Maquinaria en la orden ${widget.ordenTrabajo.id}",
         body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading ||

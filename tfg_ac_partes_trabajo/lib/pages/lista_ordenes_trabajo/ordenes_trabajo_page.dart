@@ -8,10 +8,14 @@ import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/material_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/persona_dao.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/orden_maestro_dao/orden_material_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_maestro_dao/orden_persona_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_trabajo_dao.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/maestro/material.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/maestro/persona.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_material.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_persona.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/detalle_orden_trabajo_page.dart';
@@ -143,7 +147,7 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
     await MyDatabase.instance.clearDatabase();
   }
 
-  void initialiseOrdenesYPersonas() async {
+  void initialiseOrdenesYMaestros() async {
     for (int i = 0; i < 10; i++) {
       OrdenTrabajoDao.instance.create(OrdenTrabajo(
           fechaInicio: DateTime.now(),
@@ -162,9 +166,22 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
     await PersonaDao.instance.create(Persona(descripcion: "descripcion10"));
     await PersonaDao.instance.create(Persona(descripcion: "descripcion11"));
     await PersonaDao.instance.create(Persona(descripcion: "descripcion12"));
+
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion2"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion3"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion4"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion5"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion6"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion7"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion8"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion9"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion10"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion11"));
+    await MaterialDao.instance.create(Materiall(descripcion: "descripcion12"));
   }
 
-  void initialiseOrdenPersona() async {
+  void initialiseOrdenMaestro() async {
     await OrdenPersonaDao.instance
         .create(OrdenPersona(ordenTrabajoId: 5, personaId: 1, horas: 11.0));
     await OrdenPersonaDao.instance
@@ -189,20 +206,46 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
         .create(OrdenPersona(ordenTrabajoId: 7, personaId: 11, horas: 21.0));
     await OrdenPersonaDao.instance
         .create(OrdenPersona(ordenTrabajoId: 8, personaId: 12, horas: 22.0));
+
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 1, unidades: 11.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 2, unidades: 12.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 3, unidades: 13.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 4, unidades: 14.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 5, unidades: 15.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 5, materialId: 6, unidades: 16.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 6, materialId: 7, unidades: 17.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 6, materialId: 8, unidades: 18.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 6, materialId: 9, unidades: 19.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 6, materialId: 10, unidades: 20.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 7, materialId: 11, unidades: 21.0));
+    await OrdenMaterialDao.instance.create(
+        OrdenMaterial(ordenTrabajoId: 8, materialId: 12, unidades: 22.0));
   }
 
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
       title: context.translate("work_orders_list"),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     // clearDB();
-      //     // initialiseOrdenesYPersonas();
-      //     // initialiseOrdenPersona();
-      //     viewDataDB();
-      //   },
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          // clearDB();
+          // initialiseOrdenesYMaestros();
+          // initialiseOrdenMaestro();
+
+          viewDataDB();
+        },
+      ),
       body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
         listenWhen: (previous, current) =>
             previous.isLoading != current.isLoading,

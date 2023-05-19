@@ -53,7 +53,7 @@ class MyDatabase {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         ordenTrabajoId INTEGER NOT NULL,
         fechaInicio TEXT NOT NULL,
-        fechaFin TEXT NOT NULL,
+        fechaFin TEXT,
         observaciones TEXT NOT NULL,
         trabajoRealizado TEXT NOT NULL,
         identificadorDispositivo TEXT NOT NULL,
@@ -114,7 +114,7 @@ class MyDatabase {
       CREATE TABLE IF NOT EXISTS ordenesMateriales (
         ordenTrabajoId INTEGER NOT NULL,
         materialId INTEGER NOT NULL,
-        horas DOUBLE NOT NULL,
+        unidades DOUBLE NOT NULL,
         FOREIGN KEY (ordenTrabajoId) REFERENCES ordenesTrabajo(id),
         FOREIGN KEY (materialId) REFERENCES materiales(id)
       )
@@ -124,7 +124,7 @@ class MyDatabase {
       CREATE TABLE IF NOT EXISTS partesMateriales (
         parteTrabajoId INTEGER NOT NULL,
         materialId INTEGER NOT NULL,
-        horas DOUBLE NOT NULL,
+        unidades DOUBLE NOT NULL,
         FOREIGN KEY (parteTrabajoId) REFERENCES partesTrabajo(id),
         FOREIGN KEY (materialId) REFERENCES materiales(id)
       )

@@ -200,6 +200,8 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
                       context.read<ListadoPartesBloc>().add(
                           const ListadoPartesEvent.onChangeButtonState(
                               buttonState: false));
+
+                      FocusScope.of(context).unfocus();
                     }),
               ],
             );
@@ -238,7 +240,7 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
                       Row(
                         children: [
                           SizedBox(
-                            width: 60,
+                            width: 80,
                             child: CustomTextField(
                                 controller: _unitsControllers[index],
                                 hintText: units,
@@ -268,7 +270,7 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
                             width: 2,
                           ),
                           Text(
-                            "h",
+                            "u",
                             style: MyFontStyles(MyColorStyles.darkGreyColor)
                                 .getSourceSansPro16Regular(),
                           ),
