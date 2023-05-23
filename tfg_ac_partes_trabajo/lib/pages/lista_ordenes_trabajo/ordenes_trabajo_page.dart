@@ -20,6 +20,8 @@ import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_persona.d
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/detalle_orden_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/widgets/orden_trabajo_card.dart';
+import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
+import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
 import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
 class OrdenesTrabajoPage extends StatelessWidget {
@@ -237,14 +239,100 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       title: context.translate("work_orders_list"),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          // clearDB();
-          // initialiseOrdenesYMaestros();
-          // initialiseOrdenMaestro();
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () async {
+      //     // clearDB();
+      //     // initialiseOrdenesYMaestros();
+      //     // initialiseOrdenMaestro();
 
-          viewDataDB();
-        },
+      //     viewDataDB();
+      //   },
+      // ),
+      drawer: Drawer(
+        width: 220,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          //padding: EdgeInsets.zero,
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                DrawerHeader(
+                  decoration: const BoxDecoration(
+                    color: MyColorStyles.redColor,
+                  ),
+                  child: Text(
+                    'Menú Lateral',
+                    style: MyFontStyles(MyColorStyles.whiteColor)
+                        .getSourceSansPro20SemiBold(),
+                  ),
+                ),
+                ListTile(
+                  trailing: Icon(
+                    Icons.settings,
+                    color: MyColorStyles.blackColor,
+                  ),
+                  title: Text(
+                    'Configuración',
+                    style: MyFontStyles(MyColorStyles.blackColor)
+                        .getSourceSansPro18Regular(),
+                  ),
+                  onTap: () {
+                    // Lógica cuando se selecciona "Refrescar"
+                  },
+                ),
+                const Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                ),
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 30),
+              child: Column(
+                children: [
+                  const Divider(
+                    color: Colors.grey,
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    trailing: Icon(
+                      Icons.refresh,
+                      color: MyColorStyles.blackColor,
+                    ),
+                    title: Text(
+                      'Refrescar',
+                      style: MyFontStyles(MyColorStyles.blackColor)
+                          .getSourceSansPro18Regular(),
+                    ),
+                    onTap: () {
+                      // Lógica cuando se selecciona "Refrescar"
+                    },
+                  ),
+                  const Divider(
+                    color: Colors.grey,
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    trailing: Icon(
+                      Icons.exit_to_app,
+                      color: MyColorStyles.blackColor,
+                    ),
+                    title: Text(
+                      'Salir',
+                      style: MyFontStyles(MyColorStyles.blackColor)
+                          .getSourceSansPro18Regular(),
+                    ),
+                    onTap: () {
+                      // Lógica cuando se selecciona "Salir"
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
         listenWhen: (previous, current) =>

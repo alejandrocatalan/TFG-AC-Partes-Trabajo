@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
@@ -31,7 +32,7 @@ class OrdenTrabajoCard extends StatelessWidget {
                       .getSourceSansPro18Bold()),
               const SizedBox(height: 8),
               Text(
-                  '${context.translate("start_date")}: ${ordenTrabajo.fechaInicio.toString()}',
+                  '${context.translate("start_date")}: ${DateFormat('dd/MM/yyyy - kk:mm').format(ordenTrabajo.fechaInicio)}',
                   style: MyFontStyles(MyColorStyles.darkGreyColor)
                       .getSourceSansPro16Regular()),
             ],

@@ -6,12 +6,14 @@ class CustomScaffold extends StatelessWidget {
   final String title;
   final FloatingActionButton? floatingActionButton;
   final Widget body;
+  final Widget? drawer;
 
   const CustomScaffold(
       {Key? key,
       required this.title,
       this.floatingActionButton,
-      required this.body})
+      required this.body,
+      this.drawer})
       : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class CustomScaffold extends StatelessWidget {
         backgroundColor: MyColorStyles.redColor,
       ),
       floatingActionButton: floatingActionButton,
+      drawer: drawer,
       body: Container(
         child: body,
       ),
