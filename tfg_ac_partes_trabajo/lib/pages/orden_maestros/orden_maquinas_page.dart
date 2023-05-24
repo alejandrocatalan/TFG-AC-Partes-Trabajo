@@ -34,7 +34,8 @@ class _OrdenMaquinasPageState extends State<OrdenMaquinasPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: "Maquinaria en la orden ${widget.ordenTrabajo.id}",
+        title:
+            "${context.translate("machines_in_order")} ${widget.ordenTrabajo.id}",
         body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading ||
@@ -50,9 +51,9 @@ class _OrdenMaquinasPageState extends State<OrdenMaquinasPage> {
               previous.listMaquinas != current.listMaquinas,
           builder: (context, state) {
             return Container(
-              //color: Colors.white,
+              color: Colors.grey.shade100,
               width: double.maxFinite,
-              margin: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
@@ -130,7 +131,6 @@ class DataTableMaquinasDeOrden extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      // orden.horas.toString(),
                       convertHours(orden.horas),
                       style: MyFontStyles(MyColorStyles.darkGreyColor)
                           .getSourceSansPro16Regular(),

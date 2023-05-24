@@ -51,9 +51,9 @@ class _OrdenPersonasPageState extends State<OrdenPersonasPage> {
               previous.listPersonas != current.listPersonas,
           builder: (context, state) {
             return Container(
-              //color: Colors.white,
+              color: Colors.grey.shade100,
               width: double.maxFinite,
-              margin: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(

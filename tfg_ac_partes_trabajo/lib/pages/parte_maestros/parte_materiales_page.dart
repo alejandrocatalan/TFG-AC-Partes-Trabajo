@@ -12,6 +12,7 @@ import 'package:tfg_ac_partes_trabajo/model/models/parte_maestro/parte_material.
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
+import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
 class ParteMaterialesPage extends StatefulWidget {
   final ParteTrabajo parteTrabajo;
@@ -38,7 +39,8 @@ class _ParteMaterialesPageState extends State<ParteMaterialesPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: "Materiales en el parte ${widget.parteTrabajo.id}",
+        title:
+            "${context.translate("materials_in_work_part")} ${widget.parteTrabajo.id}",
         body: BlocConsumer<ListadoPartesBloc, ListadoPartesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading,
@@ -135,7 +137,8 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
         )
         .toList();
 
-    _dataList.sort((a, b) => b['unidades']!.compareTo(a['unidades']!));
+    _dataList.sort((a, b) =>
+        double.parse(b['unidades']!).compareTo(double.parse(a['unidades']!)));
 
     for (int i = 0; i < _dataList.length; i++) {
       _unitsControllers.add(TextEditingController());
@@ -155,7 +158,7 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SecondaryButtonWidget(
-                    textButton: "Resetear",
+                    textButton: context.translate("reset"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()
@@ -171,7 +174,7 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
                               buttonState: false));
                     }),
                 ButtonWidget(
-                    textButton: "Aplicar",
+                    textButton: context.translate("apply"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()
@@ -246,7 +249,9 @@ class _ListViewMaterialesDeParteState extends State<ListViewMaterialesDeParte> {
                                 hintText: units,
                                 textAlign: TextAlign.end,
                                 textAlignVertical: TextAlignVertical.center,
-                                keyboardType: TextInputType.number,
+                                keyboardType:
+                                    const TextInputType.numberWithOptions(
+                                        decimal: true),
                                 height: 30,
                                 contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 6, vertical: 0),

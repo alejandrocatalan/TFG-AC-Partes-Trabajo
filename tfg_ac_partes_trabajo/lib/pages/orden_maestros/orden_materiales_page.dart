@@ -33,7 +33,8 @@ class _OrdenMaterialesPageState extends State<OrdenMaterialesPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: "Materiales en la orden ${widget.ordenTrabajo.id}",
+        title:
+            "${context.translate("materials_in_order")} ${widget.ordenTrabajo.id}",
         body: BlocConsumer<ListadoOrdenesBloc, ListadoOrdenesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading ||
@@ -49,9 +50,9 @@ class _OrdenMaterialesPageState extends State<OrdenMaterialesPage> {
               previous.listMateriales != current.listMateriales,
           builder: (context, state) {
             return Container(
-              //color: Colors.white,
+              color: Colors.grey.shade100,
               width: double.maxFinite,
-              margin: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
@@ -129,8 +130,7 @@ class DataTableMaterialesDeOrden extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      // orden.horas.toString(),
-                      orden.unidades.toString(),
+                      orden.unidades.toStringAsFixed(2),
                       style: MyFontStyles(MyColorStyles.darkGreyColor)
                           .getSourceSansPro16Regular(),
                     ),

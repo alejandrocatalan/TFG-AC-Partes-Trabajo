@@ -12,6 +12,7 @@ import 'package:tfg_ac_partes_trabajo/model/models/parte_maestro/parte_maquina.d
 import 'package:tfg_ac_partes_trabajo/model/models/parte_trabajo.dart';
 import 'package:tfg_ac_partes_trabajo/themes/color_styles.dart';
 import 'package:tfg_ac_partes_trabajo/themes/font_styles.dart';
+import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 import 'package:tfg_ac_partes_trabajo/utils/utilities.dart';
 
 class ParteMaquinasPage extends StatefulWidget {
@@ -39,7 +40,8 @@ class _ParteMaquinasPageState extends State<ParteMaquinasPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: "Máquinas en el parte ${widget.parteTrabajo.id}",
+        title:
+            "${context.translate("machines_in_work_part")} ${widget.parteTrabajo.id}",
         body: BlocConsumer<ListadoPartesBloc, ListadoPartesState>(
           listenWhen: (previous, current) =>
               previous.isLoading != current.isLoading,
@@ -139,7 +141,8 @@ class _ListViewMaquinasDeParteState extends State<ListViewMaquinasDeParte> {
         )
         .toList();
     // Se ordena la lista en orden decreciente según las horas
-    _dataList.sort((a, b) => b['horas']!.compareTo(a['horas']!));
+    _dataList.sort((a, b) =>
+        double.parse(b['horas']!).compareTo(double.parse(a['horas']!)));
 
     // Se inicializan los controladores para los TextField de horas y para los de
     // minutos, según el número de elementos en la lista de datos.
@@ -162,7 +165,7 @@ class _ListViewMaquinasDeParteState extends State<ListViewMaquinasDeParte> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SecondaryButtonWidget(
-                    textButton: "Resetear",
+                    textButton: context.translate("reset"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()
@@ -179,7 +182,7 @@ class _ListViewMaquinasDeParteState extends State<ListViewMaquinasDeParte> {
                               buttonState: false));
                     }),
                 ButtonWidget(
-                    textButton: "Aplicar",
+                    textButton: context.translate("apply"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()

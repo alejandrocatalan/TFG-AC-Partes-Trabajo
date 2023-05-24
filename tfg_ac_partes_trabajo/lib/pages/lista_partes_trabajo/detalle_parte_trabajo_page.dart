@@ -49,9 +49,9 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
       builder: (context) {
         return CustomAlertDialog(
           context: context,
-          titleText: "Atención",
-          text: "Parte cerrado correctamente.",
-          mainButtonText: "Aceptar",
+          titleText: context.translate("attention"),
+          text: context.translate("work_part_closed_successfully"),
+          mainButtonText: context.translate("accept"),
           pressMainButtonFunction: () {
             Navigator.pop(context);
             Navigator.pop(context);
@@ -72,7 +72,8 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
         }
       },
       child: CustomScaffold(
-        title: "Editar ${context.translate("part")} ${widget.parteTrabajo.id}",
+        title:
+            "${context.translate("edit")} ${context.translate("part")} ${widget.parteTrabajo.id}",
         body: Container(
           color: Colors.grey.shade100,
           padding: const EdgeInsets.all(12),
@@ -117,7 +118,7 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'Trabajo realizado:',
+                    "${context.translate("work_completed")}:",
                     style: MyFontStyles(MyColorStyles.darkGreyColor)
                         .getSourceSansPro18SemiBold(),
                   ),
@@ -139,7 +140,8 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
             ),
             SliverToBoxAdapter(
                 child: Container(
-              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 15, bottom: 15, left: 12, right: 12),
               child: SecondaryButtonWidget(
                   textButton: context.translate("personnel"),
                   disabled: false,
@@ -156,9 +158,10 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
             )),
             SliverToBoxAdapter(
                 child: Container(
-              padding: const EdgeInsets.only(top: 0, bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 0, bottom: 15, left: 12, right: 12),
               child: SecondaryButtonWidget(
-                  textButton: "Materiales",
+                  textButton: context.translate("materials"),
                   disabled: false,
                   context: context,
                   onPressed: () {
@@ -173,9 +176,10 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
             )),
             SliverToBoxAdapter(
                 child: Container(
-              padding: const EdgeInsets.only(top: 0, bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 0, bottom: 15, left: 12, right: 12),
               child: SecondaryButtonWidget(
-                  textButton: "Maquinaria",
+                  textButton: context.translate("machinery"),
                   disabled: false,
                   context: context,
                   onPressed: () {
@@ -195,9 +199,10 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(bottom: Platform.isIOS ? 30 : 15),
+                    padding: EdgeInsets.only(
+                        bottom: Platform.isIOS ? 30 : 15, left: 12, right: 12),
                     child: ButtonWidget(
-                        textButton: "Cerrar parte",
+                        textButton: context.translate("close_work_part"),
                         disabled: false,
                         context: context,
                         onPressed: () {
@@ -205,7 +210,6 @@ class _DetallesParteTrabajoPageState extends State<DetallesParteTrabajoPage> {
                               ListadoPartesEvent.onUpdateParte(
                                   parteTrabajo: _parteTrabajo.copyWith(
                                       fechaFin: DateTime.now())));
-                          // Navigator.pop(context);
                         }),
                   )
                 ],

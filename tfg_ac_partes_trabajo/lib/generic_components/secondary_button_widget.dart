@@ -37,7 +37,11 @@ class SecondaryButtonWidget extends StatelessWidget {
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
-            side: const BorderSide(color: MyColorStyles.redColor, width: 2),
+            side: BorderSide(
+                color: disabled
+                    ? MyColorStyles.whiteColor
+                    : MyColorStyles.redColor,
+                width: 2),
           ),
         ),
         elevation: MaterialStateProperty.all<double>(0),
@@ -53,7 +57,8 @@ class SecondaryButtonWidget extends StatelessWidget {
       child: Text(
         textAlign: TextAlign.center,
         style: disabled
-            ? MyFontStyles(MyColorStyles.redColor).getSourceSansPro16SemiBold()
+            ? MyFontStyles(MyColorStyles.whiteColor)
+                .getSourceSansPro16SemiBold()
             : MyFontStyles(MyColorStyles.redColor).getSourceSansPro16SemiBold(),
         textButton,
       ),

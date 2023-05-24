@@ -400,7 +400,6 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          //padding: EdgeInsets.zero,
           children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -410,7 +409,7 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                     color: MyColorStyles.redColor,
                   ),
                   child: Text(
-                    'Menú Lateral',
+                    context.translate("side_menu"),
                     style: MyFontStyles(MyColorStyles.whiteColor)
                         .getSourceSansPro20SemiBold(),
                   ),
@@ -421,9 +420,9 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                     color: MyColorStyles.blackColor,
                   ),
                   title: Text(
-                    'Configuración',
+                    context.translate("settings"),
                     style: MyFontStyles(MyColorStyles.blackColor)
-                        .getSourceSansPro18Regular(),
+                        .getSourceSansPro16Regular(),
                   ),
                   onTap: () {
                     // Lógica cuando se selecciona "Refrescar"
@@ -447,11 +446,12 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                     trailing: Icon(
                       Icons.refresh,
                       color: MyColorStyles.blackColor,
+                      size: 21,
                     ),
                     title: Text(
-                      'Refrescar',
+                      context.translate("refresh"),
                       style: MyFontStyles(MyColorStyles.blackColor)
-                          .getSourceSansPro18Regular(),
+                          .getSourceSansPro16Regular(),
                     ),
                     onTap: () {
                       // Lógica cuando se selecciona "Refrescar"
@@ -465,11 +465,12 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
                     trailing: Icon(
                       Icons.exit_to_app,
                       color: MyColorStyles.blackColor,
+                      size: 21,
                     ),
                     title: Text(
-                      'Salir',
+                      context.translate("exit"),
                       style: MyFontStyles(MyColorStyles.blackColor)
-                          .getSourceSansPro18Regular(),
+                          .getSourceSansPro16Regular(),
                     ),
                     onTap: () {
                       // Lógica cuando se selecciona "Salir"

@@ -117,3 +117,123 @@ es = Personal
 tags = android,ios
 en = Personnel in part
 es = Personal en el parte
+
+[manager]
+tags = android,ios
+en = Manager
+es = Gestor
+
+[tasks]
+tags = android,ios
+en = Tasks
+es = Tareas
+
+[user]
+tags = android,ios
+en = User
+es = Usuario
+
+[password]
+tags = android,ios
+en = Password
+es = Contraseña
+
+[continue]
+tags = android,ios
+en = Continue
+es = Continuar
+
+[machines_in_work_part]
+tags = android,ios
+en = Machines in the work part
+es = Máquinas en el parte
+
+[reset]
+tags = android,ios
+en = Reset
+es = Resetear
+
+[apply]
+tags = android,ios
+en = Apply
+es = Aplicar
+
+[materials_in_work_part]
+tags = android,ios
+en = Materials in the work part
+es = Materiales en el parte
+
+[machines_in_order]
+tags = android,ios
+en = Machines in the order
+es = Máquinas en la orden
+
+[materials_in_order]
+tags = android,ios
+en = Materials in the order
+es = Materiales en la orden
+
+[units]
+tags = android,ios
+en = Units
+es = Unidades
+
+[attention]
+tags = android,ios
+en = Attention
+es = Atención
+
+[work_part_closed_successfully]
+tags = android,ios
+en = Work part closed successfully
+es = Parte cerrado correctamente
+
+[accept]
+tags = android,ios
+en = Accept
+es = Aceptar
+
+[edit]
+tags = android,ios
+en = Edit
+es = Editar
+
+[work_completed]
+tags = android,ios
+en = Work completed
+es = Trabajo realizado
+
+[materials]
+tags = android,ios
+en = Materials
+es = Materiales
+
+[machinery]
+tags = android,ios
+en = Machinery
+es = Maquinaria
+
+[close_work_part]
+tags = android,ios
+en = Close work part
+es = Cerrar parte
+
+[side_menu]
+tags = android,ios
+en = Side menu
+es = Menú Lateral
+
+[settings]
+tags = android,ios
+en = Settings
+es = Configuración
+
+[refresh]
+tags = android,ios
+en = Refresh
+es = Refrescar
+
+[exit]
+tags = android,ios
+en = Exit
+es = Salir

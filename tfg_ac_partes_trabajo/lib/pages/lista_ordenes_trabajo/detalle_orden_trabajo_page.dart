@@ -75,8 +75,8 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(
-                    controller: TextEditingController(),
-                    hintText: widget.ordenTrabajo.observaciones ?? "",
+                    controller: TextEditingController(
+                        text: widget.ordenTrabajo.observaciones ?? ""),
                     readOnly: true,
                     onChanged: () {},
                   ),
@@ -88,8 +88,9 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
                   ),
                   const SizedBox(height: 12),
                   CustomTextField(
-                    controller: TextEditingController(),
-                    hintText: widget.ordenTrabajo.trabajoARealizar ?? "",
+                    controller: TextEditingController(
+                      text: widget.ordenTrabajo.trabajoARealizar ?? "",
+                    ),
                     readOnly: true,
                     onChanged: () {},
                   ),
@@ -120,7 +121,7 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
             padding:
                 const EdgeInsets.only(top: 0, bottom: 15, left: 24, right: 24),
             child: SecondaryButtonWidget(
-                textButton: "Materiales",
+                textButton: context.translate("materials"),
                 disabled: false,
                 context: context,
                 onPressed: () {
@@ -138,7 +139,7 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
             padding:
                 const EdgeInsets.only(top: 0, bottom: 15, left: 24, right: 24),
             child: SecondaryButtonWidget(
-                textButton: "Maquinaria",
+                textButton: context.translate("machinery"),
                 disabled: false,
                 context: context,
                 onPressed: () {
@@ -180,67 +181,3 @@ class _DetallesOrdenTrabajoPageState extends State<DetallesOrdenTrabajoPage> {
     );
   }
 }
-
-/// Ejemplo de widgets con condición
-// Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   'ID: ${widget.ordenTrabajo.id}',
-//                   style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                       .getSourceSansPro20SemiBold(),
-//                 ),
-//                 const SizedBox(height: 12),
-//                 Text(
-//                     '${context.translate("start_date")}: ${widget.ordenTrabajo.fechaInicio.toString()}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular()),
-//                 if (widget.ordenTrabajo.fechaFin != null) ...[
-//                   const SizedBox(height: 12),
-//                   Text(
-//                     '${context.translate("end_date")}: ${widget.ordenTrabajo.fechaFin!.toString()}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular(),
-//                   ),
-//                 ],
-//                 if (widget.ordenTrabajo.tipo != null) ...[
-//                   const SizedBox(height: 12),
-//                   Text(
-//                     '${context.translate("type")}: ${widget.ordenTrabajo.tipo!}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular(),
-//                   ),
-//                 ],
-//                 if (widget.ordenTrabajo.observaciones != null) ...[
-//                   const SizedBox(height: 12),
-//                   Text(
-//                     '${context.translate("observations")}: ${widget.ordenTrabajo.observaciones!}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular(),
-//                   ),
-//                 ],
-//                 if (widget.ordenTrabajo.trabajoARealizar != null) ...[
-//                   const SizedBox(height: 12),
-//                   Text(
-//                     '${context.translate("work_to_be_done")}: ${widget.ordenTrabajo.trabajoARealizar!}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular(),
-//                   ),
-//                 ],
-//                 const SizedBox(height: 12),
-//                 Text(
-//                   '${context.translate("customer_order_code")}: ${widget.ordenTrabajo.codigoOrdenCliente}',
-//                   style: const TextStyle(
-//                     fontSize: 16,
-//                   ),
-//                 ),
-//                 if (widget.ordenTrabajo.instalacion != null) ...[
-//                   const SizedBox(height: 12),
-//                   Text(
-//                     '${context.translate("installation")}: ${widget.ordenTrabajo.instalacion!}',
-//                     style: MyFontStyles(MyColorStyles.darkGreyColor)
-//                         .getSourceSansPro18Regular(),
-//                   ),
-//                 ],
-//               ],
-//             ),

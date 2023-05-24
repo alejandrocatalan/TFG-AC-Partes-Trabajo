@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/button_widget.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_ordenes_trabajo/ordenes_trabajo_page.dart';
+import 'package:tfg_ac_partes_trabajo/utils/extensions.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -92,9 +93,8 @@ class _LoginPageState extends State<LoginPage> {
                             });
                           },
                           suffixIcon: const Icon(Icons.person_2_outlined),
-                          hintText: "Usuario",
+                          hintText: context.translate("user"),
                           keyboardType: TextInputType.text,
-                          // copyFocusedBorder: true,
                         ),
                       ),
                       Container(
@@ -108,10 +108,9 @@ class _LoginPageState extends State<LoginPage> {
                             });
                           },
                           suffixIcon: const Icon(Icons.lock_outline),
-                          hintText: "Contraseña",
+                          hintText: context.translate("password"),
                           keyboardType: TextInputType.text,
                           obscureText: true,
-                          // copyFocusedBorder: true,
                         ),
                       ),
                       Container(
@@ -119,8 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                             top: _isTextFieldFocused ? 30 : 50,
                             bottom: Platform.isIOS ? 30 : 15),
                         child: ButtonWidget(
-                            // color: Colors.grey,
-                            textButton: "Continuar",
+                            textButton: context.translate("continue"),
                             disabled: false,
                             context: context,
                             onPressed: () {

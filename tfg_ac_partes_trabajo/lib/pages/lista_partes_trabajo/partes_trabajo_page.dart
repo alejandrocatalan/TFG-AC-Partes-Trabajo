@@ -58,7 +58,8 @@ class _PartesTrabajoViewState extends State<PartesTrabajoView> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      title: context.translate("work_parts_list"),
+      title:
+          "${context.translate("work_parts_list")} - ${widget.ordenTrabajo.id!}",
       floatingActionButton: FloatingActionButton(
         backgroundColor: MyColorStyles.redColor,
         onPressed: () {

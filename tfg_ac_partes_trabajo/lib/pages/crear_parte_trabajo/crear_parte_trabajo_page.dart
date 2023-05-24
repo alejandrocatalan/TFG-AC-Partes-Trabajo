@@ -33,7 +33,6 @@ class CrearParteTrabajoPage extends StatelessWidget {
 
     final ListadoPartesBloc bloc = BlocProvider.of<ListadoPartesBloc>(context);
     bloc.add(ListadoPartesEvent.onCreateParte(parteTrabajo: parteTrabajo));
-    // bloc.add(const ListadoPartesEvent.onCleanLastParteModified());
 
     return const CrearParteTrabajoView();
   }
@@ -124,7 +123,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      '${context.translate("work_to_be_done")}:',
+                      "${context.translate("work_completed")}:",
                       style: MyFontStyles(MyColorStyles.darkGreyColor)
                           .getSourceSansPro18SemiBold(),
                     ),
@@ -168,7 +167,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                 padding: const EdgeInsets.only(
                     top: 0, bottom: 15, left: 12, right: 12),
                 child: SecondaryButtonWidget(
-                    textButton: "Materiales",
+                    textButton: context.translate("materials"),
                     disabled: false,
                     context: context,
                     onPressed: () {
@@ -186,7 +185,7 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                 padding: const EdgeInsets.only(
                     top: 0, bottom: 15, left: 12, right: 12),
                 child: SecondaryButtonWidget(
-                    textButton: "Maquinaria",
+                    textButton: context.translate("machinery"),
                     disabled: false,
                     context: context,
                     onPressed: () {
@@ -199,28 +198,6 @@ class _CrearParteTrabajoViewState extends State<CrearParteTrabajoView> {
                       );
                     }),
               )),
-              // SliverFillRemaining(
-              //   hasScrollBody: false,
-              //   child: Column(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       Container(
-              //         padding: EdgeInsets.only(
-              //             bottom: Platform.isIOS ? 30 : 15,
-              //             left: 24,
-              //             right: 24),
-              //         child: ButtonWidget(
-              //             textButton: context.translate("create_part"),
-              //             disabled: false,
-              //             context: context,
-              //             onPressed: () {
-              //               Navigator.pop(context);
-              //             }),
-              //       )
-              //     ],
-              //   ),
-              // ),
             ]),
           ),
         );

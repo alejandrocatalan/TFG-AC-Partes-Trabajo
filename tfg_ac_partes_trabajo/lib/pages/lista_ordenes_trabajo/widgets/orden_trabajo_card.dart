@@ -35,6 +35,12 @@ class OrdenTrabajoCard extends StatelessWidget {
                   '${context.translate("start_date")}: ${DateFormat('dd/MM/yyyy - kk:mm').format(ordenTrabajo.fechaInicio)}',
                   style: MyFontStyles(MyColorStyles.darkGreyColor)
                       .getSourceSansPro16Regular()),
+              const SizedBox(height: 8),
+              Text('${ordenTrabajo.trabajoARealizar}',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: MyFontStyles(MyColorStyles.darkGreyColor)
+                      .getSourceSansPro16Regular()),
             ],
           ),
         ),

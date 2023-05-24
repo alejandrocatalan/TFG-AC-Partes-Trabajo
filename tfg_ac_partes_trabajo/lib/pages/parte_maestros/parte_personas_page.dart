@@ -144,7 +144,8 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
         .toList();
 
     // Se ordena la lista en orden decreciente según las horas
-    _dataList.sort((a, b) => b['horas']!.compareTo(a['horas']!));
+    _dataList.sort((a, b) =>
+        double.parse(b['horas']!).compareTo(double.parse(a['horas']!)));
 
     // Se inicializan los controladores para los TextField de horas y para los de
     // minutos, según el número de elementos en la lista de datos.
@@ -167,7 +168,7 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SecondaryButtonWidget(
-                    textButton: "Resetear",
+                    textButton: context.translate("reset"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()
@@ -184,7 +185,7 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                               buttonState: false));
                     }),
                 ButtonWidget(
-                    textButton: "Aplicar",
+                    textButton: context.translate("apply"),
                     widthPercentage: 0.45,
                     disabled: !context
                         .read<ListadoPartesBloc>()
