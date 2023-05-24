@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -8,13 +10,17 @@ import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes
 import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/maquina_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/material_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/persona_dao.dart';
+import 'package:tfg_ac_partes_trabajo/model/daos/orden_maestro_dao/orden_maquina_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_maestro_dao/orden_material_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_maestro_dao/orden_persona_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/orden_trabajo_dao.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/maestro/maquina.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/maestro/material.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/maestro/persona.dart';
+import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_maquina.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_material.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_maestro/orden_persona.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
@@ -150,89 +156,230 @@ class _OrdenesTrabajoViewState extends State<OrdenesTrabajoView> {
   }
 
   void initialiseOrdenesYMaestros() async {
-    for (int i = 0; i < 10; i++) {
-      OrdenTrabajoDao.instance.create(OrdenTrabajo(
-          fechaInicio: DateTime.now(),
-          codigoOrdenCliente: "codigoOrdenCliente"));
-    }
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Pendientes de la 9 a la 15",
+        trabajoARealizar: "Reparación de arquetas"));
 
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion2"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion3"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion4"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion5"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion6"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion7"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion8"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion9"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion10"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion11"));
-    await PersonaDao.instance.create(Persona(descripcion: "descripcion12"));
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Maderas del primer segmento quebradas",
+        trabajoARealizar:
+            "Reemplazo de tablas de madera en el paseo marítimo"));
 
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion2"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion3"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion4"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion5"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion6"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion7"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion8"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion9"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion10"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion11"));
-    await MaterialDao.instance.create(Materiall(descripcion: "descripcion12"));
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Zona de baño número 3",
+        trabajoARealizar: "Montaje de duchas en la zona de baño"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Escaleras de acceso norte desgastadas",
+        trabajoARealizar: "Restauración de escaleras de acceso a la playa"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Postes de sombra sueltos en el área de descanso",
+        trabajoARealizar: "Ajuste y aseguramiento de postes de sombra"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "",
+        trabajoARealizar:
+            "Relleno y nivelación de arena en la zona de juegos"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Fugas de agua",
+        trabajoARealizar: "Reparación de grifos del área de lavado"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Erosión",
+        trabajoARealizar: "Reparación de la entrada principal"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "",
+        trabajoARealizar: "Reposición de piedras en el muro de contención"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "",
+        trabajoARealizar:
+            "Instalación de señalización accesible en la zona de baño"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "En el primer bloque",
+        trabajoARealizar: "Reposición de adoquines en el paseo marítimo"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "Desgastadas las de la segunda fila",
+        trabajoARealizar: "Reemplazo de barandillas de acceso a la playa"));
+
+    await OrdenTrabajoDao.instance.create(OrdenTrabajo(
+        fechaInicio: DateTime.now(),
+        fechaFin: DateTime.now().add(const Duration(days: 3)),
+        tipo: "Obra",
+        instalacion: "Playa de Denia - Alicante",
+        codigoOrdenCliente: "DA-44327",
+        observaciones: "",
+        trabajoARealizar: "Reparación del sendero de acceso al mirador"));
+
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Alejandro Rodríguez García"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Marta López Fernández"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Javier Pérez Martínez"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Laura González Sánchez"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Carlos Ramírez Romero"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Carmen Torres Jiménez"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Alberto Morales Vargas"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Ana Bel Ruiz Medina"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Diego Castro Ortega"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Manuel Herrera Paredes"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Antonio Torres López"));
+    await PersonaDao.instance
+        .create(Persona(descripcion: "Sergio Mendoza Ríos"));
+
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Bombas de achique"));
+    await MaterialDao.instance.create(Materiall(descripcion: "Tubos de cobre"));
+    await MaterialDao.instance.create(Materiall(descripcion: "Juntas de goma"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Filtros de sedimentación"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Losas de piedra"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Bloques de hormigón"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Manguitos de unión"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Codos de hierro fundido"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Selladores de silicona"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Adhesivos para PVC"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Tuberías de PVC"));
+    await MaterialDao.instance
+        .create(Materiall(descripcion: "Válvulas de compuerta"));
+
+    await MaquinaDao.instance.create(Maquina(descripcion: "Excavadora"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Retroexcavadora"));
+    await MaquinaDao.instance
+        .create(Maquina(descripcion: "Martillo neumático"));
+    await MaquinaDao.instance
+        .create(Maquina(descripcion: "Compactadora de suelos"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Bomba de achique"));
+    await MaquinaDao.instance
+        .create(Maquina(descripcion: "Máquina de soldadura"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Hidrolimpiadora"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Vibroapisonadora"));
+    await MaquinaDao.instance
+        .create(Maquina(descripcion: "Carretilla elevadora"));
+    await MaquinaDao.instance
+        .create(Maquina(descripcion: "Fresadora de asfalto"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Taladro percutor"));
+    await MaquinaDao.instance.create(Maquina(descripcion: "Motoniveladora"));
   }
 
   void initialiseOrdenMaestro() async {
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 1, horas: 11.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 2, horas: 12.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 3, horas: 13.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 4, horas: 14.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 5, horas: 15.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 5, personaId: 6, horas: 16.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 6, personaId: 7, horas: 17.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 6, personaId: 8, horas: 18.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 6, personaId: 9, horas: 19.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 6, personaId: 10, horas: 20.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 7, personaId: 11, horas: 21.0));
-    await OrdenPersonaDao.instance
-        .create(OrdenPersona(ordenTrabajoId: 8, personaId: 12, horas: 22.0));
+    final random = Random();
 
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 1, unidades: 11.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 2, unidades: 12.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 3, unidades: 13.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 4, unidades: 14.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 5, unidades: 15.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 5, materialId: 6, unidades: 16.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 6, materialId: 7, unidades: 17.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 6, materialId: 8, unidades: 18.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 6, materialId: 9, unidades: 19.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 6, materialId: 10, unidades: 20.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 7, materialId: 11, unidades: 21.0));
-    await OrdenMaterialDao.instance.create(
-        OrdenMaterial(ordenTrabajoId: 8, materialId: 12, unidades: 22.0));
+    for (var i = 0; i < 30; i++) {
+      final ordenTrabajoId = random.nextInt(13) + 1;
+      final personaId = random.nextInt(12) + 1;
+      final horas = (random.nextDouble() * 99.5) + 0.5;
+
+      await OrdenPersonaDao.instance.create(
+        OrdenPersona(
+            ordenTrabajoId: ordenTrabajoId, personaId: personaId, horas: horas),
+      );
+    }
+
+    for (var i = 0; i < 30; i++) {
+      final ordenTrabajoId = random.nextInt(13) + 1;
+      final materialId = random.nextInt(12) + 1;
+      final unidades = (random.nextDouble() * 99.5) + 0.5;
+
+      await OrdenMaterialDao.instance.create(
+        OrdenMaterial(
+            ordenTrabajoId: ordenTrabajoId,
+            materialId: materialId,
+            unidades: unidades),
+      );
+    }
+
+    for (var i = 0; i < 30; i++) {
+      final ordenTrabajoId = random.nextInt(13) + 1;
+      final maquinaId = random.nextInt(12) + 1;
+      final horas = (random.nextDouble() * 99.5) + 0.5;
+
+      await OrdenMaquinaDao.instance.create(
+        OrdenMaquina(
+            ordenTrabajoId: ordenTrabajoId, maquinaId: maquinaId, horas: horas),
+      );
+    }
   }
 
   @override
