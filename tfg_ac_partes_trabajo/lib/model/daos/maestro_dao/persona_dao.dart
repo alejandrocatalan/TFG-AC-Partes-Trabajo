@@ -34,8 +34,7 @@ class PersonaDao extends BaseDao<Persona> {
     });
   }
 
-  Future<List<Persona>> getAllPersonasDeOrdenOPartePersona(
-      List<int> personaIds) async {
+  Future<List<Persona>> getAllPersonasById(List<int> personaIds) async {
     final db = await MyDatabase.instance.database;
     final List<Map<String, dynamic>> maps = await db.query(
       tableName,

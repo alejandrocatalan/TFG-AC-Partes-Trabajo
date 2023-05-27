@@ -80,7 +80,7 @@ class ListadoOrdenesBloc
           .map((ordenPersona) => ordenPersona.personaId)
           .toList();
       List<Persona> listPersonas =
-          await _personaDao.getAllPersonasDeOrdenOPartePersona(personaIds);
+          await _personaDao.getAllPersonasById(personaIds);
 
       emit(state.copyWith(
         isLoading: false,
