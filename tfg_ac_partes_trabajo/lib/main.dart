@@ -4,7 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_partes_bloc/listado_partes_bloc.dart';
-import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/model/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_circular_progress_indicator.dart';
 import 'package:tfg_ac_partes_trabajo/pages/lista_partes_trabajo/partes_trabajo_page.dart';
 import 'package:tfg_ac_partes_trabajo/pages/login_page.dart';

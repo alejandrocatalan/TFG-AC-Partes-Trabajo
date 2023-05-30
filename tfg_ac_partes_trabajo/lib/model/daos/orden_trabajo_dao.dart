@@ -1,4 +1,4 @@
-import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/model/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/base_dao.dart';
 import 'package:tfg_ac_partes_trabajo/model/models/orden_trabajo.dart';
 

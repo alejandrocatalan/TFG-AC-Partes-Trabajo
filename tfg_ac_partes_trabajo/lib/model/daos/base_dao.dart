@@ -1,4 +1,4 @@
-import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/model/database/my_database.dart';
 
 abstract class BaseDao<T extends ObjectWithMap> {
   final String tableName;

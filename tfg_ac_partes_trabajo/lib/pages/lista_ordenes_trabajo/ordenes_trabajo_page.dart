@@ -7,7 +7,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:tfg_ac_partes_trabajo/blocs/listado_ordenes_bloc/listado_ordenes_bloc.dart';
-import 'package:tfg_ac_partes_trabajo/database/my_database.dart';
+import 'package:tfg_ac_partes_trabajo/model/database/my_database.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/custom_scaffold.dart';
 import 'package:tfg_ac_partes_trabajo/generic_components/search_textfield.dart';
 import 'package:tfg_ac_partes_trabajo/model/daos/maestro_dao/maquina_dao.dart';
