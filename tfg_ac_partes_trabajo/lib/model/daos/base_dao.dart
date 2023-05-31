@@ -8,7 +8,6 @@ abstract class BaseDao<T extends ObjectWithMap> {
   Future<int> create(T obj) async {
     final db = await MyDatabase.instance.database;
     final id = await db.insert(tableName, obj.toMap());
-    // obj.id = id;
     return id;
   }
 
@@ -43,13 +42,10 @@ abstract class BaseDao<T extends ObjectWithMap> {
 }
 
 class ObjectWithMap {
-  /// Variables del objeto abstracto
   int? id;
 
-  /// Constructor
   ObjectWithMap({required this.id});
 
-  /// Funciones del objeto abstracto
   fromMap<T extends ObjectWithMap>(Map<String, dynamic> map) {
     throw UnimplementedError('objectFromMap() must be implemented');
   }
