@@ -35,19 +35,19 @@ class ListadoPartesBloc extends Bloc<ListadoPartesEvent, ListadoPartesState> {
   ListadoPartesBloc() : super(ListadoPartesState.initial()) {
     on<ListadoPartesEvent>((event, emit) {});
 
-    on<OnLoadPartes>((event, emit) async {
-      emit(state.copyWith(isLoading: true));
-
-      List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao.getAll();
-
-      emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
-    });
-
     on<OnLoadPartesDeOrden>((event, emit) async {
       emit(state.copyWith(isLoading: true, isParteClosed: false));
 
       List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao
           .getAllPartesDeOrden(ordenTrabajoId: event.ordenTrabajoId);
+
+      emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
+    });
+
+    on<OnLoadPartes>((event, emit) async {
+      emit(state.copyWith(isLoading: true));
+
+      List<ParteTrabajo> partesTrabajo = await _parteTrabajoDao.getAll();
 
       emit(state.copyWith(isLoading: false, listPartesTrabajo: partesTrabajo));
     });

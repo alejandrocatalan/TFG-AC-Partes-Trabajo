@@ -43,9 +43,6 @@ class PartesTrabajoView extends StatefulWidget {
 }
 
 class _PartesTrabajoViewState extends State<PartesTrabajoView> {
-  /// Variables
-  // DAOs
-
   // Controllers
   final TextEditingController _searchController = TextEditingController();
 

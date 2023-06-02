@@ -16,14 +16,6 @@ class ListadoPartesEvent with _$ListadoPartesEvent {
   const factory ListadoPartesEvent.onUpdateParte(
       {required ParteTrabajo parteTrabajo}) = OnUpdateParte;
 
-  // const factory ListadoPartesEvent.onCleanLastParteModified() =
-  //     OnCleanLastParteModified;
-
-  // const factory ListadoPartesEvent.onChangeButtonMapState({
-  //   required bool buttonState,
-  //   required int index,
-  // }) = OnChangeButtonMapState;
-
   const factory ListadoPartesEvent.onChangeButtonState({
     required bool buttonState,
   }) = OnChangeButtonState;

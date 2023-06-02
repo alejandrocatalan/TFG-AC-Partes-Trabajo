@@ -139,7 +139,6 @@ class _ListViewPersonasDeParteState extends State<ListViewPersonasDeParte> {
                       .descripcion
                   : 'Sin descripción',
               'horas': partePersona.horas.toString(),
-              //'horas': convertHours(partePersona.horas),
             })
         .toList();
 

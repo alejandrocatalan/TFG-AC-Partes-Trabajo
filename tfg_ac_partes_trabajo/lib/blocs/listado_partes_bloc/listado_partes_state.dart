@@ -8,7 +8,6 @@ class ListadoPartesState with _$ListadoPartesState {
     required List<ParteTrabajo> listPartesTrabajo,
     required ParteTrabajo lastParteCreated,
     required ParteTrabajo? lastParteModified,
-    // required Map<int, bool> isButtonEnabledMap,
     required bool isButtonEnabled,
     required bool isParteClosed,
 
@@ -31,10 +30,8 @@ class ListadoPartesState with _$ListadoPartesState {
         listPartesTrabajo: [],
         lastParteCreated: ParteTrabajo.initial(),
         lastParteModified: null,
-        // isButtonEnabledMap: {},
         isButtonEnabled: false,
         isParteClosed: false,
-
         listPartePersonas: [],
         listPersonas: [],
         listParteMateriales: [],
