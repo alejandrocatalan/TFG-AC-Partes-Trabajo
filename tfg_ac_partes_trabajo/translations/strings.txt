@@ -1,0 +1,239 @@
+[work_orders_list]
+tags = android,ios
+en = Work orders list
+es = Lista órdenes de trabajo
+
+[work_parts_list]
+tags = android,ios
+en = Work parts list
+es = Lista partes de trabajo
+
+[work_order_detail]
+tags = android,ios
+en = Work order detail
+es = Detalle orden de trabajo
+
+[work_part_detail]
+tags = android,ios
+en = Work part detail
+es = Detalle parte de trabajo
+
+[create_work_part]
+tags = android,ios
+en = Create work order
+es = Crear parte de trabajo
+
+[work_to_be_done]
+tags = android,ios
+en = Work to be done
+es = Trabajo a realizar
+
+[observations]
+tags = android,ios
+en = Observations
+es = Observaciones
+
+[create_part]
+tags = android,ios
+en = Create work order
+es = Crear parte
+
+[view_work_parts]
+tags = android,ios
+en = View work orders
+es = Ver partes de trabajo
+
+[installation]
+tags = android,ios
+en = Installation
+es = Instalación
+
+[customer_order_code]
+tags = android,ios
+en = Customer order code
+es = Código orden cliente
+
+[type]
+tags = android,ios
+en = Type
+es = Tipo
+
+[end_date]
+tags = android,ios
+en = End date
+es = Fecha de fin
+
+[start_date]
+tags = android,ios
+en = Start date
+es = Fecha de inicio
+
+[order]
+tags = android,ios
+en = Order
+es = Orden
+
+[part]
+tags = android,ios
+en = Part
+es = Parte
+
+[person]
+tags = android,ios
+en = Person
+es = Persona
+
+[people]
+tags = android,ios
+en = People
+es = Personas
+
+[people_from_order]
+tags = android,ios
+en = People from order
+es = Personas de la orden
+
+[hours]
+tags = android,ios
+en = Hours
+es = Horas
+
+[description]
+tags = android,ios
+en = Description
+es = Descripción
+
+[personnel_in_order]
+tags = android,ios
+en = Personnel in order
+es = Personal en la orden
+
+[personnel]
+tags = android,ios
+en = Personnel
+es = Personal
+
+[personnel_in_part]
+tags = android,ios
+en = Personnel in part
+es = Personal en el parte
+
+[manager]
+tags = android,ios
+en = Manager
+es = Gestor
+
+[tasks]
+tags = android,ios
+en = Tasks
+es = Tareas
+
+[user]
+tags = android,ios
+en = User
+es = Usuario
+
+[password]
+tags = android,ios
+en = Password
+es = Contraseña
+
+[continue]
+tags = android,ios
+en = Continue
+es = Continuar
+
+[machines_in_work_part]
+tags = android,ios
+en = Machines in the work part
+es = Máquinas en el parte
+
+[reset]
+tags = android,ios
+en = Reset
+es = Resetear
+
+[apply]
+tags = android,ios
+en = Apply
+es = Aplicar
+
+[materials_in_work_part]
+tags = android,ios
+en = Materials in the work part
+es = Materiales en el parte
+
+[machines_in_order]
+tags = android,ios
+en = Machines in the order
+es = Máquinas en la orden
+
+[materials_in_order]
+tags = android,ios
+en = Materials in the order
+es = Materiales en la orden
+
+[units]
+tags = android,ios
+en = Units
+es = Unidades
+
+[attention]
+tags = android,ios
+en = Attention
+es = Atención
+
+[work_part_closed_successfully]
+tags = android,ios
+en = Work part closed successfully
+es = Parte cerrado correctamente
+
+[accept]
+tags = android,ios
+en = Accept
+es = Aceptar
+
+[edit]
+tags = android,ios
+en = Edit
+es = Editar
+
+[work_completed]
+tags = android,ios
+en = Work completed
+es = Trabajo realizado
+
+[materials]
+tags = android,ios
+en = Materials
+es = Materiales
+
+[machinery]
+tags = android,ios
+en = Machinery
+es = Maquinaria
+
+[close_work_part]
+tags = android,ios
+en = Close work part
+es = Cerrar parte
+
+[side_menu]
+tags = android,ios
+en = Side menu
+es = Menú Lateral
+
+[settings]
+tags = android,ios
+en = Settings
+es = Configuración
+
+[refresh]
+tags = android,ios
+en = Refresh
+es = Refrescar
+
+[exit]
+tags = android,ios
+en = Exit
+es = Salir
