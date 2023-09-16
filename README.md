@@ -1,20 +1,9 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Este proyecto consiste en la creación y documentación de una aplicación móvil multiplataforma, llamada GestorTareas, con la finalidad de facilitar la gestión de órdenes trabajo a empresas situadas en el sector de la construcción.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+La aplicación se utilizará para la creación y edición de partes de trabajo sobre una orden de trabajo. El objetivo es facilitar el registro y gestión del trabajo realizado y de los recursos empleados en una construcción.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Se listarán todas las órdenes de trabajo abiertas, y seleccionando una de ellas se podrán ver las indicaciones y los recursos a emplear. Estas instrucciones -o indicaciones- serán tenidas en cuenta por el operario a cargo del manejo del dispositivo con la aplicación instalada. Éste creará partes de trabajo registrando cómo se ha repartido el trabajo; registrando el trabajo realizado y los recursos utilizados.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Enlace a la documentación del proyecto:
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+	https://drive.google.com/file/d/1xRwCTcwFwG9IAyRWoULdo6a3afrwexhA/view?usp=sharing
